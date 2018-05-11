@@ -14,8 +14,8 @@ export EDITOR="vim"
 export TERM="xterm-256color"
 
 # Dircolors
-LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
-export LS_COLORS
+#LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
+#export LS_COLORS
 
 # Get LS color command
 if ls --color > /dev/null 2>&1; then
@@ -84,7 +84,7 @@ alias dcd="docker-compose down"
 
 # Connect or Start TMUX
 connect_tmux() {
-if command -v tmux > /dev/null; then
+if command -v tmux >/dev/null; then
 	if [ -z ${TMUX} ]; then
 		ID="`tmux ls | grep -vm1 attached | cut -d: -f1`"
 		if [ -z ${ID} ]; then
@@ -100,12 +100,12 @@ fi
 }
 
 # Set GPG password prompt to current TTY
-if [ -x "$(which gpg-connect-agent)" ]; then
+if command -v gpg-connect-agent >/dev/null; then
 	gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
 fi
 
 # Export SSH socket to GPG agent
-if [ -x "$(which gpgconf)" ]; then
+if command -v gpgconf >/dev/null; then
 	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
 
