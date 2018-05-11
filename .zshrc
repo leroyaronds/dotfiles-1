@@ -1,7 +1,8 @@
 # Oh My Zsh
-export ZSH=$HOME/dotfiles/oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="minimal"
 plugins=(docker zsh-syntax-highlightning)
+source $ZSH/oh-my-zsh.sh
 
 # History
 HISTFILE=~/.zsh_history
@@ -104,7 +105,9 @@ if [ -x "$(which gpg-connect-agent)" ]; then
 fi
 
 # Export SSH socket to GPG agent
-export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+if [ -x "$(which gpgconf)" ]; then
+	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
 
 # Work related
 if [ -f ~/.zsh_work ]; then
