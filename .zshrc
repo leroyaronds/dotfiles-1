@@ -14,6 +14,8 @@ source ~/.antigen/antigen.zsh
 antigen use oh-my-zsh
 # Load plugins
 antigen bundle docker
+antigen bundle command-not-found
+antigen bundle z
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
