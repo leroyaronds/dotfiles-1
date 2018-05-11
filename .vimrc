@@ -55,12 +55,6 @@ Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 " Todo
 Plug 'https://github.com/freitass/todo.txt-vim.git'
-" Language server client
-"Plug 'https://github.com/natebosch/vim-lsc.git'
-"Plug 'https://github.com/prabirshrestha/async.vim.git'
-"Plug 'https://github.com/prabirshrestha/vim-lsp.git'
-"Plug 'https://github.com/prabirshrestha/asyncomplete.vim.git'
-"Plug 'https://github.com/prabirshrestha/asyncomplete-lsp.vim.git'
 " Puppet codestyle
 Plug 'https://github.com/rodjek/vim-puppet.git'
 " Tabular
@@ -70,17 +64,6 @@ Plug 'https://github.com/plasticboy/vim-markdown.git'
 " PlantUML
 Plug 'https://github.com/aklt/plantuml-syntax.git'
 call plug#end()
-
-" Language server server
-"
-" use default mapping
-let g:lsc_auto_map = v:true
-" enable verbose logging
-let g:lsc_trace_level = 'verbose'
-" configure language servers
-let g:lsc_server_commands = {
-	\ 'java': 'java-langserver', 
-	\ 'dockerfile': 'docker-langserver --stdio' }
 
 " todo command
 command! Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
