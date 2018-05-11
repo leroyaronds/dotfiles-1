@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+	<menu id="root-menu" label="Openbox">
+		<item label="XTerm">
+			<action name="Execute">
+				<execute>xterm</execute>
+			</action>
+		</item>
+		<item label="NotePad">
+			<action name="Execute">
+				<execute>mousepad</execute>
+			</action>
+		</item>
+		<item label="FileManager">
+			<action name="Execute">
+				<execute>thunar</execute>
+			</action>
+		</item>
+		<item label="ImageViewer">
+			<action name="Execute">
+				<execute>ristretto</execute>
+			</action>
+		</item>
+		<separator/>
+		<item label="Browser">
+			<action name="Execute">
+				<execute>x-www-browser</execute>
+			</action>
+		</item>
+		<item label="Mail">
+			<action name="Execute">
+				<execute>thunderbird</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu id="root-menu-15501" label="Dev">
+			<item label="Intellij">
+				<action name="Execute">
+					<execute>/home/mvandenoever/idea-IC-181.4668.68/bin/idea.sh</execute>
+				</action>
+			</item>
+			<item label="Workbench">
+				<action name="Execute">
+					<execute>mysql-workbench</execute>
+				</action>
+			</item>
+		</menu>
+		<!-- This requires the presence of the 'menu' package to work -->
+		<separator/>
+		<menu id="client-list-menu"/>
+		<separator/>
+		<item label="ObConf">
+			<action name="Execute">
+				<execute>obconf</execute>
+			</action>
+		</item>
+		<item label="ObMenu">
+			<action name="Execute">
+				<execute>obmenu</execute>
+			</action>
+		</item>
+		<item label="Reconfigure">
+			<action name="Reconfigure"/>
+		</item>
+		<item label="Restart">
+			<action name="Restart"/>
+		</item>
+		<separator/>
+		<item label="Exit">
+			<action name="Exit"/>
+		</item>
+	</menu>
+</openbox_menu>
