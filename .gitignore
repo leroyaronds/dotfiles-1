@@ -1,5 +1,4 @@
-ompiled source #
-###################
+# compiled source
 *.com
 *.class
 *.dll
@@ -7,14 +6,12 @@ ompiled source #
 *.o
 *.so
 
-# Temporary files #
-###################
+# Temp files
 *.swp
 *.swo
 *~
 
-# Packages #
-############
+# Packages
 *.7z
 *.dmg
 *.gz
@@ -24,18 +21,15 @@ ompiled source #
 *.tar
 *.zip
 
-# Logs and databases #
-######################
+# Logs and db
 *.log
 *.sql
 *.sqlite
 
-# OS generated files #
-######################
+# OS generated files
 .DS_Store*
 ehthumbs.db
 Icon?
 Thumbs.db
-
 *.lock
 package-lock.json
