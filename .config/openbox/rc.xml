@@ -126,7 +126,7 @@
 	    <name>Development</name>
 	</names>
 	-->
-    <popupTime>100</popupTime>
+    <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -324,7 +324,7 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>xterm</name>
+          <name>Terminal</name>
         </startupnotify>
 		<command>xterm</command>
       </action>
@@ -333,7 +333,7 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Slack</name>
+          <name>Chat</name>
         </startupnotify>
         <command>slack</command>
       </action>
@@ -342,7 +342,7 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Lock screen</name>
+          <name>Lock</name>
         </startupnotify>
         <command>slock</command>
       </action>
@@ -351,7 +351,7 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Chromium</name>
+          <name>Browser</name>
         </startupnotify>
         <command>chromium</command>
       </action>
@@ -360,7 +360,7 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Intellij</name>
+          <name>IDE</name>
         </startupnotify>
 		<command>~/idea-IC-181.4668.68/bin/idea.sh</command>
       </action>
@@ -369,9 +369,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Thunderbird</name>
+          <name>Mail</name>
         </startupnotify>
-		<command>thunderbird</command>
+		<command>sylpheed</command>
       </action>
 	</keybind>
     <!-- Launch scrot when Print is pressed -->
@@ -844,11 +844,11 @@
 	</application>
 
 	<application class="Chromium">
-		<decor>no</decor>
-		<maximized>yes</maximized>
+		<decor>yes</decor>
+		<maximized>no</maximized>
 	</application>
 
-	<application class="Thunderbird">
+	<application class="Sylpheed">
 		<decor>no</decor>
 	    <position force="no">
 			<monitor>1</monitor>

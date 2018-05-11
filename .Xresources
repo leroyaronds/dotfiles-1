@@ -32,6 +32,8 @@
 
 !! Disable beep beep beep beep beep beep..koekoek!
 XTerm*visualBell: false
+!! Enable copy
+XTerm*selectToClipboard: true
 !! Als key as meta
 XTerm*metaSendsEscape: true
 XTerm*eightBitInput: false

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
 	<menu id="root-menu" label="Openbox">
-		<item label="XTerm">
+		<item label="Terminal">
 			<action name="Execute">
 				<execute>xterm</execute>
 			</action>
@@ -13,7 +13,7 @@
 		</item>
 		<item label="FileManager">
 			<action name="Execute">
-				<execute>thunar</execute>
+				<execute>pcmanfm</execute>
 			</action>
 		</item>
 		<item label="ImageViewer">
@@ -29,7 +29,7 @@
 		</item>
 		<item label="Mail">
 			<action name="Execute">
-				<execute>thunderbird</execute>
+				<execute>sylpheed</execute>
 			</action>
 		</item>
 		<separator/>
@@ -59,6 +59,12 @@
 				<execute>obmenu</execute>
 			</action>
 		</item>
+		<item label="ObProps">
+			<action name="Execute">
+				<execute>obprops</execute>
+			</action>
+		</item>
+		<separator/>
 		<item label="Reconfigure">
 			<action name="Reconfigure"/>
 		</item>

@@ -1,16 +1,10 @@
-[user]
-	name = Marco van den Oever
-	email = marcoismobile@icloud.com
-	username = marcoismobile
 [core]
 	editor = vim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.gitignore
-#[rerere]
-#	enabled = 1
-#	autoupdate = 1
+	autocrlf = input
 [push]
-	default = matching
+	default = simple
 [color]
 	ui = auto
 [color "branch"]
