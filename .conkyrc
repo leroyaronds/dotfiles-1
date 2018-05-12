@@ -34,7 +34,7 @@ override_utf8_locale yes
  
 # prevent window from moving
 use_spacer none
-minimum_size 1920 0
+minimum_size 1024 0
  
 TEXT
 ${alignc} \
