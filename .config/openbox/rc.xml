@@ -55,17 +55,17 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
-      <name>sans</name>
-      <size>8</size>
+      <name>DejaVu Sans Mono</name>
+      <size>7</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>sans</name>
-      <size>8</size>
+      <name>DejaVu Sans Mono</name>
+      <size>7</size>
       <!-- font size in points -->
       <weight>bold</weight>
       <!-- 'bold' or 'normal' -->
@@ -73,7 +73,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>sans</name>
+      <name>DejaVu Sans Mono</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>normal</weight>
@@ -82,7 +82,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>sans</name>
+      <name>DejaVu Sans Mono</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>normal</weight>
@@ -91,7 +91,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>sans</name>
+      <name>DejaVu Sans Mono</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>bold</weight>
@@ -100,7 +100,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>sans</name>
+      <name>DejaVu Sans Mono</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>bold</weight>
@@ -120,12 +120,9 @@
        and back in -->
     <number>1</number>
 	<firstdesk>1</firstdesk>
-	<!--
     <names>
-		<name>Internet</name>
-	    <name>Development</name>
+		<name>General</name>
 	</names>
-	-->
     <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
@@ -453,7 +450,7 @@
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximize"/>
+        <action name="ToggleMaximizeFull"/>
       </mousebind>
       <mousebind button="Up" action="Click">
         <action name="if">
@@ -836,9 +833,9 @@
   # end of the example
 -->
     <application class="XTerm">
-		<decor>no</decor>
-		<maximized>yes</maximized>
-	    <position force="no">
+		<decor>yes</decor>
+		<maximized>no</maximized>
+		<position force="no">
 			<monitor>2</monitor>
 		</position>
 	</application>
@@ -849,15 +846,15 @@
 	</application>
 
 	<application class="Sylpheed">
-		<decor>no</decor>
+		<decor>yes</decor>
 	    <position force="no">
 			<monitor>1</monitor>
 		</position>
 	</application>
 
 	<application class="jetbrains-idea-ce">
-		<decor>no</decor>
-		<maximized>yes</maximized>
+		<decor>yes</decor>
+		<maximized>no</maximized>
 	    <position force="no">
 			<monitor>1</monitor>
 		</position>
