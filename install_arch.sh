@@ -46,7 +46,7 @@ reboot
 #################################
 #
 # Install packages
-pacman -S zsh vim sudo xorg-server mesa xorg-xinit xterm openbox obconf virtualbox-guest-utils ttf-dejavu
+pacman -S zsh vim sudo git tmux xorg-server mesa xorg-xinit xterm openbox obconf tint2 conky virtualbox-guest-utils ttf-dejavu
 # Enable VirtualBox services
 systemctl enable vboxservice.service
 # Add user
