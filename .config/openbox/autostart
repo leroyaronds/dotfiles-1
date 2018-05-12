@@ -1,7 +1,7 @@
 ## Start Tint docker panel
 tint2 &
 # Start conky
-(sleep 1s && conky) &
+conky &
 # Turn screen blank after 5 min
 (sleep 1s && xset s 300) &
 # Lock screen after 10 min
