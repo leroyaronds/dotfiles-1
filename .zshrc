@@ -18,7 +18,6 @@ antigen bundle command-not-found
 antigen bundle z
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
 # Set theme
 antigen theme minimal
 # Apply settings
