@@ -1,32 +1,25 @@
 conky.config = {
-	# main settings
 	background = true,
-	#double_buffer yes
+	double_buffer = true,
 	no_buffers = true,
 	update_interval = 5.0,
-	# own window
 	own_window = true,
 	own_window_transparent = false,
 	own_window_type = 'normal',
 	own_window_hints = 'undecorated, sticky, skip_taskbar, skip_pager, below',
-	# borders
 	draw_borders = false,
 	draw_shades = false,
 	draw_outline = false,
 	draw_graph_borders = false,
-	# position
 	gap_x = 0,
 	gap_y = 0,
 	alignment = 'top_middle',
-	# colour
 	default_color = 'white',
 	default_outline_color = 'white',
 	default_shade_color = 'white',
-	# font
 	use_xft = true,
 	font = 'DejaVu Sans Monospace:size=6',
 	override_utf8_locale = true,
-	# prevent window from moving
 	use_spacer = 'none',
 	minimum_width = 1920,
 	maximum_width = 1920
