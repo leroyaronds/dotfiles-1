@@ -37,6 +37,7 @@ use_spacer none
 minimum_size 1920 0
  
 TEXT
+${alignc} \
 DATE: ${color e0e0e0}${time %d/%m/%y}${color}	|	\
 TIME: ${color e0e0e0}${time %H:%M}${color}	|	\
 KERNEL: ${color e0e0e0}$kernel${color}	|	\
@@ -44,4 +45,5 @@ UPTIME: ${color e0e0e0}${uptime_short}${color}	|	\
 CPU: ${color e0e0e0}${cpu}%${color} ${color e0e0e0}${cpubar 5, 50}${color}	|	\
 RAM: ${color e0e0e0}${memperc}%${color} ${color e0e0e0}${membar 5, 50}${color}	|	\
 SWAP: ${color e0e0e0}${swapperc}%${color}   ${color e0e0e0}${membar 5, 50}${color}	|	\
-DISK: ${color e0e0e0}${fs_used_perc /}%${color}  ${color e0e0e0}${fs_bar 5, 50 /}${color}
+DISK: ${color e0e0e0}${fs_used_perc /}%${color}  ${color e0e0e0}${fs_bar 5, 50 /}${color} \
+${alignc}
