@@ -17,7 +17,7 @@ draw_shades no
 # position
 gap_x 150
 gap_y 4
-alignment top_center
+alignment top_left
  
 # behaviour
 update_interval 5
