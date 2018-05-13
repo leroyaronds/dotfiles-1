@@ -3,19 +3,18 @@ export EDITOR="vim"
 export TERM="xterm-256color"
 
 # Install Antigen if needed
-if [ ! -f ~/.antigen/antigen.zsh ]; then
+ANTIGEN="~/.antigen/antigen.zsh"
+if [ ! -f ${ANTIGEN} ]; then
 	echo "Installing Antigen ..."
-	curl -#SL --create-dirs git.io/antigen -o ~/.antigen/antigen.zsh
+	curl --create-dirs -#SLo ${ANTIGEN} git.io/antigen
 fi
 
 # Load Antigen
-source ~/.antigen/antigen.zsh
+source ${ANTIGEN}
 # Use oh-my-zsh
 antigen use oh-my-zsh
 # Load plugins
 antigen bundle docker
-antigen bundle command-not-found
-antigen bundle z
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 # Set theme
