@@ -21,7 +21,7 @@ conky.config = {
 	font = 'DejaVu Sans Mono:bold:size=9',
 	override_utf8_locale = true,
 	use_spacer = 'none',
-	minimum_width = 1920,
+	minimum_width = 500,
 	maximum_width = 1920
 }
 

@@ -46,11 +46,14 @@ reboot
 #################################
 #
 # Install packages
-pacman -S zsh vim sudo git tmux xorg-server mesa xorg-xinit xterm openbox obconf tint2 conky virtualbox-guest-utils ttf-dejavu
+pacman -S zsh vim sudo openssh git tmux xorg-server xorg-xinit xterm openbox obconf tint2 conky virtualbox-guest-utils ttf-dejavu
+# Enable sudo on wheel group
+visudo
 # Enable VirtualBox services
 systemctl enable vboxservice.service
 # Add user
 useradd -m -g users -G wheel,storage,power -s /bin/zsh marco
+passwd marco
 # Create xinitrc
 echo "VBoxClient-all" > ~/.xinitrc
 echo "exec openbox-session" >> ~/.xinitrc
