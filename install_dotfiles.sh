@@ -1,11 +1,11 @@
 #!/bin/sh
 #
-echo "Deploying dotfiles to ${HOME} :\n"
+echo "Deploying dotfiles to ${HOME} :"
 # Make symlinks
 FILES=$(find $(pwd) -maxdepth 1 -name ".*" -not -name ".git")
 for FILE in $FILES
 do
 	F=$(basename $FILE);
-	echo ".. ${F}"
+	echo "... ${F}"
 	ln -sn $FILE ${HOME}/${F};
 done
