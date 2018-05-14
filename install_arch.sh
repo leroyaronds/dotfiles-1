@@ -46,10 +46,11 @@ reboot
 ##################################
 #
 # Install packages
-pacman -S zsh vim sudo openssh git tmux xorg-server xorg-xinit xterm openbox obconf tint2 conky virtualbox-guest-utils ttf-dejavu
+pacman -S zsh vim sudo openssh pass sylpheed chromium git tmux xorg-server xorg-xinit xterm openbox obconf tint2 conky ttf-dejavu
 # Enable sudo on wheel group
 visudo
 # Enable VirtualBox services
+pacman -S virtualbox-guest-utils
 systemctl enable vboxservice.service
 # Add user
 useradd -m -g users -G wheel,storage,power -s /bin/zsh marco
