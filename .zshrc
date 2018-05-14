@@ -1,6 +1,8 @@
 # Environment
 export EDITOR="vim"
 export TERM="xterm-256color"
+# Put user cache in RAM
+export XDG_CACHE_HOME=/dev/shm
 
 # Install Antigen if needed
 ANTIGEN="~/.antigen/antigen.zsh"
