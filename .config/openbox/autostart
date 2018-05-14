@@ -1,4 +1,6 @@
-## Start Tint docker panel
+# Set background to black
+xsetroot -solid '#000000'
+# Start Tint
 tint2 &
 # Start conky
 conky &
