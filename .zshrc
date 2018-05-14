@@ -80,4 +80,8 @@ fi
 if command -v gpgconf >/dev/null; then
 	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
+
+if [ -f .zshrc_work ]; then
+	source .zshrc_work
+fi
 # end
