@@ -18,7 +18,7 @@ conky.config = {
 	default_outline_color = 'white',
 	default_shade_color = 'white',
 	use_xft = true,
-	font = 'DejaVu Sans Mono:bold:size=9',
+	font = 'DejaVu Sans Mono:size=8',
 	override_utf8_locale = true,
 	use_spacer = 'none',
 	minimum_height = 10,
