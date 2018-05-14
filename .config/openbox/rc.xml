@@ -854,7 +854,7 @@
 
 	<application class="jetbrains-idea-ce">
 		<decor>yes</decor>
-		<maximized>no</maximized>
+		<maximized>yes</maximized>
 	    <position force="no">
 			<monitor>1</monitor>
 		</position>
