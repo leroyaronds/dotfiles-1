@@ -6,7 +6,7 @@ conky &
 (sleep 1s && xset s 300) &
 # Lock screen after 10 min
 (sleep 1s && xautolock -time 10 -locker "slock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'") &
-# Turn screen off after 15 min
-(sleep 1s && xset dpms 0 0 900) &
+# Turn screen off after 10 min
+(sleep 1s && xset dpms 600 600 600) &
 # Load xterm config
 xrdb -load ~/.Xresources
