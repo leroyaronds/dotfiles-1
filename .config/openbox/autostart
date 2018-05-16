@@ -10,7 +10,7 @@ fi
 if command -v conky >/dev/null; then
 	conky &
 fi
-# Start irxvt daemon
+# Start rxvt daemon
 if command -v urxvtd >/dev/null; then
 	urxvtd -q -o -f
 fi
