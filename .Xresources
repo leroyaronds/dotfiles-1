@@ -1,4 +1,4 @@
-### Colors
+!! Colors
 *foreground:				#00CC00
 *background:				#000000
 *fadeColor:					#002B36
@@ -12,14 +12,14 @@
 !*color1:					#DC322F
 !*color9:					#CB4B16
 !green
-!*color2:					#859900
-!*color10:					#586E75
+*color2:					#859900
+*color10:					#586E75
 !yellow
 !*color3:					#B58900
 !*color11:					#657B83
 !blue
-!*color4:					#268BD2
-!*color12:					#839496
+*color4:					#268BD2
+*color12:					#839496
 !magenta
 !*color5:					#D33682
 !*color13:					#6C71C4
@@ -30,7 +30,7 @@
 !*color7:					#93A1A1
 !*color15:					#FDF6E3
 
-### Xft Fonts
+!! Xft Fonts
 Xft.dpi:					96
 Xft.antialias:              true
 Xft.rgba:                   rgb
@@ -39,9 +39,9 @@ Xft.hintstyle:              hintslight
 Xft.embeddedbitmap:			false
 Xft.lcdfilter:				lcddefault
 
-### RXVT
+!! RXVT
 URxvt*termName:				screen-256color
-#URxvt*geometry:				240x84
+!URxvt*geometry:				240x84
 URxvt*loginShell:			true
 URxvt*fading:				30
 URxvt*utmpInhibit:			false
@@ -59,39 +59,39 @@ URxvt*saveLines:			5000
 URxvt*buffered:				true
 URxvt*hold:					false
 URxvt*internalBorder:
-# Key bindings
+!! Key bindings
 URxvt*keysym.Home:			\033[1~
 URxvt*keysym.End:			\033[4~
 URxvt*keysym.KP_Home:		\033[1~
 URxvt*keysym.KP_End:		\033[4~
 URxvt*iso14755:				false
-# Set font
+!! Set font
 URxvt*font:					xft:DejaVu Sans Mono:size=11
-# Reduce spacing
+!! Reduce spacing
 URxvt*letterSpace:			-1
-# Disable perl support
+!! Disable perl support
 URxvt.perl-ext:
 URxvt.perl-ext-common:
-# Scrollbar
+!! Scrollbar
 URxvt*scrollColor:			#777777
 URxvt*scrollstyle:			plain
 URxvt*scrollTtyKeypress:	true
 URxvt*scrollTtyOutput:		false
 URxvt*scrollWithBuffer:		false
 URxvt*scrollBar_right:		true
-#URxvt*skipScroll:			true
-#URxvt*scrollBar:			false
+!URxvt*skipScroll:			true
+!URxvt*scrollBar:			false
 URxvt*scrollBar_floating:	false
 
-### XTerm
-# Disable beep
+!! XTerm
+! Disable beep
 XTerm*visualBell:			false
-# Enable copy
+! Enable copy
 XTerm*selectToClipboard:	true
-# Als key as meta
+! Als key as meta
 XTerm*metaSendsEscape:		true
 XTerm*eightBitInput:		false
-# Max lines in buffer
+! Max lines in buffer
 XTerm*saveLines:			4096
-# Font
+! Font
 XTerm*faceName:				Monospace:size=11:antialias=true
