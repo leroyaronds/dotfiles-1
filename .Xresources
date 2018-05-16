@@ -59,6 +59,12 @@ URxvt*saveLines:			5000
 URxvt*buffered:				true
 URxvt*hold:					false
 URxvt*internalBorder:
+# Key bindings
+URxvt*keysym.Home:			\033[1~
+URxvt*keysym.End:			\033[4~
+URxvt*keysym.KP_Home:		\033[1~
+URxvt*keysym.KP_End:		\033[4~
+URxvt*iso14755:				false
 # Set font
 URxvt*font:					xft:DejaVu Sans Mono:size=11
 # Reduce spacing
