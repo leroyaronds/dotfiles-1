@@ -1,4 +1,4 @@
-!! Color defaults
+### Colors
 *foreground:				#00CC00
 *background:				#000000
 *fadeColor:					#002B36
@@ -30,14 +30,62 @@
 !*color7:					#93A1A1
 !*color15:					#FDF6E3
 
-!! Disable beep
-XTerm*visualBell: false
-!! Enable copy
-XTerm*selectToClipboard: true
-!! Als key as meta
-XTerm*metaSendsEscape: true
-XTerm*eightBitInput: false
-!! Max lines in buffer
-XTerm*saveLines: 4096
-!! Font
-XTerm*faceName: Monospace:size=11:antialias=true
+### Xft Fonts
+Xft.dpi:					96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+Xft.embeddedbitmap:			false
+Xft.lcdfilter:				lcddefault
+
+### RXVT
+URxvt*termName:				screen-256color
+#URxvt*geometry:				240x84
+URxvt*loginShell:			true
+URxvt*fading:				30
+URxvt*utmpInhibit:			false
+URxvt*urgentOnBell:			false
+URxvt*visualBell:			true
+URxvt*mapAlert:				true
+URxvt*mouseWheelScrollPage: true
+URxvt*background:			Black
+URxvt*foreground:			White
+URxvt*colorUL:				yellow
+URxvt*underlineColor:		yellow
+URxvt*depth:                32
+URxvt*lineSpace:            0
+URxvt*saveLines:			5000
+URxvt*buffered:				true
+URxvt*hold:					false
+URxvt*internalBorder:
+# Set font
+URxvt*font:					xft:DejaVu Sans Mono:size=11
+# Reduce spacing
+URxvt*letterSpace:			-1
+# Disable perl support
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+# Scrollbar
+URxvt*scrollColor:			#777777
+URxvt*scrollstyle:			plain
+URxvt*scrollTtyKeypress:	true
+URxvt*scrollTtyOutput:		false
+URxvt*scrollWithBuffer:		false
+URxvt*scrollBar_right:		true
+#URxvt*skipScroll:			true
+#URxvt*scrollBar:			false
+URxvt*scrollBar_floating:	false
+
+### XTerm
+# Disable beep
+XTerm*visualBell:			false
+# Enable copy
+XTerm*selectToClipboard:	true
+# Als key as meta
+XTerm*metaSendsEscape:		true
+XTerm*eightBitInput:		false
+# Max lines in buffer
+XTerm*saveLines:			4096
+# Font
+XTerm*faceName:				Monospace:size=11:antialias=true

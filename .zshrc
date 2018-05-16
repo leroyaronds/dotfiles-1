@@ -2,7 +2,7 @@
 export EDITOR="vim"
 export TERM="xterm-256color"
 # Put user cache in RAM
-export XDG_CACHE_HOME=/dev/shm
+#export XDG_CACHE_HOME=/dev/shm
 export XDG_CONFIG_HOME=$HOME/.config
 
 # Install Antigen if needed

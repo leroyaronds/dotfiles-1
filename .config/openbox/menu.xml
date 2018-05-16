@@ -3,7 +3,7 @@
 	<menu id="root-menu" label="Openbox">
 		<item label="Terminal">
 			<action name="Execute">
-				<execute>xterm</execute>
+				<execute>urxvtc</execute>
 			</action>
 		</item>
 		<item label="NotePad">
