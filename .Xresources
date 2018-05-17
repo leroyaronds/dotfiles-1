@@ -40,7 +40,7 @@ Xft.embeddedbitmap:			false
 Xft.lcdfilter:				lcddefault
 
 !! RXVT
-URxvt*termName:				rxvt-unicode-256color
+URxvt*termName:				screen-256color
 URxvt*geometry:				80x24
 URxvt*loginShell:			true
 URxvt*fading:				30
@@ -69,6 +69,7 @@ URxvt*keysym.End:			\033[4~
 URxvt*keysym.KP_Home:		\033[1~
 URxvt*keysym.KP_End:		\033[4~
 URxvt*iso14755:				false
+URxvt*iso14755_52:			false
 ! Set font
 URxvt*font:					xft:DejaVu Sans Mono:size=11
 ! Reduce spacing
