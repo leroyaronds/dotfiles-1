@@ -39,6 +39,7 @@ else
 fi
 alias ll="ls -lh"
 alias g="git"
+alias n="vim ~/notes"
 # Tmux
 alias t=connect_tmux
 alias ta="tmux -2 attach -t"
