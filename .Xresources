@@ -49,10 +49,10 @@ URxvt*urgentOnBell:			false
 URxvt*visualBell:			true
 URxvt*mapAlert:				true
 URxvt*mouseWheelScrollPage: true
-URxvt*background:			Black
-URxvt*foreground:			White
-URxvt*colorUL:				yellow
-URxvt*underlineColor:		yellow
+URxvt*background:			#000000
+URxvt*foreground:			#FFFFFF
+URxvt*colorUL:				#B58900
+URxvt*underlineColor:		#B58900
 URxvt*depth:                32
 URxvt*lineSpace:            0
 URxvt*saveLines:			4096
@@ -62,7 +62,7 @@ URxvt*internalBorder:
 ! Cursor
 URxvt*cursorUnderline:		true
 URxvt*cursorBlink:			true
-URxvt*cursorColor:			green
+URxvt*cursorColor:			#FFFFFF
 ! Key bindings
 URxvt*keysym.Home:			\033[1~
 URxvt*keysym.End:			\033[4~
