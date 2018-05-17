@@ -55,6 +55,7 @@ alias dcb="docker-compose build"
 alias dcu="docker-compose up -d"
 alias dck="docker-compose kill"
 alias dcd="docker-compose down"
+alias dcp="docker-compose ps"
 
 # Connect or Start TMUX
 connect_tmux() {
