@@ -1,7 +1,8 @@
 !! Colors
-*foreground:				#00CC00
-*background:				#000000
+*foreground:				#839496
+*background:				#002B36
 *fadeColor:					#002B36
+*fading:					40
 *cursorColor:				#93A1A1
 *pointerColorBackground:	#586E75
 *pointerColorForeground:	#93A1A1
@@ -27,7 +28,7 @@
 *color6:					#2AA198
 *color14:					#93A1A1
 !white
-*color7:					#93A1A1
+*color7:					#EEE8D5
 *color15:					#FDF6E3
 
 !! Xft Fonts
