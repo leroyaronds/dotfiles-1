@@ -6,29 +6,29 @@
 *pointerColorBackground:	#586E75
 *pointerColorForeground:	#93A1A1
 !black
-!*color0:					#073642
-!*color8:					#002B36
+*color0:					#073642
+*color8:					#002B36
 !red
-!*color1:					#DC322F
-!*color9:					#CB4B16
+*color1:					#DC322F
+*color9:					#CB4B16
 !green
 *color2:					#859900
 *color10:					#586E75
 !yellow
-!*color3:					#B58900
-!*color11:					#657B83
+*color3:					#B58900
+*color11:					#657B83
 !blue
 *color4:					#268BD2
 *color12:					#839496
 !magenta
-!*color5:					#D33682
-!*color13:					#6C71C4
+*color5:					#D33682
+*color13:					#6C71C4
 !cyan
-!*color6:					#2AA198
-!*color14:					#93A1A1
+*color6:					#2AA198
+*color14:					#93A1A1
 !white
-!*color7:					#93A1A1
-!*color15:					#FDF6E3
+*color7:					#93A1A1
+*color15:					#FDF6E3
 
 !! Xft Fonts
 Xft.dpi:					96
@@ -40,8 +40,8 @@ Xft.embeddedbitmap:			false
 Xft.lcdfilter:				lcddefault
 
 !! RXVT
-URxvt*termName:				screen-256color
-!URxvt*geometry:				240x84
+URxvt*termName:				rxvt-unicode-256color
+URxvt*geometry:				80x24
 URxvt*loginShell:			true
 URxvt*fading:				30
 URxvt*utmpInhibit:			false
@@ -55,43 +55,34 @@ URxvt*colorUL:				yellow
 URxvt*underlineColor:		yellow
 URxvt*depth:                32
 URxvt*lineSpace:            0
-URxvt*saveLines:			5000
+URxvt*saveLines:			4096
 URxvt*buffered:				true
 URxvt*hold:					false
 URxvt*internalBorder:
-!! Key bindings
+! Cursor
+URxvt*cursorUnderline:		true
+URxvt*cursorBlink:			true
+URxvt*cursorColor:			green
+! Key bindings
 URxvt*keysym.Home:			\033[1~
 URxvt*keysym.End:			\033[4~
 URxvt*keysym.KP_Home:		\033[1~
 URxvt*keysym.KP_End:		\033[4~
 URxvt*iso14755:				false
-!! Set font
+! Set font
 URxvt*font:					xft:DejaVu Sans Mono:size=11
-!! Reduce spacing
+! Reduce spacing
 URxvt*letterSpace:			-1
-!! Disable perl support
+! Disable perl support
 URxvt.perl-ext:
 URxvt.perl-ext-common:
-!! Scrollbar
+! Scrollbar
 URxvt*scrollColor:			#777777
 URxvt*scrollstyle:			plain
 URxvt*scrollTtyKeypress:	true
 URxvt*scrollTtyOutput:		false
 URxvt*scrollWithBuffer:		false
 URxvt*scrollBar_right:		true
-!URxvt*skipScroll:			true
-!URxvt*scrollBar:			false
+URxvt*skipScroll:			false
+URxvt*scrollBar:			true
 URxvt*scrollBar_floating:	false
-
-!! XTerm
-! Disable beep
-XTerm*visualBell:			false
-! Enable copy
-XTerm*selectToClipboard:	true
-! Als key as meta
-XTerm*metaSendsEscape:		true
-XTerm*eightBitInput:		false
-! Max lines in buffer
-XTerm*saveLines:			4096
-! Font
-XTerm*faceName:				Monospace:size=11:antialias=true
