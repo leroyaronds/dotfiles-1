@@ -60,7 +60,6 @@ URxvt*saveLines:			4096
 URxvt*buffered:				true
 URxvt*hold:					false
 URxvt*internalBorder:
-!URxvt.iconFile:				/usr/share/icons/hicolor/scalable/apps/xterm-color.svg
 ! Cursor
 URxvt*cursorUnderline:		true
 URxvt*cursorBlink:			true
