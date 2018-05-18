@@ -24,7 +24,7 @@ border_color = #FFFFFF 30
 
 # Panel
 panel_monitor = 1
-panel_items = TSE:E:C
+panel_items = TSEEEC
 panel_position = bottom center horizontal
 panel_size = 100% 25
 panel_margin = 0 1
@@ -143,9 +143,9 @@ separator_style = line
 separator_size = 1
 separator_padding = 0 0 0
 
-# Executor 1
+# Executor 1 (CPU)
 execp = new
-execp_command = uptime | rev | cut -d":" -f1 | rev | sed s/,//g | awk '{print "Load:", $1}'
+execp_command = uptime | rev | cut -d":" -f1 | rev | sed s/,//g | awk '{print "L:", $1}'
 execp_interval = 10
 execp_has_icon = 0
 execp_cache_icon = 1
@@ -164,9 +164,32 @@ execp_centered = 0
 execp_icon_w = 0
 execp_icon_h = 0
 
-# Executor 2
+# Executor 2 (MEM)
 execp = new
-execp_command = free -m | awk 'FNR == 2 {print "Mem:", $7}'
+#execp_command = free -m | awk 'FNR == 2 {print "Mem:", $7}'
+execp_command = free | grep Mem | awk '{printf "M: %.0f", $3/$2 * 100.0}'
+execp_interval = 10
+execp_has_icon = 0
+execp_cache_icon = 1
+execp_continuous = 0
+execp_markup = 1
+execp_lclick_command = 
+execp_rclick_command = 
+execp_mclick_command = 
+execp_uwheel_command = 
+execp_dwheel_command = 
+execp_font = DejaVu Sans Mono 8
+execp_font_color = #ffffff 100
+execp_padding = 4 0
+execp_background_id = 1
+execp_centered = 0
+execp_icon_w = 0
+execp_icon_h = 0
+
+# Executor 3 (TEMP)
+execp = new
+#execp_command = free -m | awk 'FNR == 2 {print "Mem:", $7}'
+execp_command = sensors | grep -oP 'Physical.*?\+\K[0-9]+' | awk '{printf "T: %d", $0}'
 execp_interval = 10
 execp_has_icon = 0
 execp_cache_icon = 1

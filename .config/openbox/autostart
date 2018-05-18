@@ -7,9 +7,9 @@ if command -v tint2 >/dev/null; then
 	tint2 &
 fi
 # Start conky
-if command -v conky >/dev/null; then
-	conky &
-fi
+#if command -v conky >/dev/null; then
+#	conky &
+#fi
 # Start rxvt daemon
 if command -v urxvtd >/dev/null; then
 	urxvtd -q -o -f
