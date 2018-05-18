@@ -1,90 +1,88 @@
-!! Colors
-*foreground:				#839496
-*background:				#002B36
-*fadeColor:					#002B36
-*fading:					40
-*cursorColor:				#93A1A1
-*pointerColorBackground:	#586E75
-*pointerColorForeground:	#93A1A1
-!black
-*color0:					#073642
-*color8:					#002B36
-!red
-*color1:					#DC322F
-*color9:					#CB4B16
-!green
-*color2:					#859900
-*color10:					#586E75
-!yellow
-*color3:					#B58900
-*color11:					#657B83
-!blue
-*color4:					#268BD2
-*color12:					#839496
-!magenta
-*color5:					#D33682
-*color13:					#6C71C4
-!cyan
-*color6:					#2AA198
-*color14:					#93A1A1
-!white
-*color7:					#EEE8D5
-*color15:					#FDF6E3
-
-!! Xft Fonts
-Xft.dpi:					96
-Xft.antialias:              true
-Xft.rgba:                   rgb
-Xft.hinting:                true
-Xft.hintstyle:              hintslight
-Xft.embeddedbitmap:			false
-Xft.lcdfilter:				lcddefault
-
-!! RXVT
-URxvt*termName:				rxvt-256color
-URxvt*geometry:				80x24
-URxvt*loginShell:			true
-URxvt*fading:				30
-URxvt*utmpInhibit:			false
-URxvt*urgentOnBell:			false
-URxvt*visualBell:			true
-URxvt*mapAlert:				true
-URxvt*mouseWheelScrollPage: true
-URxvt*background:			#000000
-URxvt*foreground:			#FFFFFF
-URxvt*colorUL:				#B58900
-URxvt*underlineColor:		#B58900
-URxvt*depth:                32
-URxvt*lineSpace:            0
-URxvt*saveLines:			4096
-URxvt*buffered:				true
-URxvt*hold:					false
+!! Colors:
+*foreground:                 #839496
+*background:                 #002B36
+*fadeColor:                  #002B36
+*fading:                     40
+*cursorColor:                #93A1A1
+*pointerColorBackground:     #586E75
+*pointerColorForeground:     #93A1A1
+! Black:
+*color0:                     #073642
+*color8:                     #002B36
+! Red:
+*color1:                     #DC322F
+*color9:                     #CB4B16
+! Green:
+*color2:                     #859900
+*color10:                    #586E75
+! Yellow:
+*color3:                     #B58900
+*color11:                    #657B83
+! Blue:
+*color4:                     #268BD2
+*color12:                    #839496
+! Magenta:
+*color5:                     #D33682
+*color13:                    #6C71C4
+! Cyan:
+*color6:                     #2AA198
+*color14:                    #93A1A1
+! White:
+*color7:                     #EEE8D5
+*color15:                    #FDF6E3
+!! Xft Fonts:
+Xft.dpi:                     96
+Xft.antialias:               true
+Xft.rgba:                    rgb
+Xft.hinting:                 true
+Xft.hintstyle:               hintslight
+Xft.embeddedbitmap:          false
+Xft.lcdfilter:               lcddefault
+!! RXVT:
+URxvt*termName:              rxvt-256color
+URxvt*geometry:              80x24
+URxvt*loginShell:            true
+URxvt*fading:                30
+URxvt*utmpInhibit:           false
+URxvt*urgentOnBell:          false
+URxvt*visualBell:            true
+URxvt*mapAlert:              true
+URxvt*mouseWheelScrollPage:  true
+URxvt*background:            #000000
+URxvt*foreground:            #FFFFFF
+URxvt*colorUL:               #B58900
+URxvt*underlineColor:        #B58900
+URxvt*depth:                 32
+URxvt*lineSpace:             0
+URxvt*saveLines:             4096
+URxvt*buffered:              true
+URxvt*hold:                  false
 URxvt*internalBorder:
-! Cursor
-URxvt*cursorUnderline:		true
-URxvt*cursorBlink:			true
-URxvt*cursorColor:			#FFFFFF
-! Key bindings
-URxvt*keysym.Home:			\033[7~
-URxvt*keysym.End:			\033[8~
-URxvt*keysym.KP_Home:		\033[7~
-URxvt*keysym.KP_End:		\033[8~
-URxvt*iso14755:				false
-URxvt*iso14755_52:			false
-! Set font
-URxvt*font:					xft:DejaVu Sans Mono:size=11
-! Reduce spacing
-URxvt*letterSpace:			-1
-! Disable perl support
+! Cursor:
+URxvt*cursorUnderline:       true
+URxvt*cursorBlink:           true
+URxvt*cursorColor:           #FFFFFF
+! Key bindings:
+URxvt*keysym.Home:           \033[7~
+URxvt*keysym.End:            \033[8~
+URxvt*keysym.KP_Home:        \033[7~
+URxvt*keysym.KP_End:         \033[8~
+URxvt*iso14755:              false
+URxvt*iso14755_52:           false
+! Set font:
+URxvt*font:                  xft:           DejaVu Sans Mono:  size=11
+! Reduce spacing:
+URxvt*letterSpace:           -1
+! Disable perl support:
 URxvt*perl-ext:
 URxvt*perl-ext-common:
-! Scrollbar
-URxvt*scrollColor:			#777777
-URxvt*scrollstyle:			plain
-URxvt*scrollTtyKeypress:	true
-URxvt*scrollTtyOutput:		false
-URxvt*scrollWithBuffer:		false
-URxvt*scrollBar_right:		true
-URxvt*skipScroll:			false
-URxvt*scrollBar:			true
-URxvt*scrollBar_floating:	false
+! Scrollbar:
+URxvt*scrollColor:           #777777
+URxvt*scrollstyle:           plain
+URxvt*scrollTtyKeypress:     true
+URxvt*scrollTtyOutput:       false
+URxvt*scrollWithBuffer:      false
+URxvt*scrollBar_right:       true
+URxvt*skipScroll:            false
+URxvt*scrollBar:             true
+URxvt*scrollBar_floating:    false

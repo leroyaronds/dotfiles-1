@@ -94,4 +94,4 @@ let g:airline#extensions#tabline#buffer_nr_show=1
 " do not count whitespaces
 let g:airline#extensions#whitespace#enabled=0
 " set theme
-let g:airline_theme='minimalist'
+silent! let g:airline_theme='minimalist'
