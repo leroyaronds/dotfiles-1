@@ -1,8 +1,7 @@
 # Environment
 export EDITOR="vim"
-# Set XDG environment
-#export XDG_CACHE_HOME=/dev/shm
-export XDG_CONFIG_HOME=$HOME/.config
+# ANT color logger
+export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 
 # Install Antigen if needed
 ANTIGEN="~/.antigen/antigen.zsh"
@@ -39,9 +38,9 @@ else
 fi
 alias ll="ls -lh"
 alias g="git"
-alias n="vim ~/notes"
+alias n="vim ~/docs/notes.txt"
+alias t="vim ~/docs/todo.txt ~/docs/done.txt"
 # Tmux
-alias t=connect_tmux
 alias ta="tmux -2 attach -t"
 alias tnew="tmux -2 new -s"
 alias tls="tmux -2 ls"
@@ -57,23 +56,10 @@ alias dcu="docker-compose up -d"
 alias dck="docker-compose kill"
 alias dcd="docker-compose down"
 alias dcp="docker-compose ps"
-
-# Connect or Start TMUX
-connect_tmux() {
-if command -v tmux >/dev/null; then
-	if [ -z ${TMUX} ]; then
-		ID="`tmux ls | grep -vm1 attached | cut -d: -f1`"
-		if [ -z ${ID} ]; then
-			tmux new -n 'shell' -d -s main;
-			tmux new-window -t main:2 -n 'prog';
-			tmux select-window -t main:1;
-			tmux -2 attach -t main;
-		else
-			tmux -2 attach -t "$ID"
-		fi
-	fi
-fi
-}
+# Work
+alias cdd="cd ~/repositories/docker/images/dev"
+alias cdcrm="cd ~/dev/git/crm"
+alias dcl='docker-compose logs -f --tail 1000 tomcat'
 
 # Set GPG password prompt to current TTY
 if command -v gpg-connect-agent >/dev/null; then
@@ -83,8 +69,4 @@ fi
 # Export SSH socket to GPG agent
 if command -v gpgconf >/dev/null; then
 	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
-
-if [ -f .zshrc_work ]; then
-	source .zshrc_work
 fi

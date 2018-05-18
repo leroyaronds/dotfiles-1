@@ -1,1 +1,5 @@
 export SHELL=/bin/zsh
+export EDITOR=vim
+export BROWSER=firefox
+export XDG_CACHE_HOME=/dev/shm
+export XDG_CONFIG_HOME=$HOME/.config
