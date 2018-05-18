@@ -76,8 +76,8 @@ URxvt*font:					xft:DejaVu Sans Mono:size=11
 ! Reduce spacing
 URxvt*letterSpace:			-1
 ! Disable perl support
-URxvt.perl-ext:
-URxvt.perl-ext-common:
+URxvt*perl-ext:
+URxvt*perl-ext-common:
 ! Scrollbar
 URxvt*scrollColor:			#777777
 URxvt*scrollstyle:			plain
