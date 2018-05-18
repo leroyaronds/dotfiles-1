@@ -145,7 +145,8 @@ separator_padding = 0 0 0
 
 # Executor 1 (CPU)
 execp = new
-execp_command = uptime | rev | cut -d":" -f1 | rev | sed s/,//g | awk '{print "L:", $1}'
+#execp_command = uptime | rev | cut -d":" -f1 | rev | sed s/,//g | awk '{print "L:", $1}'
+execp_command = grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {printf "C: %d", usage}'
 execp_interval = 10
 execp_has_icon = 0
 execp_cache_icon = 1
