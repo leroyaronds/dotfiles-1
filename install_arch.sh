@@ -55,4 +55,5 @@ systemctl enable vboxservice.service
 # Add user
 useradd -m -g users -G wheel,storage,power -s /bin/zsh marco
 passwd marco
+#pacman -Qi $(pacman -Qq) | grep "Installed Size" | cut -d ' ' -f 4 | perl -lne '$x += $_; END { print $x; }'
 # end
