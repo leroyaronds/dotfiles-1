@@ -712,7 +712,7 @@
       </mousebind>
     </context>
   </mouse>
-  <!-- menu>
+  <menu>
     <file>menu.xml</file>
     <hideDelay>200</hideDelay>
     <middle>no</middle>
@@ -720,7 +720,7 @@
     <submenuHideDelay>400</submenuHideDelay>
     <showIcons>yes</showIcons>
     <manageDesktops>yes</manageDesktops>
-  </menu -->
+  </menu>
   <applications>
     <application class="URxvt">
 		<decor>yes</decor>
