@@ -77,8 +77,7 @@ fi
 
 # Set GPG password prompt to current TTY
 if command -v gpg-connect-agent >/dev/null; then
-	gpg-connect-agent /bye >/dev/null 2>&1
-#	gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
+	gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
 fi
 
 # Export SSH socket to GPG agent
