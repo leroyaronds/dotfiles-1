@@ -46,7 +46,7 @@ reboot
 ##################################
 #
 # Install packages
-pacman -S zsh vim sudo openssh pass sylpheed chromium git tmux xorg-server xorg-xinit xterm rxvt-unicode openbox obconf obmenu tint2 conky ttf-dejavu
+pacman -Syu zsh vim sudo openssh pass sylpheed firefox git xorg-server xorg-xinit xterm rxvt-unicode openbox tint2 ttf-dejavu
 # Enable sudo on wheel group
 visudo
 # Enable VirtualBox services
