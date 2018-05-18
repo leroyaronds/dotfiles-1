@@ -49,6 +49,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/nanotech/jellybeans.vim.git'
 " Airline
 Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'https://github.com/vim-airline/vim-airline-themes.git'
 " CtrlP
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 " Fugitive - Git for airline
@@ -92,3 +93,5 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#buffer_nr_show=1
 " do not count whitespaces
 let g:airline#extensions#whitespace#enabled=0
+" set theme
+let g:airline_theme='minimalist'
