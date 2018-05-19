@@ -3,24 +3,24 @@
 	<menu id="root-menu" label="Openbox">
 		<separator label="OpenBox"/>
 		<item label="Terminal">
-			<action name="Execute"/>
+			<action name="Execute">
 				<command>urxvtc</command>
 			</action>
 		</item>
 		<separator/>
-		<menu id="Applications" label="Applications">
+		<menu id="applications" label="Applications">
 			<item label="Browser">
-				<action name="Execute"/>
+				<action name="Execute">
 					<command>firefox</command>
 				</action>
 			</item>
 			<item label="Mail">
-				<action name="Execute"/>
+				<action name="Execute">
 					<command>sylpheed</command>
 				</action>
 			</item>
 			<item label="FileManager">
-				<action name="Execute"/>
+				<action name="Execute">
 					<command>pcmanfm</command>
 				</action>
 			</item>
