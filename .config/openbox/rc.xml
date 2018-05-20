@@ -30,7 +30,7 @@
     <font place="ActiveWindow">
       <name>DejaVu Sans Mono</name>
       <size>7</size>
-      <weight>normal</weight>
+      <weight>bold</weight>
       <slant>normal</slant>
     </font>
     <font place="InactiveWindow">
@@ -41,25 +41,25 @@
     </font>
     <font place="MenuHeader">
       <name>DejaVu Sans Mono</name>
-      <size>9</size>
+      <size>8</size>
       <weight>normal</weight>
       <slant>normal</slant>
     </font>
     <font place="MenuItem">
       <name>DejaVu Sans Mono</name>
-      <size>9</size>
+      <size>8</size>
       <weight>normal</weight>
       <slant>normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
       <name>DejaVu Sans Mono</name>
-      <size>9</size>
+      <size>8</size>
       <weight>bold</weight>
       <slant>normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
       <name>DejaVu Sans Mono</name>
-      <size>9</size>
+      <size>8</size>
       <weight>bold</weight>
       <slant>normal</slant>
     </font>
