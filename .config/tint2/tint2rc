@@ -13,7 +13,7 @@ border_color = #000000 0
 # ID 3 (Task active)
 rounded = 0
 border_width = 0
-background_color = #FFFFFF 30
+background_color = #FFFFFF 10
 border_color = #000000 0
 
 # ID 4 (Task urgent)
@@ -34,13 +34,6 @@ wm_menu = 0
 panel_layer = top
 panel_background_id = 1
 
-# Panel Autohide
-autohide = 0
-autohide_show_timeout = 0.3
-autohide_hide_timeout = 2
-autohide_height = 2
-strut_policy = follow_size
-
 # Taskbar
 taskbar_mode = single_desktop
 taskbar_padding = 0 0 0
@@ -54,18 +47,12 @@ task_icon = 0
 task_text = 1
 task_centered = 0
 task_maximum_size = 120 20
-task_padding = 0 0
+task_padding = 5 0
 task_background_id = 2
 task_active_background_id = 3
 task_urgent_background_id = 4
 task_iconified_background_id = 2
 task_tooltip = 0
-
-# Task Icons
-task_icon_asb = 70 0 0
-task_active_icon_asb = 100 0 0
-task_urgent_icon_asb = 100 0 0
-task_iconified_icon_asb = 70 0 0
 
 # Fonts
 task_font = DejaVu Sans Mono Bold 8
@@ -77,7 +64,7 @@ font_shadow = 0
 
 # System Tray
 systray = 1
-systray_padding = 0 4 5
+systray_padding = 5 0 5
 systray_sort = ascending
 systray_background_id = 1
 systray_icon_size = 16
@@ -91,7 +78,7 @@ time2_font = DejaVu Sans Mono 6
 time1_timezone =
 time2_timezone =
 clock_font_color = #FFFFFF 80
-clock_padding = 0 0
+clock_padding = 5 0
 clock_background_id = 0
 clock_tooltip = %d-%m-%Y (%V)
 clock_tooltip_timezone = 
@@ -116,42 +103,15 @@ mouse_right = close
 mouse_scroll_up = toggle
 mouse_scroll_down = iconify
 
-# Battery
-battery = 0
-battery_low_status = 10
-battery_low_cmd = notify-send "battery low"
-battery_hide = 98
-bat1_font = sans 8
-bat2_font = sans 6
-battery_font_color = #FFFFFF 74
-battery_padding = 1 0
-battery_background_id = 1
-
-# Separator 1
-separator = new
-separator_background_id = 1
-separator_color = #FFFFFF 80
-separator_style = line
-separator_size = 1
-separator_padding = 0 0 0
-
-# Separator 2
-separator = new
-separator_background_id = 1
-separator_color = #FFFFFF 80
-separator_style = line
-separator_size = 1
-separator_padding = 0 0 0
-
 # Executor 1 (CPU)
 execp = new
 execp_command = uptime | rev | cut -d":" -f1 | rev | sed s/,//g | awk '{print "L:", $1}'
-#execp_command = grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {printf "C: %d", usage}'
 execp_interval = 10
 execp_has_icon = 0
 execp_cache_icon = 1
 execp_continuous = 0
 execp_markup = 1
+execp_tooltip =
 execp_lclick_command = 
 execp_rclick_command = 
 execp_mclick_command = 
@@ -159,7 +119,7 @@ execp_uwheel_command =
 execp_dwheel_command = 
 execp_font = DejaVu Sans Mono Bold 8
 execp_font_color = #FFFFFF 80
-execp_padding = 0 0
+execp_padding = 5 0
 execp_background_id = 1
 execp_centered = 0
 execp_icon_w = 0
@@ -173,6 +133,7 @@ execp_has_icon = 0
 execp_cache_icon = 1
 execp_continuous = 0
 execp_markup = 1
+execp_tooltip =
 execp_lclick_command = 
 execp_rclick_command = 
 execp_mclick_command = 
@@ -180,7 +141,7 @@ execp_uwheel_command =
 execp_dwheel_command = 
 execp_font = DejaVu Sans Mono Bold 8
 execp_font_color = #FFFFFF 80
-execp_padding = 0 0
+execp_padding = 5 0
 execp_background_id = 1
 execp_centered = 0
 execp_icon_w = 0
