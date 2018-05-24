@@ -40,7 +40,7 @@ filetype plugin indent on
 
 " Install vim-plug if not available
 if empty(glob("~/.vim/autoload/plug.vim"))
-	execute '!curl --create-dirs -#SLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+	execute '!curl --create-dirs -SLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 endif
 
 " Start vim-plug manager
