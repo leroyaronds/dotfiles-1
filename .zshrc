@@ -4,7 +4,7 @@ export EDITOR="vim"
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 
 # Install Antigen if needed
-ANTIGEN="~/.antigen/antigen.zsh"
+ANTIGEN="${HOME}/.antigen/antigen.zsh"
 if [ ! -f ${ANTIGEN} ]; then
 	echo "Installing Antigen ..."
 	curl --create-dirs -#SLo ${ANTIGEN} git.io/antigen
