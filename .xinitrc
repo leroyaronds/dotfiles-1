@@ -10,6 +10,7 @@ export XDG_CACHE_HOME=/dev/shm
 export XDG_CONFIG_HOME=$HOME/.config
 
 # Set background to black
+# feh --bg-fill $HOME/wallpaper.png
 if command -v xsetroot >/dev/null; then
 	(sleep 1s && xsetroot -solid black) &
 fi
