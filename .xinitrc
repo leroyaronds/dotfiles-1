@@ -21,7 +21,8 @@ fi
 
 # Start rxvt daemon
 if command -v urxvtd >/dev/null; then
-	urxvtd -q -o -f
+#	urxvtd -q -o -f
+	LD_PRELOAD=/usr/lib/libswmhack.so.0.0 urxvtd -q -o -f
 fi
 
 # Start VirtualBox Client tools
