@@ -40,5 +40,5 @@ fi
 xrdb -load ~/.Xresources
 
 # Start Window Manager
-exec spectrwm
-#exec openbox-session
+#exec spectrwm
+exec openbox-session
