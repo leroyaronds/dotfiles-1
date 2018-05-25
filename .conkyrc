@@ -11,6 +11,4 @@ conky.config = {
 	use_spacer = 'none',
 };
 
-conky.text = [[
-Uptime:  ${uptime_short}    CPU:  ${cpu cpu0}%    ${loadavg}    Mem:  ${memperc}%    Net:  Down - ${downspeedf enp2s0} kb/s  Up - ${upspeedf enp2s0} kb/s  
-]];
+conky.text = [[ C: ${cpu cpu0}% [${loadavg}] | M: ${memperc}% ]];
