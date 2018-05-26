@@ -11,18 +11,22 @@ export XDG_CONFIG_HOME=$HOME/.config
 
 # Set background
 if command -v feh >/dev/null; then
-	(sleep 1s && feh --bg-scale $HOME/dotfiles/background.png) &
+	feh --bg-scale $HOME/dotfiles/background.png &
 fi
 
-# Start rxvt daemon
+# Start rxvt terminal daemon
 if command -v urxvtd >/dev/null; then
-	urxvtd -q -o -f
-#	(sleep 1s && LD_PRELOAD=/usr/lib/libswmhack.so.0.0 urxvtd -q -o -f) &
+	urxvtd -q -o -f &
+fi
+
+# Start dunst notification daemon
+if command -v dunst >/dev/null; then
+	dunst -config $HOME/.dunstrc &
 fi
 
 # Start VirtualBox Client tools
 if command -v VBoxClient >/dev/null; then
-	(sleep 1s && VBoxClient-all) &
+	VBoxClient-all &
 fi
 
 # Turn screen blank after 5 min
