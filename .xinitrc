@@ -9,21 +9,15 @@ export XDG_CACHE_HOME=/dev/shm
 # Set config directory
 export XDG_CONFIG_HOME=$HOME/.config
 
-# Set background to black
-# feh --bg-fill $HOME/wallpaper.png
-if command -v xsetroot >/dev/null; then
-	(sleep 1s && xsetroot -solid black) &
-fi
-
-# Start Tint
-if command -v tint2 >/dev/null; then
-	(sleep 1s && tint2) &
+# Set background
+if command -v feh >/dev/null; then
+	(sleep 1s && feh --bg-scale $HOME/dotfiles/background.png) &
 fi
 
 # Start rxvt daemon
 if command -v urxvtd >/dev/null; then
-#	urxvtd -q -o -f
-	(sleep 1s && LD_PRELOAD=/usr/lib/libswmhack.so.0.0 urxvtd -q -o -f) &
+	urxvtd -q -o -f
+#	(sleep 1s && LD_PRELOAD=/usr/lib/libswmhack.so.0.0 urxvtd -q -o -f) &
 fi
 
 # Start VirtualBox Client tools
