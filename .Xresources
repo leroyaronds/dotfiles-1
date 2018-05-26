@@ -84,5 +84,5 @@ URxvt*scrollTtyOutput:       false
 URxvt*scrollWithBuffer:      false
 URxvt*scrollBar_right:       true
 URxvt*skipScroll:            false
-URxvt*scrollBar:             true
+URxvt*scrollBar:             false
 URxvt*scrollBar_floating:    false
