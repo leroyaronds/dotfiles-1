@@ -10,9 +10,9 @@ export XDG_CACHE_HOME=/dev/shm
 export XDG_CONFIG_HOME=$HOME/.config
 
 # Set background
-if command -v feh >/dev/null; then
-	feh --bg-scale $HOME/dotfiles/background.png &
-fi
+#if command -v feh >/dev/null; then
+#	feh --bg-scale $HOME/dotfiles/background.png &
+#fi
 
 # Start rxvt terminal daemon
 if command -v urxvtd >/dev/null; then
