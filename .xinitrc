@@ -36,7 +36,7 @@ fi
 # Turn screen off after 10 min
 (sleep 1s && xset dpms 600 600 600) &
 # Load X resources
-(sleep 1s && xrdb -load ~/.Xresources) &
+xrdb -load ~/.Xresources &
 
 # Start Window Manager
 exec spectrwm
