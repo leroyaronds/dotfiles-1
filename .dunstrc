@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = mouse
-    geometry = "200x50-15+50"
+    geometry = "200x50-15+33"
     indicate_hidden = yes
     shrink = no
     transparency = 0
@@ -38,7 +38,7 @@
     stack_duplicates = true
     hide_duplicate_count = false
     show_indicators = yes
-    icon_position = off
+    icon_position = left
     max_icon_size = 32
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
     sticky_history = yes
@@ -78,20 +78,20 @@
 
 [urgency_low]
     background = "#000000"
-    foreground = "#AAAAAA"
-	frame_color = "#00FF00"
+    foreground = "#3B7C87"
+	frame_color = "#3B7C87"
     timeout = 10
 
 [urgency_normal]
     background = "#000000"
-    foreground = "#AAAAAA"
-	frame_color = "#0000FF"
+    foreground = "#5B8234"
+	frame_color = "#5B8234"
     timeout = 10
 
 [urgency_critical]
     background = "#000000"
-    foreground = "#AAAAAA"
-    frame_color = "#FF0000"
+    foreground = "#B7472A"
+    frame_color = "#B7472A"
     timeout = 0
 
 # Every section that isn't one of the above is interpreted as a rules to
