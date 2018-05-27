@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = mouse
-    geometry = "200x50-15+33"
+    geometry = "250x50-15+33"
     indicate_hidden = yes
     shrink = no
     transparency = 0
@@ -14,7 +14,7 @@
     separator_color = frame
     sort = yes
     idle_threshold = 120
-    font = DejaVu Sans Mono 8
+    font = DejaVu Sans Mono 10
     line_height = 0
     markup = full
 
@@ -40,7 +40,7 @@
     show_indicators = yes
     icon_position = left
     max_icon_size = 32
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = /usr/share/icons/Adwaita/32x32/status/:/usr/share/icons/Adwaita/32x32/devices/
     sticky_history = yes
     history_length = 15
     dmenu = /usr/bin/dmenu -p dunst:
