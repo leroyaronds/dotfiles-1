@@ -57,3 +57,15 @@ systemctl enable vboxservice.service
 useradd -m -g users -G wheel,storage,power -s /bin/zsh marco
 passwd marco
 # end
+
+###########
+# Firefox #
+###########
+# Fix Tab bar and sidebar header with 'userChrome.css' hack in Firefox profile/chrome dir
+#
+# Install add-ons
+#
+# - Mouseless
+# - Stylish
+# - Tab Center Redux
+#
