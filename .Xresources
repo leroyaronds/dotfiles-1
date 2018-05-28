@@ -44,7 +44,7 @@ URxvt*geometry:              80x24
 URxvt*loginShell:            true
 URxvt*fading:                30
 URxvt*utmpInhibit:           false
-URxvt*urgentOnBell:          false
+URxvt*urgentOnBell:          true
 URxvt*visualBell:            true
 URxvt*mapAlert:              true
 URxvt*mouseWheelScrollPage:  true
