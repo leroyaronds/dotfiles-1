@@ -123,11 +123,20 @@
 [slack]
 	# Match
 	appname = Electron
+	summary = "*message*"
 	# Override
     background = "#000000"
     foreground = "#00FF00"
     frame_color = "#00FF00"
     timeout = 0
+
+[gitlab]
+	# Match
+	appname = Firefox
+	summary = "*Pipeline*"
+	# Override
+	format = "<b>GitLab</b>\n\n%b"
+	urgency = low
 
 #[fullscreen_delay_everything]
 #    fullscreen = delay
