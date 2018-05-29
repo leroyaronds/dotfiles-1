@@ -120,6 +120,15 @@
 # pushback: same as delay, but when switching into fullscreen, the notification will get
 #           withdrawn from screen again and will get delayed like a new notification
 #
+[slack]
+	# Match
+	appname = Electron
+	# Override
+    background = "#000000"
+    foreground = "#00FF00"
+    frame_color = "#00FF00"
+    timeout = 0
+
 #[fullscreen_delay_everything]
 #    fullscreen = delay
 #[fullscreen_show_critical]
