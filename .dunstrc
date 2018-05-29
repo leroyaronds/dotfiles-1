@@ -37,7 +37,7 @@
     ignore_newline = no
     stack_duplicates = true
     hide_duplicate_count = false
-    show_indicators = yes
+    show_indicators = no
     icon_position = left
     max_icon_size = 32
     icon_path = /usr/share/icons/Adwaita/32x32/status/:/usr/share/icons/Adwaita/32x32/devices/
@@ -128,6 +128,7 @@
     background = "#000000"
     foreground = "#00FF00"
     frame_color = "#00FF00"
+	format = "<b>Slack</b>\n\n%s:\n%b"
     timeout = 0
 
 [gitlab]
