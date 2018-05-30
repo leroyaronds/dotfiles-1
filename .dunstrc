@@ -139,6 +139,13 @@
 	format = "<b>GitLab</b>\n\n%b"
 	urgency = low
 
+[mutt]
+	# Match
+	appname = notify-send
+	summary = "*New Email*"
+	# Override
+	format = "<b>Mutt</b>\n\n%b"
+
 #[fullscreen_delay_everything]
 #    fullscreen = delay
 #[fullscreen_show_critical]
