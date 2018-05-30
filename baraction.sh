@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 while :; do
-	UPTIME=$(uptime -p | sed 's/up //;')
+	UPTIME=$(uptime -p | sed 's/up //; s/,.*//')
 	CPU_LOAD=$(uptime | sed 's/.*: //; s/,//g;' | cut -d' ' -f1)
 	CPU_TEMP=$(sensors | grep -oP 'Physical.*?\+\K[0-9.]+')
 	MEM_USED=$(free | grep Mem | awk '{printf "%.1f", $3/$2 * 100.0}')
