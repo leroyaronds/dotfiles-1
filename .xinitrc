@@ -8,6 +8,8 @@ export BROWSER=firefox
 export XDG_CACHE_HOME=/dev/shm
 # Set config directory
 export XDG_CONFIG_HOME=$HOME/.config
+# Set data directory
+export XDG_DATA_HOME=$HOME/.local/share/
 
 # Set background
 if command -v feh >/dev/null; then
