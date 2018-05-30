@@ -28,6 +28,7 @@ set imap_keepalive = 300
 set mail_check = 120
 set timeout = 30
 set beep_new = yes
+set new_mail_command = "notify-send 'New Email' '%n new messages, %u unread.' &"
 #
 # Fetch mail keybind on ^
 bind index ^ imap-fetch-mail
