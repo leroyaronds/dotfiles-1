@@ -128,8 +128,8 @@
     foreground = "#00FF00"
     frame_color = "#00FF00"
 	format = "<b>Slack</b>\n\n%s:\n%b"
-	new_icon = "/home/mvandenoever/dotfiles/icons/slack.svg"
-    timeout = 0
+	new_icon = "~/dotfiles/icons/slack.svg"
+    urgency = critical
 
 [gitlab]
 	# Match
@@ -137,7 +137,7 @@
 	summary = "*Pipeline*"
 	# Override
 	format = "<b>GitLab</b>\n\n%b"
-	new_icon = "/home/mvandenoever/dotfiles/icons/gitlab.svg"
+	new_icon = "~/dotfiles/icons/gitlab.svg"
 	urgency = low
 
 [mutt]
@@ -145,8 +145,9 @@
 	appname = notify-send
 	summary = "*New Email*"
 	# Override
-	new_icon = "/home/mvandenoever/dotfiles/icons/envelope.svg"
+	new_icon = "~/dotfiles/icons/envelope.svg"
 	format = "<b>Mutt</b>\n\n%b"
+	urgency = normal
 
 #[fullscreen_delay_everything]
 #    fullscreen = delay
