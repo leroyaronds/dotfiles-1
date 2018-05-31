@@ -77,19 +77,19 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#000000"
+    background = "#444444"
     foreground = "#3B7C87"
 	frame_color = "#3B7C87"
     timeout = 10
 
 [urgency_normal]
-    background = "#000000"
+    background = "#444444"
     foreground = "#5B8234"
 	frame_color = "#5B8234"
     timeout = 10
 
 [urgency_critical]
-    background = "#000000"
+    background = "#444444"
     foreground = "#B7472A"
     frame_color = "#B7472A"
     timeout = 0
@@ -125,11 +125,10 @@
 	appname = Electron
 	summary = "*message*"
 	# Override
-    background = "#000000"
     foreground = "#00FF00"
     frame_color = "#00FF00"
 	format = "<b>Slack</b>\n\n%s:\n%b"
-	new_icon = "~/dotfiles/icons/slack.svg"
+	new_icon = "/home/mvandenoever/dotfiles/icons/slack.svg"
     timeout = 0
 
 [gitlab]
@@ -138,7 +137,7 @@
 	summary = "*Pipeline*"
 	# Override
 	format = "<b>GitLab</b>\n\n%b"
-	new_icon = "~/dotfiles/icons/gitlab.svg"
+	new_icon = "/home/mvandenoever/dotfiles/icons/gitlab.svg"
 	urgency = low
 
 [mutt]
@@ -146,7 +145,7 @@
 	appname = notify-send
 	summary = "*New Email*"
 	# Override
-	new_icon = "~/dotfiles/icons/envelope.svg"
+	new_icon = "/home/mvandenoever/dotfiles/icons/envelope.svg"
 	format = "<b>Mutt</b>\n\n%b"
 
 #[fullscreen_delay_everything]
