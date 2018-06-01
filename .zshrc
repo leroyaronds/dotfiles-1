@@ -16,6 +16,11 @@ source ${ANTIGEN}
 antigen use oh-my-zsh
 # Load plugins
 antigen bundle docker
+antigen bundle docker-compose
+antigen bundle minikube
+antigen bundle kubectl
+antigen bundle pass
+antigen bundle tmux
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 # Set theme
@@ -38,28 +43,10 @@ else
 fi
 alias ll="ls -lh"
 alias g="git"
-alias n="vim ~/docs/notes.txt"
-alias t="vim ~/docs/todo.txt ~/docs/done.txt"
-# Tmux
-alias ta="tmux -2 attach -t"
-alias tnew="tmux -2 new -s"
-alias tls="tmux -2 ls"
-alias tkill="tmux kill-session -t"
-# Edit config files
-alias ev="vim ~/.vimrc"
-alias et="vim ~/.tmux.conf"
-alias ez="vim ~/.zshrc"
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
-# Docker
-alias dcb="docker-compose build"
-alias dcu="docker-compose up -d"
-alias dck="docker-compose kill"
-alias dcd="docker-compose down"
-alias dcp="docker-compose ps"
 # Work
 alias cdd="cd ~/repositories/docker/images/dev"
 alias cdcrm="cd ~/dev/git/crm"
-alias dcl='docker-compose logs -f --tail 1000 tomcat'
 
 # Set GPG password prompt to current TTY
 if command -v gpg-connect-agent >/dev/null; then
