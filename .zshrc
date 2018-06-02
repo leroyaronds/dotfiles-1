@@ -15,6 +15,9 @@ source ${ANTIGEN}
 # Use oh-my-zsh
 antigen use oh-my-zsh
 # Load plugins
+antigen bundle common-aliases
+antigen bundle gpg-agent
+antigen bundle git
 antigen bundle docker
 antigen bundle docker-compose
 antigen bundle minikube
@@ -34,26 +37,15 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 # Aliases
-#
-# Get ls color command
-if ls --color > /dev/null 2>&1; then
-	alias ls="ls -F --color" # Unix
-else
-	alias ls="ls -F -G" # OSX
-fi
-alias ll="ls -lh"
-alias g="git"
-alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
-# Work
 alias cdd="cd ~/repositories/docker/images/dev"
 alias cdcrm="cd ~/dev/git/crm"
 
 # Set GPG password prompt to current TTY
-if command -v gpg-connect-agent >/dev/null; then
-	gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
-fi
+#if command -v gpg-connect-agent >/dev/null; then
+#	gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
+#fi
 
 # Export SSH socket to GPG agent
-if command -v gpgconf >/dev/null; then
-	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
+#if command -v gpgconf >/dev/null; then
+#	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+#fi
