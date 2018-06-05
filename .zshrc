@@ -15,15 +15,19 @@ source ${ANTIGEN}
 # Use oh-my-zsh
 antigen use oh-my-zsh
 # Load plugins
+if command -v gpg-agent >/dev/null; then
+	antigen bundle gpg-agent
+fi
+if command -v tmux >/dev/null; then
+	antigen bundle tmux
+fi
 antigen bundle common-aliases
-antigen bundle gpg-agent
 antigen bundle git
 antigen bundle docker
 antigen bundle docker-compose
 antigen bundle minikube
 antigen bundle kubectl
 antigen bundle pass
-antigen bundle tmux
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 # Set theme
