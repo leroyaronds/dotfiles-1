@@ -164,9 +164,13 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# screen locker command
+set $locker i3lock -c 000000 -n
+
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id slock, mode "default"
+    bindsym l exec --no-startup-id $locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id slock && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id slock && systemctl hibernate, mode "default"
@@ -179,6 +183,7 @@ mode "$mode_system" {
 }
 
 bindsym $mod+Shift+Home mode "$mode_system"
+bindsym $mod+Shift+p exec $locker
 
 default_border pixel 1
 
