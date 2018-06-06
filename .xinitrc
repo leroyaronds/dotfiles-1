@@ -41,4 +41,4 @@ fi
 xrdb -load ~/.Xresources &
 
 # Start Window Manager
-exec spectrwm
+exec i3
