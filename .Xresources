@@ -54,7 +54,7 @@ URxvt*colorUL:               #B58900
 URxvt*underlineColor:        #B58900
 URxvt*depth:                 32
 URxvt*lineSpace:             0
-URxvt*saveLines:             4096
+URxvt*saveLines:             8192
 URxvt*buffered:              true
 URxvt*hold:                  false
 URxvt*internalBorder:
