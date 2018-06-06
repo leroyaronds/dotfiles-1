@@ -15,12 +15,6 @@ source ${ANTIGEN}
 # Use oh-my-zsh
 antigen use oh-my-zsh
 # Load plugins
-if command -v gpg-agent >/dev/null; then
-	antigen bundle gpg-agent
-fi
-if command -v tmux >/dev/null; then
-	antigen bundle tmux
-fi
 antigen bundle common-aliases
 antigen bundle git
 antigen bundle docker
@@ -45,11 +39,11 @@ alias cdd="cd ~/repositories/docker/images/dev"
 alias cdcrm="cd ~/dev/git/crm"
 
 # Set GPG password prompt to current TTY
-#if command -v gpg-connect-agent >/dev/null; then
-#	gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
-#fi
+if command -v gpg-connect-agent >/dev/null; then
+	gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
+fi
 
 # Export SSH socket to GPG agent
-#if command -v gpgconf >/dev/null; then
-#	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-#fi
+if command -v gpgconf >/dev/null; then
+	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
