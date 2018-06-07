@@ -30,5 +30,5 @@ ethernet _first_ {
 }
 
 time {
-	format = "%d-%m @ %H:%M"
+	format = "%d-%m %H:%M"
 }
