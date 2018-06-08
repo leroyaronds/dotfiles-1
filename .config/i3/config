@@ -38,8 +38,12 @@ client.background       #ffffff
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+set $terminal --no-startup-id urxvtc
+set $docs ~/docs
 # start a terminal
-bindsym $mod+Return exec --no-startup-id urxvtc
+bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+n exec $terminal -e vim $docs/notes.txt
+bindsym $mod+Shift+t exec $terminal -e vim $docs/todo.txt $docs/done.txt
 
 # kill focused window
 bindsym $mod+Shift+q kill
