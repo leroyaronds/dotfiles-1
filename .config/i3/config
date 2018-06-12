@@ -12,9 +12,6 @@
 # set modifier
 set $mod Mod4
 
-# set terminal
-set $terminal --no-startup-id urxvtc
-
 # screen locker command
 set $locker i3lock -c 000000 -n
 
@@ -46,7 +43,7 @@ client.background       #ffffff
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $terminal
+bindsym $mod+Return exec --no-startup-id urxvtc
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -64,23 +61,11 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -206,9 +191,7 @@ focus_follows_mouse no
 # toggle i3bar
 bindsym $mod+b bar mode toggle
 
-set $docs ~/docs
-#
-bindsym $mod+Shift+n exec $terminal -name vimnotes -e vim $docs/notes.txt $docs/todo.txt $docs/done.txt
+#bindsym $mod+Shift+n exec --no-startup-id urxvtc -name vimnotes -e vim $docs/notes.txt $docs/todo.txt $docs/done.txt
 for_window [instance="vimnotes"] move scratchpad; #, move position 0px 22px, resize set 800 400;
 bindsym $mod+n [instance="vimnotes"] scratchpad show
 
@@ -219,3 +202,18 @@ bar {
 	font pango: DejaVu Sans Mono bold 9
 	position top
 }
+
+# Auto start
+#
+# Start URXVT daemon
+#exec --no-startup-id urxvtd -q -o -f
+# Dunst notifier (exec_always)
+exec_always --no-startup-id dunst -config ~/.dunstrc
+# Set background
+#exec --no-startup-id feh --bg-center ~/dotfiles/background.png
+# Autolocker
+#exec --no-startup-id xautolock -time 10 -locker "$locker" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'")
+# Set display blank, standby etc
+#exec --no-startup-id xset s 300 dpms 600 600 600
+# Start notes/todo in scratchpad workspace`
+#exec --no-startup-id urxvtc -name vimnotes -e vim ~/docs/notes.txt ~/docs/todo.txt ~/docs/done.txt

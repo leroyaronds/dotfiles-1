@@ -1,6 +1,6 @@
 [global]
     monitor = 0
-    follow = none
+    follow = keyboard
     geometry = "250x50-15+33"
     indicate_hidden = yes
     shrink = no
@@ -38,7 +38,7 @@
     stack_duplicates = true
     hide_duplicate_count = false
     show_indicators = no
-    icon_position = off
+    icon_position = left
     max_icon_size = 32
     icon_path = /usr/share/icons/Adwaita/32x32/status/:/usr/share/icons/Adwaita/32x32/devices/
     sticky_history = yes
