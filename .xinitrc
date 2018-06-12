@@ -12,33 +12,33 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share/
 
 # Set background
-if command -v feh >/dev/null; then
-	feh --bg-center $HOME/dotfiles/background.png &
-fi
+#if command -v feh >/dev/null; then
+#	feh --bg-center $HOME/dotfiles/background.png &
+#fi
 
 # Start rxvt terminal daemon
-if command -v urxvtd >/dev/null; then
-	urxvtd -q -o -f &
-fi
+#if command -v urxvtd >/dev/null; then
+#	urxvtd -q -o -f &
+#fi
 
 # Start dunst notification daemon
-if command -v dunst >/dev/null; then
-	dunst -config $HOME/.dunstrc &
-fi
+#if command -v dunst >/dev/null; then
+#	dunst -config $HOME/.dunstrc &
+#fi
 
 # Start VirtualBox Client tools
-if command -v VBoxClient >/dev/null; then
-	VBoxClient-all &
-fi
+#if command -v VBoxClient >/dev/null; then
+#	VBoxClient-all &
+#fi
 
 # Turn screen blank after 5 min
-(sleep 1s && xset s 300) &
+#(sleep 1s && xset s 300) &
 # Lock screen after 10 min
-(sleep 1s && xautolock -time 10 -locker "slock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'") &
+#(sleep 1s && xautolock -time 10 -locker "slock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'") &
 # Turn screen off after 10 min
-(sleep 1s && xset dpms 600 600 600) &
+#(sleep 1s && xset dpms 600 600 600) &
 # Load X resources
-xrdb -load ~/.Xresources &
+#xrdb -load ~/.Xresources &
 
 # Start Window Manager
 exec i3

@@ -205,15 +205,16 @@ bar {
 
 # Auto start
 #
+exec --no-startup-id xrdb -load ~/.Xresources
 # Start URXVT daemon
-#exec --no-startup-id urxvtd -q -o -f
+exec --no-startup-id urxvtd -q -o -f
 # Dunst notifier (exec_always)
 exec_always --no-startup-id dunst -config ~/.dunstrc
 # Set background
-#exec --no-startup-id feh --bg-center ~/dotfiles/background.png
+exec --no-startup-id feh --bg-center ~/dotfiles/background.png
 # Autolocker
-#exec --no-startup-id xautolock -time 10 -locker "$locker" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'")
+exec --no-startup-id xautolock -time 10 -locker "$locker" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'")
 # Set display blank, standby etc
-#exec --no-startup-id xset s 300 dpms 600 600 600
+exec --no-startup-id xset s 300 dpms 600 600 600
 # Start notes/todo in scratchpad workspace`
-#exec --no-startup-id urxvtc -name vimnotes -e vim ~/docs/notes.txt ~/docs/todo.txt ~/docs/done.txt
+exec --no-startup-id urxvtc -name vimnotes -e vim ~/docs/notes.txt ~/docs/todo.txt ~/docs/done.txt
