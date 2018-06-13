@@ -217,6 +217,6 @@ exec --no-startup-id dunst -config ~/.dunstrc
 # Set background
 exec --no-startup-id feh --bg-center ~/dotfiles/background.png
 # Autolocker
-exec_always --no-startup-id xautolock -time 10 -locker "${locker}" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'"
+exec_always --no-startup-id xautolock -time 10 -locker "'$locker'" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'"
 # Start notes/todo in scratchpad workspace
 exec --no-startup-id urxvtc -name vimnotes -e vim $docs/notes.txt $docs/todo.txt $docs/done.txt
