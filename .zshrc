@@ -16,12 +16,12 @@ source ${ANTIGEN}
 antigen use oh-my-zsh
 # Load plugins
 antigen bundle common-aliases
-antigen bundle git
+#antigen bundle git
 antigen bundle docker
 antigen bundle docker-compose
-antigen bundle minikube
-antigen bundle kubectl
-antigen bundle pass
+#antigen bundle minikube
+#antigen bundle kubectl
+#antigen bundle pass
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 # Set theme
@@ -35,6 +35,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 # Aliases
+alias g="git"
 alias cdd="cd ~/repositories/docker/images/dev"
 alias cdcrm="cd ~/dev/git/crm"
 

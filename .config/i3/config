@@ -213,7 +213,7 @@ bar {
 # Start URXVT daemon
 exec --no-startup-id urxvtd -q -o -f
 # Dunst notifier (exec_always)
-exec --no-startup-id dunst -config ~/.dunstrc
+exec_always --no-startup-id dunst -config ~/.dunstrc
 # Set background
 exec --no-startup-id feh --bg-center ~/dotfiles/background.png
 # Autolocker
