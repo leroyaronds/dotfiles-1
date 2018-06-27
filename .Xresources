@@ -39,7 +39,7 @@ Xft.hintstyle:               hintslight
 Xft.embeddedbitmap:          false
 Xft.lcdfilter:               lcddefault
 !! RXVT:
-URxvt*termName:              rxvt-256color
+URxvt*termName:              xterm-256color
 URxvt*geometry:              80x24
 URxvt*loginShell:            true
 URxvt*fading:                30
@@ -63,10 +63,12 @@ URxvt*cursorUnderline:       true
 URxvt*cursorBlink:           true
 URxvt*cursorColor:           #FFFFFF
 ! Key bindings:
-URxvt*keysym.Home:           \033[7~
-URxvt*keysym.End:            \033[8~
-URxvt*keysym.KP_Home:        \033[7~
-URxvt*keysym.KP_End:         \033[8~
+!URxvt*keysym.Home:           \e[7~
+URxvt*keysym.Home:           \033OH
+!URxvt*keysym.End:            \e[8~
+URxvt*keysym.End:            \033OF
+URxvt*keysym.KP_Home:        \e[7~
+URxvt*keysym.KP_End:         \e[8~
 URxvt*iso14755:              false
 URxvt*iso14755_52:           false
 ! Set font:
