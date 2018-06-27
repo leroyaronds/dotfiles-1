@@ -63,12 +63,30 @@ URxvt*cursorUnderline:       true
 URxvt*cursorBlink:           true
 URxvt*cursorColor:           #FFFFFF
 ! Key bindings:
-!URxvt*keysym.Home:           \e[7~
 URxvt*keysym.Home:           \033OH
-!URxvt*keysym.End:            \e[8~
 URxvt*keysym.End:            \033OF
-URxvt*keysym.KP_Home:        \e[7~
-URxvt*keysym.KP_End:         \e[8~
+URxvt*keysym.KP_Home:        \033OH
+URxvt*keysym.KP_End:         \033OF
+URxvt*keysym.F1:             \033OP
+URxvt*keysym.F2:             \033OQ
+URxvt*keysym.F3:             \033OR
+URxvt*keysym.F4:             \033OS
+URxvt*keysym.S-Delete:       \033[3;2~
+URxvt*keysym.S-Home:         \033[1;2H
+URxvt*keysym.S-End:          \033[1;2F
+URxvt*keysym.S-F1:           \033[1;2P
+URxvt*keysym.S-F2:           \033[1;2Q
+URxvt*keysym.S-F3:           \033[1;2R
+URxvt*keysym.S-F4:           \033[1;2S
+URxvt*keysym.S-F5:           \033[15;2~
+URxvt*keysym.S-F6:           \033[17;2~
+URxvt*keysym.S-F7:           \033[18;2~
+URxvt*keysym.S-F8:           \033[19;2~
+URxvt*keysym.S-F9:           \033[20;2~
+URxvt*keysym.S-F10:          \033[21;2~
+URxvt*keysym.S-F11:          \033[23;2~
+URxvt*keysym.S-F12:          \033[24;2~
+
 URxvt*iso14755:              false
 URxvt*iso14755_52:           false
 ! Set font:
