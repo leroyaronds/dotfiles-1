@@ -19,8 +19,8 @@ antigen bundle common-aliases
 #antigen bundle git
 antigen bundle docker
 antigen bundle docker-compose
-#antigen bundle minikube
-#antigen bundle kubectl
+antigen bundle minikube
+antigen bundle kubectl
 #antigen bundle pass
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
