@@ -86,7 +86,7 @@
     background = "#000000"
     foreground = "#5B8234"
 	frame_color = "#5B8234"
-    timeout = 10
+    timeout = 15
 
 [urgency_critical]
     background = "#000000"
@@ -122,10 +122,10 @@
 #
 [slack]
 	# Match
-	appname = Electron
-	summary = "*message*"
+	appname = Firefox
+	summary = "*New message*"
 	# Override
-	format = "<b>Slack</b>\n\n%s:\n%b"
+	format = "<b>Slack</b>\n\n%s\n%b"
     urgency = critical
 
 [gitlab]
@@ -135,6 +135,14 @@
 	# Override
 	format = "<b>GitLab</b>\n\n%b"
 	urgency = low
+
+[Pomodoro]
+	# Match
+	appname = Firefox
+	summary = "*Tomato Clock*"
+	# Override
+	format = "<b>Pomodoro</b>\n\n%b"
+	urgency = normal
 
 [mutt]
 	# Match
