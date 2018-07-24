@@ -15,12 +15,10 @@ source ${ANTIGEN}
 # Use oh-my-zsh
 antigen use oh-my-zsh
 # Load plugins
-antigen bundle common-aliases
-#antigen bundle git
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle minikube
-antigen bundle kubectl
+#antigen bundle docker
+#antigen bundle docker-compose
+#antigen bundle minikube
+#antigen bundle kubectl
 #antigen bundle pass
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
@@ -35,6 +33,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 # Aliases
+alias t=connect_tmux
 alias g="git"
 alias cdd="cd ~/repositories/docker/images/dev"
 alias cdcrm="cd ~/dev/git/crm"
@@ -48,3 +47,22 @@ fi
 if command -v gpgconf >/dev/null; then
 	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
+
+# Connect or Start TMUX
+connect_tmux() {
+  if command -v tmux > /dev/null; then
+    if [ -z ${TMUX} ]; then
+      ID="`tmux ls | grep -vm1 attached | cut -d: -f1`"
+      if [ -z ${ID} ]; then
+        tmux new -n 'shell' -d -s main;
+        tmux new-window -t main:2 -n 'mutt';
+        tmux select-window -t main:1;
+        tmux attach -t main;
+      else
+        tmux attach -t "$ID"
+      fi
+    fi
+  else
+    echo "TMUX is not installed"
+  fi
+}
