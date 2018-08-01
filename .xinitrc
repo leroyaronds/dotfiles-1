@@ -20,7 +20,7 @@ feh --bg-center $HOME/dotfiles/background.png &
 # Turn screen off (10 min)
 xset s 0 dpms 0 0 600 &
 # Autolocker (5 min)
-xautolock -time 5 -locker "i3lock -c 000000 -n" &
+xautolock -time 5 -locker $HOME/dotfiles/scripts/lock.sh &
 # Load X resources
 xrdb -load ~/.Xresources &
 # Start Window Manager
