@@ -47,7 +47,7 @@ URxvt*utmpInhibit:           false
 URxvt*urgentOnBell:          true
 URxvt*visualBell:            true
 URxvt*mapAlert:              true
-URxvt*mouseWheelScrollPage:  true
+URxvt*mouseWheelScrollPage:  false
 URxvt*background:            #000000
 URxvt*foreground:            #FFFFFF
 URxvt*colorUL:               #B58900
@@ -58,6 +58,11 @@ URxvt*saveLines:             8192
 URxvt*buffered:              true
 URxvt*hold:                  false
 URxvt*internalBorder:
+URxvt*pointerBlank:          true
+URxvt*pointerBlankDelay:     4
+URxvt*transparent:           true
+!URxvt*tintColor:             #555555
+URxvt*shading:               15
 ! Cursor:
 URxvt*cursorUnderline:       true
 URxvt*cursorBlink:           true
