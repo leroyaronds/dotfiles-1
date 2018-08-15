@@ -15,8 +15,8 @@ source ${ANTIGEN}
 # Use oh-my-zsh
 antigen use oh-my-zsh
 # Load plugins
-#antigen bundle docker
-#antigen bundle docker-compose
+antigen bundle docker
+antigen bundle docker-compose
 #antigen bundle minikube
 #antigen bundle kubectl
 #antigen bundle pass
@@ -35,8 +35,6 @@ SAVEHIST=1000
 # Aliases
 alias t=connect_tmux
 alias g="git"
-alias cdd="cd ~/repositories/docker/images/dev"
-alias cdcrm="cd ~/dev/git/crm"
 
 # Set GPG password prompt to current TTY
 if command -v gpg-connect-agent >/dev/null; then
