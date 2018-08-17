@@ -22,7 +22,7 @@ if command -v docker-compose >/dev/null; then
 	CURRENT_VERSION=`docker-compose version | grep -Po "docker-compose version (?:(\d+)\.?){4}" | awk -F ' ' '{print $3}'`
 	AVAILABLE_VERSION=`git ls-remote https://github.com/docker/compose | grep refs/tags | grep -oP "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | tail -n 1`
 	echo -e "${YELLOW}Current: ${CURRENT_VERSION} - Available: ${AVAILABLE_VERSION}${RESET}"
-	if [[ $CURRENT_VERSION != $AVAILABLE_VERSION ]]; then
+	if [ $CURRENT_VERSION != $AVAILABLE_VERSION ]; then
 		curl -#Lo /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/${AVAILABLE_VERSION}/docker-compose-`uname -s`-`uname -m`
 		chmod +x /usr/local/bin/docker-compose
 	fi
@@ -34,7 +34,7 @@ if command -v minikube >/dev/null; then
 	CURRENT_VERSION=`minikube version | grep -Po "(?:(\d+)\.?){4}"`
 	AVAILABLE_VERSION=`git ls-remote https://github.com/kubernetes/minikube | grep refs/tags | grep -oP "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | tail -n 1`
 	echo -e "${YELLOW}Current: ${CURRENT_VERSION} - Available: ${AVAILABLE_VERSION}${RESET}"
-	if [[ $CURRENT_VERSION != $AVAILABLE_VERSION ]]; then
+	if [ $CURRENT_VERSION != $AVAILABLE_VERSION ]; then
 		curl -#Lo /usr/local/bin/minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 		chmod +x /usr/local/bin/minikube
 	fi

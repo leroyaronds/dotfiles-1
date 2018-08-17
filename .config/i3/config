@@ -194,10 +194,8 @@ focus_follows_mouse no
 # toggle i3bar
 bindsym $mod+b bar mode toggle
 
-bindsym $mod+Shift+n exec --no-startup-id urxvtc -name vimnotes -e vim $docs/notes.txt $docs/todo.txt $docs/done.txt
-# Start notes/todo in scratchpad workspace`
-for_window [instance="vimnotes"] move scratchpad; #, move position 0px 22px, resize set 800 400;
-bindsym $mod+n [instance="vimnotes"] scratchpad show
+# Show notes/todo in scratchpad workspace
+bindsym $mod+n [instance="_scratch_vim_notes"] scratchpad show
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -209,3 +207,6 @@ bar {
 
 # Auto start
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+# Start notes/todo in scratchpad workspace`
+for_window [instance="_scratch_vim_notes"] move scratchpad;
+exec --no-startup-id urxvtc -name _scratch_vim_notes -e vim $docs/notes.txt $docs/todo.txt $docs/done.txt
