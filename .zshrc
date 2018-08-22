@@ -1,3 +1,5 @@
+# Download URL of antigen
+ANTIGEN_URL="git.io/antigen-nightly"
 # Environment
 export EDITOR="vim"
 # ANT color logger
@@ -7,7 +9,7 @@ export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 ANTIGEN="${HOME}/.antigen/antigen.zsh"
 if [ ! -f ${ANTIGEN} ]; then
 	echo "Installing Antigen ..."
-	curl --create-dirs -#SLo ${ANTIGEN} git.io/antigen
+	curl --create-dirs -#SLo ${ANTIGEN} ${ANTIGEN_URL}
 fi
 
 # Load Antigen
@@ -35,6 +37,8 @@ SAVEHIST=1000
 # Aliases
 alias t=connect_tmux
 alias g="git"
+alias s="${HOME}/dotfiles/scripts/shortcuts.sh"
+alias u="${HOME}/dotfiles/scripts/update_debian.sh"
 
 # Set GPG password prompt to current TTY
 if command -v gpg-connect-agent >/dev/null; then
