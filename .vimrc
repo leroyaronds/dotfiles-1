@@ -64,6 +64,8 @@ Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/plasticboy/vim-markdown.git'
 " PlantUML
 Plug 'https://github.com/aklt/plantuml-syntax.git'
+" GPG
+Plug 'https://github.com/jamessan/vim-gnupg'
 call plug#end()
 
 " todo command
