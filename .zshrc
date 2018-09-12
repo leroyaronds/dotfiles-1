@@ -17,8 +17,6 @@ source ${ANTIGEN}
 # Use oh-my-zsh
 antigen use oh-my-zsh
 # Load plugins
-antigen bundle git
-antigen bundle docker
 antigen bundle docker-compose
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
@@ -31,6 +29,11 @@ antigen apply
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
+
+# Aliases
+alias g="git"
+alias t="tmux -2"
+alias v="vim"
 
 # Set GPG password prompt to current TTY
 if command -v gpg-connect-agent >/dev/null; then
