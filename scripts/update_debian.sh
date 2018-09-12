@@ -27,15 +27,3 @@ if command -v docker-compose >/dev/null; then
 		chmod +x /usr/local/bin/docker-compose
 	fi
 fi
-#
-# Update Minikube
-if command -v minikube >/dev/null; then
-	echo -e "\n${GREEN}# Updating Minikube ...${RESET}"
-	CURRENT_VERSION=`minikube version | grep -Po "(?:(\d+)\.?){4}"`
-	AVAILABLE_VERSION=`git ls-remote https://github.com/kubernetes/minikube | grep refs/tags | grep -oP "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | tail -n 1`
-	echo -e "${YELLOW}Current: ${CURRENT_VERSION} - Available: ${AVAILABLE_VERSION}${RESET}"
-	if [ $CURRENT_VERSION != $AVAILABLE_VERSION ]; then
-		curl -#Lo /usr/local/bin/minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-		chmod +x /usr/local/bin/minikube
-	fi
-fi
