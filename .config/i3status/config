@@ -15,7 +15,8 @@ load {
 }
 
 cpu_temperature 0 {
-	format = "T: %degrees °C"
+	format = "T: %degrees°C"
+	max_threshold = 45
 	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
 }
 
