@@ -13,8 +13,6 @@ export XDG_DATA_HOME=$HOME/.local/share/
 
 # Start URXVT daemon
 urxvtd -q -o -f &
-# Dunst notifier
-dunst -config $HOME/.dunstrc &
 # Set background
 feh --bg-center $HOME/dotfiles/background.png &
 # Turn screen off (10 min)
