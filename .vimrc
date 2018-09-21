@@ -58,6 +58,8 @@ Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/freitass/todo.txt-vim.git'
 " Puppet codestyle
 Plug 'https://github.com/rodjek/vim-puppet.git'
+" Syntastic
+Plug 'https://github.com/vim-syntastic/syntastic'
 " Tabular
 Plug 'https://github.com/godlygeek/tabular.git'
 " Markdown
@@ -89,6 +91,16 @@ set colorcolumn=110
 
 " set colorscheme
 silent! colorscheme jellybeans
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Airline
 let g:airline#extensions#tabline#enabled=1
