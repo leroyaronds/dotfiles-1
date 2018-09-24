@@ -68,6 +68,10 @@ Plug 'https://github.com/plasticboy/vim-markdown.git'
 Plug 'https://github.com/aklt/plantuml-syntax.git'
 " GPG
 Plug 'https://github.com/jamessan/vim-gnupg'
+" VimWiki
+Plug 'https://github.com/vimwiki/vimwiki.git'
+" Dir specific VIM settings
+Plug 'https://github.com/chazy/dirsettings.git'
 call plug#end()
 
 " todo command
@@ -91,6 +95,20 @@ set colorcolumn=110
 
 " set colorscheme
 silent! colorscheme jellybeans
+
+" VimWiki
+let wiki_1 = {}  
+let wiki_1.path = '~/docs/wiki/work/'  
+let wiki_1.syntax = 'markdown'  
+let wiki_1.ext = '.md'
+
+let wiki_2 = {}  
+let wiki_2.path = '~/docs/wiki/personal/'  
+let wiki_2.syntax = 'markdown'  
+let wiki_2.ext = '.md'
+
+let g:vimwiki_list = [wiki_1, wiki_2]
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
 " Syntastic
 set statusline+=%#warningmsg#
