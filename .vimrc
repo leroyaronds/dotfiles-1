@@ -56,8 +56,6 @@ Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 " Todo
 Plug 'https://github.com/freitass/todo.txt-vim.git'
-" Puppet codestyle
-Plug 'https://github.com/rodjek/vim-puppet.git'
 " Syntastic
 Plug 'https://github.com/vim-syntastic/syntastic'
 " Tabular
@@ -67,11 +65,9 @@ Plug 'https://github.com/plasticboy/vim-markdown.git'
 " PlantUML
 Plug 'https://github.com/aklt/plantuml-syntax.git'
 " GPG
-Plug 'https://github.com/jamessan/vim-gnupg'
+Plug 'https://github.com/jamessan/vim-gnupg.git'
 " VimWiki
 Plug 'https://github.com/vimwiki/vimwiki.git'
-" Dir specific VIM settings
-Plug 'https://github.com/chazy/dirsettings.git'
 call plug#end()
 
 " todo command
