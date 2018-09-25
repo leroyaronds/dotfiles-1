@@ -93,17 +93,7 @@ set colorcolumn=110
 silent! colorscheme jellybeans
 
 " VimWiki
-let wiki_1 = {}  
-let wiki_1.path = '~/docs/wiki/work/'  
-let wiki_1.syntax = 'markdown'  
-let wiki_1.ext = '.md'
-
-let wiki_2 = {}  
-let wiki_2.path = '~/docs/wiki/personal/'  
-let wiki_2.syntax = 'markdown'  
-let wiki_2.ext = '.md'
-
-let g:vimwiki_list = [wiki_1, wiki_2]
+let g:vimwiki_list = [{'path': '~/docs/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
 " Syntastic
