@@ -58,6 +58,8 @@ Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/freitass/todo.txt-vim.git'
 " Syntastic
 Plug 'https://github.com/vim-syntastic/syntastic'
+" Puppet
+Plug 'https://github.com/rodjek/vim-puppet.git'
 " Tabular
 Plug 'https://github.com/godlygeek/tabular.git'
 " Markdown
@@ -92,8 +94,19 @@ set colorcolumn=110
 " set colorscheme
 silent! colorscheme jellybeans
 
+" VimWiki wiki defines
+let wiki_work = {}
+let wiki_work.path = '~/docs/wiki/work/'
+let wiki_work.syntax = 'markdown'
+let wiki_work.ext = '.md'
+let wiki_work.auto_tags = 1
+let wiki_personal = {}
+let wiki_personal.path = '~/docs/wiki/personal/'
+let wiki_personal.syntax = 'markdown'
+let wiki_personal.ext = '.md'
+let wiki_personal.auto_tags = 1
 " VimWiki
-let g:vimwiki_list = [{'path': '~/docs/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [wiki_work, wiki_personal]
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
 " Syntastic
