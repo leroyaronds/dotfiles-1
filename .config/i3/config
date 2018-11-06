@@ -180,7 +180,7 @@ bindsym $mod+n [instance="_scratch_vim_notes"] scratchpad show
 bar {
 	status_command i3status
 	font pango: DejaVu Sans Mono bold 9
-#	tray_output none
+	tray_output none
 	position top
 }
 
