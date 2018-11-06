@@ -96,7 +96,7 @@ silent! colorscheme jellybeans
 
 " VimWiki wiki defines
 let wiki_work = {}
-let wiki_work.path = '~/wiki/work/'
+let wiki_work.path = '~/repositories/docs.wiki/'
 let wiki_work.syntax = 'markdown'
 let wiki_work.ext = '.md'
 let wiki_work.auto_tags = 1

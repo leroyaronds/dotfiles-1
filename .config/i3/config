@@ -18,8 +18,6 @@ set $docs ~/docs
 set $terminal urxvtc
 # screen locker command
 set $locker ~/dotfiles/scripts/lock.sh
-# text expander
-set $expander ~/dotfiles/scripts/expander.sh
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -39,9 +37,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id $terminal
-
-# text expander
-bindsym $mod+e exec --no-startup-id $expander
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -73,6 +68,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -184,7 +180,7 @@ bindsym $mod+n [instance="_scratch_vim_notes"] scratchpad show
 bar {
 	status_command i3status
 	font pango: DejaVu Sans Mono bold 9
-	tray_output none
+#	tray_output none
 	position top
 }
 

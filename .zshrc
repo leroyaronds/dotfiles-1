@@ -34,6 +34,7 @@ SAVEHIST=1000
 alias g="git"
 alias t="tmux -2"
 alias v="vim"
+alias f="find . -type f -print | xargs grep"
 
 # Set GPG password prompt to current TTY
 if command -v gpg-connect-agent >/dev/null; then
