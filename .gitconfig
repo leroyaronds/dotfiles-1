@@ -25,9 +25,16 @@
 	changed = yellow bold
 	untracked = red bold
 [diff]
-	tool = vimdiff
+	tool = meld
 [difftool]
 	prompt = false
+[merge]
+	tool = meld
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+	keepBackup = false
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 [alias]
 	a = add
 	aa = add --all
