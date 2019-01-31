@@ -40,9 +40,10 @@
 	aa = add --all
 	c = checkout
 	b = branch
-	cam = commit -a -m
+	cam = commit --amend
 	d = diff
 	p = push
+	pf = push --force
 	st = status
 	sa = config --get-regexp alias
 	ib = --bare init

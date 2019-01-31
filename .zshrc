@@ -18,6 +18,7 @@ source ${ANTIGEN}
 antigen use oh-my-zsh
 # Load plugins
 antigen bundle docker-compose
+antigen bundle kubectl
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 # Set theme
