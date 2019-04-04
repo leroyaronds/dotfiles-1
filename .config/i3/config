@@ -173,14 +173,8 @@ bindsym $mod+b bar mode toggle
 
 ## Quick terminal
 bindsym $mod+Shift+n exec --no-startup-id urxvtc -name metask -e vim $docs/notes.txt $docs/todo.txt $docs/done.txt
-#for_window [instance="metask"] floating enable;
 for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad show; move position 1000px 200px; resize set height 800px; resize set width 800px; move scratchpad
 bindsym $mod+n [instance="metask"] scratchpad show
-
-# Show notes/todo in scratchpad workspace
-#for_window [instance="_scratch_vim_notes"] move scratchpad;
-#bindsym $mod+Shift+n exec --no-startup-id urxvtc -name _scratch_vim_notes -e vim $docs/notes.txt $docs/todo.txt $docs/done.txt
-#bindsym $mod+n [instance="_scratch_vim_notes"] scratchpad show
 
 # Start i3bar to display a workspace bar
 bar {
@@ -191,4 +185,5 @@ bar {
 }
 
 # Start firefox on workspace 1
+#for_window [class="Firefox" instance="Navigator"] floating enable
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
