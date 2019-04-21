@@ -185,5 +185,4 @@ bar {
 }
 
 # Start firefox on workspace 1
-#for_window [class="Firefox" instance="Navigator"] floating enable
-exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+#exec --no-startup-id i3-msg 'workspace 1; exec firefox'

@@ -61,7 +61,6 @@ URxvt*internalBorder:
 URxvt*pointerBlank:          true
 URxvt*pointerBlankDelay:     4
 URxvt*transparent:           true
-!URxvt*tintColor:             #555555
 URxvt*shading:               15
 ! Cursor:
 URxvt*cursorUnderline:       true

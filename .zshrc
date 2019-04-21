@@ -1,19 +1,15 @@
 # Environment
 export EDITOR="vim"
-# ANT color logger
-export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 
-# Download URL of antigen
-ANTIGEN_URL="git.io/antigen-nightly"
 # Install Antigen if needed
-ANTIGEN="${HOME}/.antigen/antigen.zsh"
-if [ ! -f ${ANTIGEN} ]; then
+ANTIGEN="~/.antigen/antigen.zsh"
+if [ ! -f $ANTIGEN ]; then
 	echo "Installing Antigen ..."
-	curl --create-dirs -#SLo ${ANTIGEN} ${ANTIGEN_URL}
+	curl --create-dirs -#sSLo $ANTIGEN git.io/antigen-nightly
 fi
 
 # Load Antigen
-source ${ANTIGEN}
+source $ANTIGEN
 # Use oh-my-zsh
 antigen use oh-my-zsh
 # Load plugins
