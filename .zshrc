@@ -31,7 +31,7 @@ SAVEHIST=1000
 # Aliases
 alias g="git"
 alias tm="tmux -2 attach || tmux -2 new-session"
-alias t="${HOME}/dotfiles/scripts/todo.sh -d ${HOME}/.config/todo/config"
+alias t="${HOME}/dotfiles/scripts/todo.sh -Actd ${HOME}/.config/todo/config"
 alias v="vim"
 alias f="find . -type f -print | xargs grep"
 
