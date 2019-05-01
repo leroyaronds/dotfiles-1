@@ -1,8 +1,9 @@
 # Environment
 export EDITOR="vim"
+export TODOTXT_DEFAULT_ACTION=ls
 
 # Install Antigen if needed
-ANTIGEN="~/.antigen/antigen.zsh"
+ANTIGEN="${HOME}/.antigen/antigen.zsh"
 if [ ! -f $ANTIGEN ]; then
 	echo "Installing Antigen ..."
 	curl --create-dirs -#sSLo $ANTIGEN git.io/antigen-nightly
@@ -29,7 +30,8 @@ SAVEHIST=1000
 
 # Aliases
 alias g="git"
-alias t="tmux -2"
+alias tm="tmux -2 attach || tmux -2 new-session"
+alias t="${HOME}/dotfiles/scripts/todo.sh -d ${HOME}/.config/todo/config"
 alias v="vim"
 alias f="find . -type f -print | xargs grep"
 
