@@ -22,9 +22,9 @@ cpu_temperature 0 {
 	format = "T: %degrees°C"
 	max_threshold = 60
 	# rPI
-	path = "/sys/class/thermal/thermal_zone0/temp"
+	#path = "/sys/class/thermal/thermal_zone0/temp"
 	# Normal CPU
-	#path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
 }
 
 disk "/" {

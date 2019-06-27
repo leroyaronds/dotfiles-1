@@ -1,6 +1,7 @@
 # Environment
 export EDITOR="vim"
 export TODOTXT_DEFAULT_ACTION=ls
+export ANT_ARGS="-logger org.apache.tools.ant.listener.AnsiColorLogger -quiet"
 
 # Install Antigen if needed
 ANTIGEN="${HOME}/.antigen/antigen.zsh"
