@@ -21,5 +21,7 @@ xset s 0 dpms 0 0 600 &
 xautolock -time 5 -locker $HOME/dotfiles/scripts/lock.sh &
 # Load X resources
 xrdb -load $HOME/.Xresources &
+# Start VNC server
+x0vncserver -passwordfile $HOME/.vnc/passwd -display :0 &
 # Start Window Manager
 exec i3

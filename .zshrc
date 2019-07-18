@@ -31,6 +31,8 @@ SAVEHIST=1000
 
 # Aliases
 alias g="git"
+alias crp="cmus-remote --play"
+alias crs="cmus-remote --stop"
 alias tm="tmux -2 attach || tmux -2 new-session"
 alias t="${HOME}/dotfiles/scripts/todo.sh -Actd ${HOME}/.config/todo/config"
 alias v="vim"

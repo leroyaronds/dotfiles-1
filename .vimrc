@@ -70,6 +70,12 @@ Plug 'https://github.com/aklt/plantuml-syntax.git'
 Plug 'https://github.com/jamessan/vim-gnupg.git'
 " VimWiki
 Plug 'https://github.com/vimwiki/vimwiki.git'
+" Orgmode
+Plug 'https://github.com/jceb/vim-orgmode.git'
+" Speeddating
+Plug 'https://github.com/tpope/vim-speeddating.git'
+" Repeat
+Plug 'https://github.com/tpope/vim-repeat.git'
 call plug#end()
 
 " todo command
@@ -105,7 +111,6 @@ let wiki_personal.path = '~/wiki/personal/'
 let wiki_personal.syntax = 'markdown'
 let wiki_personal.ext = '.md'
 let wiki_personal.auto_tags = 1
-" VimWiki
 let g:vimwiki_list = [wiki_work, wiki_personal]
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
@@ -113,7 +118,6 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -126,3 +130,9 @@ let g:airline#extensions#tabline#buffer_nr_show=1
 let g:airline#extensions#whitespace#enabled=0
 " set theme
 silent! let g:airline_theme='minimalist'
+
+" Orgmode
+let g:org_todo_keywords=['TODO', 'FEEDBACK', '|', 'DONE', 'DELEGATED', 'CANCELLED']
+let g:org_agenda_files = ['~/org/work.org']
+let g:org_aggressive_conceal = 1
+

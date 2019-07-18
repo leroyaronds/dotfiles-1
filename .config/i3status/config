@@ -8,6 +8,7 @@ general {
 }
 
 order += "load"
+order += "memory"
 order += "cpu_temperature 0"
 order += "disk /"
 order += "ethernet _first_"
@@ -16,6 +17,13 @@ order += "time"
 
 load {
 	format = "L: %1min"
+}
+
+memory {
+	format = "M: %used"
+	memory_used_method = classical
+	threshold_degraded = 80%
+	threshold_critical = 10%
 }
 
 cpu_temperature 0 {
