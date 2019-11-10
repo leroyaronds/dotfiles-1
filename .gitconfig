@@ -48,3 +48,4 @@
 	rp = remote prune origin
 	rmr = "!git branch -vv | grep ' none]' | awk '{print $1}' | xargs git branch -d"
 	up = "!git add -A && git commit -m \"changes from $(uname -n) on $(date '+%d-%m-%Y @ %H:%M:%S')\" && git push"
+	lines = "!git ls-files | xargs wc -l"
