@@ -22,7 +22,7 @@ load {
 memory {
 	format = "M: %used"
 	memory_used_method = classical
-	threshold_degraded = 80%
+	threshold_degraded = 50%
 	threshold_critical = 10%
 }
 
