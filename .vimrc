@@ -15,7 +15,7 @@ set number
 " disable unloading of buffers
 set hidden
 " set shorter delays
-set timeoutlen=1000 ttimeoutlen=10
+set timeoutlen=1000 ttimeoutlen=10 updatetime=100
 " remove current mode status
 set noshowmode
 " disable code folding
@@ -26,9 +26,6 @@ set tabpagemax=50
 set scrolloff=10
 " turn off alt shortcuts
 set winaltkeys=no
-
-" auto reload vimrc when editing it
-autocmd! BufWritePost .vimrc source ~/.vimrc
 
 " disable annoying sound on errors
 set noerrorbells
@@ -53,6 +50,8 @@ else
 	Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 	" Fugitive (Git)
 	Plug 'https://github.com/tpope/vim-fugitive.git'
+	" GitGutter (Git diff)
+	Plug 'https://github.com/airblade/vim-gitgutter'
 	" Todo (Todo.txt)
 	Plug 'https://github.com/freitass/todo.txt-vim.git'
 	" Syntastic (Syntax checking)
