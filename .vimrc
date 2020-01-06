@@ -41,42 +41,36 @@ filetype plugin indent on
 " Install vim-plug if not available
 if empty(glob("~/.vim/autoload/plug.vim"))
 	execute '!curl --create-dirs -SLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+else
+	" Start vim-plug manager
+	call plug#begin('~/.vim/plugged') 
+	" Jellybeans (Theme)
+	Plug 'https://github.com/nanotech/jellybeans.vim.git'
+	" Airline (Status bar)
+	Plug 'https://github.com/vim-airline/vim-airline.git'
+	Plug 'https://github.com/vim-airline/vim-airline-themes.git'
+	" CtrlP (File browser)
+	Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+	" Fugitive (Git)
+	Plug 'https://github.com/tpope/vim-fugitive.git'
+	" Todo (Todo.txt)
+	Plug 'https://github.com/freitass/todo.txt-vim.git'
+	" Syntastic (Syntax checking)
+	Plug 'https://github.com/vim-syntastic/syntastic'
+	" Puppet (Puppet)
+	Plug 'https://github.com/rodjek/vim-puppet.git'
+	" Tabular (Identing shortcuts)
+	Plug 'https://github.com/godlygeek/tabular.git'
+	" Markdown (Markdown preview)
+	Plug 'https://github.com/plasticboy/vim-markdown.git'
+	" GPG (GPG encrypt/decrypt)
+	Plug 'https://github.com/jamessan/vim-gnupg.git'
+	" Speeddating (Fast datetime insert)
+	Plug 'https://github.com/tpope/vim-speeddating.git'
+	" Repeat (Enabled repeat for plugins)
+	Plug 'https://github.com/tpope/vim-repeat.git'
+	call plug#end()
 endif
-
-" Start vim-plug manager
-call plug#begin('~/.vim/plugged') 
-" Jellybeans theme
-Plug 'https://github.com/nanotech/jellybeans.vim.git'
-" Airline
-Plug 'https://github.com/vim-airline/vim-airline.git'
-Plug 'https://github.com/vim-airline/vim-airline-themes.git'
-" CtrlP
-Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
-" Fugitive - Git for airline
-Plug 'https://github.com/tpope/vim-fugitive.git'
-" Todo
-Plug 'https://github.com/freitass/todo.txt-vim.git'
-" Syntastic
-Plug 'https://github.com/vim-syntastic/syntastic'
-" Puppet
-Plug 'https://github.com/rodjek/vim-puppet.git'
-" Tabular
-Plug 'https://github.com/godlygeek/tabular.git'
-" Markdown
-Plug 'https://github.com/plasticboy/vim-markdown.git'
-" PlantUML
-Plug 'https://github.com/aklt/plantuml-syntax.git'
-" GPG
-Plug 'https://github.com/jamessan/vim-gnupg.git'
-" VimWiki
-Plug 'https://github.com/vimwiki/vimwiki.git'
-" Orgmode
-Plug 'https://github.com/jceb/vim-orgmode.git'
-" Speeddating
-Plug 'https://github.com/tpope/vim-speeddating.git'
-" Repeat
-Plug 'https://github.com/tpope/vim-repeat.git'
-call plug#end()
 
 " todo command
 command! Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
@@ -100,20 +94,6 @@ set colorcolumn=110
 " set colorscheme
 silent! colorscheme jellybeans
 
-" VimWiki wiki defines
-let wiki_work = {}
-let wiki_work.path = '~/repositories/docs.wiki/'
-let wiki_work.syntax = 'markdown'
-let wiki_work.ext = '.md'
-let wiki_work.auto_tags = 1
-let wiki_personal = {}
-let wiki_personal.path = '~/wiki/personal/'
-let wiki_personal.syntax = 'markdown'
-let wiki_personal.ext = '.md'
-let wiki_personal.auto_tags = 1
-let g:vimwiki_list = [wiki_work, wiki_personal]
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -130,9 +110,4 @@ let g:airline#extensions#tabline#buffer_nr_show=1
 let g:airline#extensions#whitespace#enabled=0
 " set theme
 silent! let g:airline_theme='minimalist'
-
-" Orgmode
-let g:org_todo_keywords=['TODO', 'FEEDBACK', '|', 'DONE', 'DELEGATED', 'CANCELLED']
-let g:org_agenda_files = ['~/org/work.org']
-let g:org_aggressive_conceal = 1
 
