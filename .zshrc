@@ -1,7 +1,5 @@
 # Environment
 export EDITOR="vim"
-export TODOTXT_DEFAULT_ACTION=ls
-export ANT_ARGS="-logger org.apache.tools.ant.listener.AnsiColorLogger -quiet"
 
 # Install Antigen if needed
 ANTIGEN="${HOME}/.antigen/antigen.zsh"
@@ -15,8 +13,6 @@ source $ANTIGEN
 # Use oh-my-zsh
 antigen use oh-my-zsh
 # Load plugins
-antigen bundle docker-compose
-antigen bundle kubectl
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 # Set theme
@@ -31,19 +27,17 @@ SAVEHIST=1000
 
 # Aliases
 alias g="git"
-alias crp="cmus-remote --play"
-alias crs="cmus-remote --stop"
-alias tm="tmux -2 attach || tmux -2 new-session"
-alias t="${HOME}/dotfiles/scripts/todo.sh -Actd ${HOME}/.config/todo/config"
+alias ll="ls -l"
 alias v="vim"
-alias f="find . -type f -print | xargs grep"
 
 # Set GPG password prompt to current TTY
-if command -v gpg-connect-agent >/dev/null; then
-	gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
-fi
+#if command -v gpg-connect-agent >/dev/null; then
+#	gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
+#fi
 
 # Export SSH socket to GPG agent
 if command -v gpgconf >/dev/null; then
+	export GPG_TTY="$(tty)"
 	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+	gpgconf --launch gpg-agent
 fi
