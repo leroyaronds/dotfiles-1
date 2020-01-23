@@ -14,7 +14,7 @@ $APT autoremove
 $APT autoclean
 
 # Install packages
-apt-get install feh git i3 rxvt-unicode scdaemon vim xautolock zsh
+apt-get install feh git i3 rxvt-unicode scdaemon vim xautolock xbacklight zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig $HOME/.gitconfig
@@ -23,20 +23,29 @@ ln --symbolic ../.vimrc $HOME/.vimrc
 ln --symbolic ../.xinitrc $HOME/.xinitrc
 ln --symbolic ../.Xrecources $HOME/.Xresources
 ln --symbolic ../.zshrc $HOME/.zshrc
+ln --symbolic ../.config/i3 $HOME/.config/i3
+ln --symbolic ../.config/i3status $HOME/.config/i3status
+ln --symbolic ../.config/dunst $HOME/.config/dunst
 
 # Change shell
 chsh --shell /usr/bin/zsh
 
-# Enable tap to click
+# Enable 'tap to click' and 'brightness control'
 mkdir -f /etc/X11/xorg.conf.d
-cat >"/etc/X11/xorg.conf.d/30-touchpad.conf" <<EOL
+cat >"/etc/X11/xorg.conf.d/10-surface.conf" <<EOL
+Section "Device"
+  Identifier "Device0"
+  Driver     "intel"
+  Option     "Backlight" "intel_backlight"
+EndSection
+
 Section "InputClass"
-Identifier "touchpad"
-Driver "libinput"
+  Identifier      "touchpad"
+  Driver          "libinput"
   MatchIsTouchpad "on"
-  Option "Tapping" "on"
-  Option "NaturalScrolling" "off"
-  Option "ClickMethod" "clickfinger"
+  Option          "Tapping" "on"
+  Option          "NaturalScrolling" "off"
+  Option          "ClickMethod" "clickfinger"
 EndSection
 EOL
 
