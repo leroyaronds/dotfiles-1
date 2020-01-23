@@ -13,6 +13,7 @@ order += "cpu_temperature 0"
 order += "disk /"
 order += "ethernet _first_"
 order += "wireless _first_"
+order += "battery all"
 order += "time"
 
 load {
@@ -29,10 +30,7 @@ memory {
 cpu_temperature 0 {
 	format = "T: %degrees°C"
 	max_threshold = 60
-	# rPI
-	#path = "/sys/class/thermal/thermal_zone0/temp"
-	# Normal CPU
-	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input"
 }
 
 disk "/" {
@@ -46,6 +44,17 @@ ethernet _first_ {
 
 wireless _first_ {
 	format_up = "W: %ip"
+	format_down = ""
+}
+
+battery all {
+	format = "P: %remaining [%status]"
+	low_threshold = 30
+	threshold_type = time
+	status_chr = CHR
+	status_bat = BAT
+	status_unk = ?
+	status_full = FULL
 	format_down = ""
 }
 
