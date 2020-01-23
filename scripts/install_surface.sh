@@ -14,7 +14,7 @@ $APT autoremove
 $APT autoclean
 
 # Install packages
-apt-get install feh git i3 rxvt-unicode scdaemon vim zsh
+apt-get install feh git i3 rxvt-unicode scdaemon vim xautolock zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig $HOME/.gitconfig
