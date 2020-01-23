@@ -27,6 +27,19 @@ ln --symbolic ../.zshrc $HOME/.zshrc
 # Change shell
 chsh --shell /usr/bin/zsh
 
+# Enable tap to click
+mkdir -f /etc/X11/xorg.conf.d
+cat >"/etc/X11/xorg.conf.d/30-touchpad.conf" <<EOL
+Section "InputClass"
+Identifier "touchpad"
+Driver "libinput"
+  MatchIsTouchpad "on"
+  Option "Tapping" "on"
+  Option "NaturalScrolling" "off"
+  Option "ClickMethod" "clickfinger"
+EndSection
+EOL
+
 # Remove kernel splash and enable login shell (Remove 'splash' and 'quiet')
 # vim /etc/default/grub
 # update-grub2
