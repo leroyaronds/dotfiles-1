@@ -26,3 +26,7 @@ ln --symbolic ../.zshrc $HOME/.zshrc
 
 # Change shell
 chsh --shell /usr/bin/zsh
+
+# Remove kernel splash and enable login shell (Remove 'splash' and 'quiet')
+# vim /etc/default/grub
+# update-grub2
