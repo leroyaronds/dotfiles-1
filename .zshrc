@@ -30,11 +30,6 @@ alias g="git"
 alias ll="ls -l"
 alias v="vim"
 
-# Set GPG password prompt to current TTY
-#if command -v gpg-connect-agent >/dev/null; then
-#	gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
-#fi
-
 # Export SSH socket to GPG agent
 if command -v gpgconf >/dev/null; then
 	export GPG_TTY="$(tty)"
