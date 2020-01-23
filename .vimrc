@@ -34,6 +34,9 @@ set vb t_vb=
 
 syntax on
 filetype plugin indent on
+" show special chars
+set list
+set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
 
 " Install vim-plug if not available
 if empty(glob("~/.vim/autoload/plug.vim"))
