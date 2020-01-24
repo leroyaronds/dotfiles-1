@@ -7,4 +7,4 @@ if command -v cmus-remote >/dev/null; then
 fi
 
 # Lock screen
-i3lock -c 000000 -f -n
+i3lock -c 000000 -f -n &

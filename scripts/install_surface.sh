@@ -14,7 +14,7 @@ $APT autoremove
 $APT autoclean
 
 # Install packages
-apt-get install cpufrequtils feh git i3 resolvconf rxvt-unicode scdaemon vim wireguard xautolock xbacklight zsh
+apt-get install cmus cpufrequtils feh git i3 mutt resolvconf rxvt-unicode scdaemon scrot vim wireguard xautolock xbacklight zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig $HOME/.gitconfig
