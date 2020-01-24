@@ -158,6 +158,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl -- set-sink-volume 0 +5
 bindsym XF86AudioLowerVolume exec --no-startup-id "pactl -- set-sink-volume 0 -5%; notify-send 'Volume DOWN'"
 bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle; notify-send 'Volume MUTE'"
 
+# play/pause
+bindsym XF86AudioPlay exec --no-startup-id "cmus-remote --pause"
+
 # screen brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 20; notify-send 'Brightness UP'"
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 20; notify-send 'Brightness DOWN'"
