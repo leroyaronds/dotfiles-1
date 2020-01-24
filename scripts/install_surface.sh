@@ -9,12 +9,12 @@ APT="apt --quiet --assume-yes --no-install-recommends"
 [ "$UID" -eq 0 ] || exec sudo "$0" "$@"
 
 # Remove pre installed packages
-$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups rsyslog
+$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups openvpn rsyslog thermald unattended-upgrades
 $APT autoremove
 $APT autoclean
 
 # Install packages
-apt-get install feh git i3 rxvt-unicode scdaemon vim xautolock xbacklight zsh
+apt-get install cpufrequtils feh git i3 resolvconf rxvt-unicode scdaemon vim wireguard xautolock xbacklight zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig $HOME/.gitconfig
@@ -48,6 +48,16 @@ Section "InputClass"
   Option          "ClickMethod" "clickfinger"
 EndSection
 EOL
+
+# Set CPU goverer to 'performance'
+cat >"/etc/default/cpufrequtils" <<EOL
+GOVERNOR="performance"
+MIN_SPEED="1000MHz"
+MAX_SPEED="1600MHz"
+EOL
+
+# Disable ondemand CPU scaling
+systemctl disable ondemand
 
 # Remove kernel splash and enable login shell (Remove 'splash' and 'quiet')
 # vim /etc/default/grub
