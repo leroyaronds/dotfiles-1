@@ -9,7 +9,7 @@ APT="apt --quiet --assume-yes --no-install-recommends"
 [ "$UID" -eq 0 ] || exec sudo "$0" "$@"
 
 # Remove pre installed packages
-$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups openvpn rsyslog thermald unattended-upgrades
+$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups openvpn plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text rsyslog thermald unattended-upgrades
 $APT autoremove
 $APT autoclean
 
