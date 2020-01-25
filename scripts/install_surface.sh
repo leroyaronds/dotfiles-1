@@ -17,7 +17,8 @@ APT="apt --quiet --assume-yes --no-install-recommends"
 # unattended-upgrades - Autmatic background update daemon
 # snapd - Extra package manager
 # thermald - Thermal manager CPU manager
-$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups openvpn plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text rsyslog thermald unattended-upgrades
+# xserver-xorg-video-intel - ** Intel driver which is causing screen FREEZES! (Removing this fixed the freezes) **
+$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups openvpn plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text thermald unattended-upgrades xserver-xorg-video-intel
 $APT autoremove
 $APT autoclean
 
