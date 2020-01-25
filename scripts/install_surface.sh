@@ -8,13 +8,21 @@ APT="apt --quiet --assume-yes --no-install-recommends"
 # Elevate permissions
 [ "$UID" -eq 0 ] || exec sudo "$0" "$@"
 
-# Remove pre installed packages
+# Remove installed packages
+#
+# bluez - Bluetooth
+# cups - Printer
+# gdm3 - Graphical login manager
+# plymouth-theme-* - Stupid PURPLE ubuntu grub splashscreen
+# unattended-upgrades - Autmatic background update daemon
+# snapd - Extra package manager
+# thermald - Thermal manager CPU manager
 $APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups openvpn plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text rsyslog thermald unattended-upgrades
 $APT autoremove
 $APT autoclean
 
 # Install packages
-apt-get install cmus cpufrequtils feh git i3 mutt resolvconf rxvt-unicode scdaemon scrot vim wireguard xautolock xbacklight zsh
+apt-get install cmus cpufrequtils feh git gpg i3 linux-headers-$(uname -r) mutt resolvconf rxvt-unicode scdaemon scrot vim wireguard xautolock xbacklight zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig $HOME/.gitconfig
