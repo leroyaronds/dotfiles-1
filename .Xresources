@@ -92,8 +92,6 @@ URxvt*keysym.S-F11:          \033[23;2~
 URxvt*keysym.S-F12:          \033[24;2~
 URxvt*keysym.Shift-Up:       command:\033]720;1\007
 URxvt*keysym.Shift-Down:     command:\033]721;1\007
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 URxvt*iso14755:              false
 URxvt*iso14755_52:           false

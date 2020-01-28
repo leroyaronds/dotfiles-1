@@ -18,12 +18,12 @@ APT="apt --quiet --assume-yes --no-install-recommends"
 # snapd - Extra package manager
 # thermald - Thermal manager CPU manager
 # xserver-xorg-video-intel - ** Intel driver which is causing screen FREEZES! (Removing this fixed the freezes) **
-$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups openvpn plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text thermald unattended-upgrades xserver-xorg-video-intel
+$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text thermald unattended-upgrades xserver-xorg-video-intel
 $APT autoremove
 $APT autoclean
 
 # Install packages
-apt-get install cmus cpufrequtils feh git gpg i3 libgfshare-bin linux-headers-$(uname -r) mutt resolvconf rxvt-unicode scdaemon scrot vim wireguard xautolock xbacklight zsh
+apt-get install brightnessctl cmus cpufrequtils feh git gpg i3 libgfshare-bin linux-headers-$(uname -r) mutt resolvconf rxvt-unicode scdaemon scrot vim wireguard xautolock zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig $HOME/.gitconfig
@@ -39,30 +39,11 @@ ln --symbolic ../.config/dunst $HOME/.config/dunst
 # Change shell
 chsh --shell /usr/bin/zsh
 
-# Enable 'tap to click' and 'brightness control'
-mkdir -f /etc/X11/xorg.conf.d
-cat >"/etc/X11/xorg.conf.d/10-surface.conf" <<EOL
-Section "Device"
-  Identifier "Device0"
-  Driver     "intel"
-  Option     "Backlight" "intel_backlight"
-EndSection
-
-Section "InputClass"
-  Identifier      "touchpad"
-  Driver          "libinput"
-  MatchIsTouchpad "on"
-  Option          "Tapping" "on"
-  Option          "NaturalScrolling" "off"
-  Option          "ClickMethod" "clickfinger"
-EndSection
-EOL
-
 # Set CPU goverer to 'performance'
 cat >"/etc/default/cpufrequtils" <<EOL
-GOVERNOR="performance"
-MIN_SPEED="1000MHz"
-MAX_SPEED="1600MHz"
+GOVERNOR="powersave"
+MIN_SPEED="400MHz"
+MAX_SPEED="1000MHz"
 EOL
 
 # Disable ondemand CPU scaling
