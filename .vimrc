@@ -76,6 +76,8 @@ endif
 
 " todo command
 command! Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
+" create readable JSON view
+command! ShowJSON %!python -m json.tool
 
 " set netrw defaults
 let g:netrw_banner=0
