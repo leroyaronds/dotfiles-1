@@ -23,18 +23,15 @@ $APT autoremove
 $APT autoclean
 
 # Install packages
-apt-get install brightnessctl cmus cpufrequtils feh git gpg i3 libgfshare-bin linux-headers-$(uname -r) mutt resolvconf rxvt-unicode scdaemon scrot vim wireguard xautolock zsh
+$APT install brightnessctl cmus cpufrequtils git gpg i3status libgfshare-bin linux-headers-$(uname -r) mutt pinentry-qt resolvconf rxvt-unicode scdaemon sway vim wireguard wpasupplicant zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig $HOME/.gitconfig
 ln --symbolic ../.gitignore $HOME/.gitignore
 ln --symbolic ../.vimrc $HOME/.vimrc
-ln --symbolic ../.xinitrc $HOME/.xinitrc
-ln --symbolic ../.Xrecources $HOME/.Xresources
 ln --symbolic ../.zshrc $HOME/.zshrc
-ln --symbolic ../.config/i3 $HOME/.config/i3
+ln --symbolic ../.config/sway $HOME/.config/sway
 ln --symbolic ../.config/i3status $HOME/.config/i3status
-ln --symbolic ../.config/dunst $HOME/.config/dunst
 
 # Change shell
 chsh --shell /usr/bin/zsh
