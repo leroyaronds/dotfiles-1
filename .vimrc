@@ -80,9 +80,8 @@ command! Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
 command! ShowJSON %!python -m json.tool
 
 " date/time shortcuts
-noremap! <expr> ,t strftime("%H:%M")
-noremap! <expr> ,d strftime("%Y-%m-%d")
-noremap! <expr> ,l strftime("%Y-%m-%d @ %H:%M")
+inoremap <script> <silent> <buffer> time<Tab> <C-R>=strftime("%H:%M")<CR>
+inoremap <script> <silent> <buffer> date<Tab> <C-R>=strftime("%Y-%m-%d")<CR>
 
 " set netrw defaults
 let g:netrw_banner=0
