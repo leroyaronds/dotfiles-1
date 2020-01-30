@@ -79,6 +79,11 @@ command! Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
 " create readable JSON view
 command! ShowJSON %!python -m json.tool
 
+" date/time shortcuts
+noremap! <expr> ,t strftime("%H:%M")
+noremap! <expr> ,d strftime("%Y-%m-%d")
+noremap! <expr> ,l strftime("%Y-%m-%d @ %H:%M")
+
 " set netrw defaults
 let g:netrw_banner=0
 let g:netrw_liststyle=3
