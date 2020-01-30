@@ -28,6 +28,7 @@ SAVEHIST=1000
 # Aliases
 alias g="git"
 alias ll="ls -l"
+alias t="vim ~/todo.txt"
 alias v="vim"
 
 # Export SSH socket to GPG agent
