@@ -8,10 +8,10 @@
 set $mod Mod4
 #
 # Device lock
-set $lock swaylock -c 0000 -f -F
+set $lock swaylock -c 000000 -f -F
 #
 # Terminal
-set $term kitty
+set $term kitty #urxvtc
 #
 # Application launcher
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
@@ -43,7 +43,7 @@ floating_modifier $mod
 # No mouse focus
 focus_follows_mouse no
 
-## Input
+## Inputs
 #
 # [swaymsg -t get_inputs]
 #
@@ -52,6 +52,20 @@ input "1118:2415:Microsoft_Surface_Type_Cover_Touchpad" {
     tap enabled
     natural_scroll disabled
 }
+
+## Outputs
+#
+# [swaymsg -t get_outputs]
+#
+# Primary screen
+set $surface_screen eDP-1
+output $surface_screen scale 1.25
+bindswitch --reload lid:on output $surface_screen disable
+bindswitch --reload lid:off output $surface_screen enable
+#
+# Docking station
+set $docking_screen HDMI1
+#output $docking_screen resolution 1920x1200 position 1920,0
 
 ## Key bindings
 #
@@ -69,9 +83,6 @@ bindsym $mod+b bar mode toggle
 #
 # Reload the configuration file
 bindsym $mod+Shift+c reload
-#
-# Restart sway
-bindsym $mod+Shift+r restart
 #
 # Move focus
 bindsym $mod+h focus left
@@ -184,9 +195,20 @@ bar {
 
 ## Scratchpad
 #
-exec $term -name scratch-term
-for_window [instance="scratch-term"] floating enable, move to scratchpad
-bindsym $mod+t [instance="scratch-term"] scratchpad show
+# Move window to scratchpad
+bindsym $mod+Shift+grave move scratchpad
+#
+# Show scratchpad
+bindsym $mod+grave scratchpad show
+
+## Application manipulations
+#
+#for_window [app_id="^scratch-term$"] floating enable, move to scratchpad
+#exec $term --name=scratch-term
+#bindsym $mod+t [app_id="^scratch-term$"] scratchpad show
+#
+#bindsym $mod+u exec termite --name=launcher -e "bash -c 'compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec'"
+#for_window [app_id="^launcher$"] floating enable, border none
 
 ## Idle configuration
 #
@@ -196,11 +218,8 @@ exec swayidle -w \
     resume 'swaymsg "output * dpms on"' \
     before-sleep $lock
 
-## Set display scaling
-#
-Output eDP-1 scale 1.25
-
 # Start URXVT daemon
 #exec urxvtd -q -o -f &
-# Load X resources
+# Load X resources for URXVT
 #exec xrdb -load ~/.Xresources &
+
