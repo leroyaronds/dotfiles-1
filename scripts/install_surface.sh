@@ -23,15 +23,17 @@ $APT autoremove
 $APT autoclean
 
 # Install packages
-$APT install brightnessctl cmus cpufrequtils git gpg i3status libgfshare-bin linux-headers-$(uname -r) mutt pinentry-qt resolvconf rxvt-unicode scdaemon sway vim wireguard wpasupplicant zsh
+$APT install brightnessctl cmus cpufrequtils git gpg i3status libgfshare-bin linux-headers-$(uname -r) mutt resolvconf kitty scdaemon sway swayidle swaylock tomb vim wireguard wpasupplicant zsh
 
 # Create symbolic links to dotfiles
-ln --symbolic ../.gitconfig $HOME/.gitconfig
-ln --symbolic ../.gitignore $HOME/.gitignore
-ln --symbolic ../.vimrc $HOME/.vimrc
-ln --symbolic ../.zshrc $HOME/.zshrc
-ln --symbolic ../.config/sway $HOME/.config/sway
-ln --symbolic ../.config/i3status $HOME/.config/i3status
+ln --symbolic ../.gitconfig ~/.gitconfig
+ln --symbolic ../.gitignore ~/.gitignore
+ln --symbolic ../.vimrc ~/.vimrc
+ln --symbolic ../.zshenv ~/.zshenv
+ln --symbolic ../.zshrc ~/.zshrc
+ln --symbolic ../.config/sway ~/.config/sway
+ln --symbolic ../.config/i3status ~/.config/i3status
+ln --symbolic ../.config/kitty ~/.config/kitty
 
 # Change shell
 chsh --shell /usr/bin/zsh
@@ -40,7 +42,7 @@ chsh --shell /usr/bin/zsh
 cat >"/etc/default/cpufrequtils" <<EOL
 GOVERNOR="powersave"
 MIN_SPEED="400MHz"
-MAX_SPEED="1000MHz"
+MAX_SPEED="1600MHz"
 EOL
 
 # Disable ondemand CPU scaling
