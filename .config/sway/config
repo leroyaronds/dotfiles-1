@@ -13,8 +13,8 @@ set $lock swaylock -c 000000 -f -F && cmus-remote --stop
 # Terminal
 set $term kitty
 #
-# Application launcher
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# Browser
+set $browser firefox
 
 ## General
 #
@@ -72,8 +72,8 @@ set $docking_screen HDMI1
 # Start a terminal
 bindsym $mod+Return exec $term
 #
-# Start your launcher
-bindsym $mod+d exec $menu
+# Start internet browser
+bindsym $mod+i exec $browser
 #
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -193,21 +193,18 @@ bar {
     status_command i3status
 }
 
-## Scratchpad
+## Scratchpad terminal
 #
-# Move window to scratchpad
-bindsym $mod+Shift+grave move scratchpad
-#
-# Show scratchpad
-bindsym $mod+grave scratchpad show
+exec $term --class=kitty-scratch
+for_window [app_id="kitty-scratch"] floating enable, resize set height 500 px, resize set width 800 px, move position center, move scratchpad
+bindsym $mod+t [app_id="kitty-scratch"] scratchpad show
 
 ## Application manipulations
 #
 # [swaymsg -t get_tree]
 #
-exec $term --class=kitty-scratch
-for_window [app_id="kitty-scratch"] floating enable, resize set height 500 px, resize set width 800 px, move position center, move scratchpad
-bindsym $mod+t [app_id="kitty-scratch"] scratchpad show
+# Always move Firefox to workspace 1
+for_window [app_id="firefox"] move workspace 1
 
 ## Idle configuration
 #
