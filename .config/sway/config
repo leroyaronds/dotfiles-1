@@ -195,7 +195,7 @@ bar {
 
 ## Scratchpad terminal
 #
-exec $term --class=kitty-scratch
+exec $term --class=kitty-scratch --override background_opacity=0.8
 for_window [app_id="kitty-scratch"] floating enable, resize set height 500 px, resize set width 800 px, move position center, move scratchpad
 bindsym $mod+t [app_id="kitty-scratch"] scratchpad show
 
