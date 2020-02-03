@@ -6,7 +6,7 @@
 set $mod Mod4
 
 # terminal
-set $terminal urxvtc
+set $terminal kitty
 # screen locker command
 set $locker ~/dotfiles/scripts/lock.sh
 
@@ -27,7 +27,7 @@ client.background       #ffffff
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id $terminal
+bindsym $mod+Return exec $terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
