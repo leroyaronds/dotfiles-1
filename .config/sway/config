@@ -2,6 +2,9 @@
 # Sway config #
 ###############
 
+# Disable Xwayland
+xwayland disable
+
 ## Variables
 #
 # Modifier key
