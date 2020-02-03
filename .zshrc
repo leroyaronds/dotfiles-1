@@ -1,6 +1,3 @@
-# Environment
-export EDITOR="vim"
-
 # Install Antigen if needed
 ANTIGEN="${HOME}/.antigen/antigen.zsh"
 if [ ! -f $ANTIGEN ]; then
@@ -22,18 +19,19 @@ antigen apply
 
 # History
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=2000
+SAVEHIST=2000
 
 # Aliases
 alias g="git"
+alias k="kubectl"
 alias ll="ls -l"
 alias t="vim ~/todo.txt"
 alias v="vim"
 
-# Export SSH socket to GPG agent
-if command -v gpgconf >/dev/null; then
+# Update GPG agent and socket
+if command -v gpg-connect-agent >/dev/null; then
 	export GPG_TTY="$(tty)"
 	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-	gpgconf --launch gpg-agent
+	gpg-connect-agent updatestartuptty /bye >/dev/null
 fi
