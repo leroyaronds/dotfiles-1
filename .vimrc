@@ -2,6 +2,8 @@
 set t_Co=256
 " encoding utf-8
 set encoding=utf-8
+" fix background color bug
+let &t_ut=''
 " not compatible with the old-fashion vi mode
 set nocompatible
 " no backup or swap, autoread file when external edited
