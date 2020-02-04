@@ -12,4 +12,4 @@ export XDG_DATA_HOME=$HOME/.local/share
 export MOZ_ENABLE_WAYLAND=1
 # Set WAYLAND backend
 #export GDK_BACKEND=wayland
-#export QT_QPA_PLATFORM=wayland-egl
+export QT_QPA_PLATFORM=wayland-egl
