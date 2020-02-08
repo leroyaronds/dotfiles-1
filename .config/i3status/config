@@ -1,9 +1,9 @@
 general {
 	output_format = "i3bar"
 	colors = true
-	color_good = "#00AA00"
-	color_degraded = "#AAAA00"
-	color_bad = "#AA0000"
+	color_good = "#008800"
+	color_degraded = "#888800"
+	color_bad = "#880000"
 	interval = 10
 }
 
@@ -49,7 +49,7 @@ wireless _first_ {
 }
 
 path_exists WG {
-	format = "%title: %status"
+	format = "[%title]"
 	format_down = ""
 	path = "/proc/sys/net/ipv4/conf/wg0"
 }

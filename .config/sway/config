@@ -197,8 +197,17 @@ bindsym XF86MonBrightnessDown exec "brightnessctl s 20%-"
 bar {
     position top
     tray_output none
-    font pango: DejaVu Sans Mono bold 10
     status_command i3status
+    colors {
+        # Text
+        statusline #888888
+        # Background
+        background #000000
+        # Separator
+        separator #000088
+    }
+    separator_symbol " "
+    font pango:DejaVu Sans Mono bold 10
 }
 
 ## Scratchpad terminal
