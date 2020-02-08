@@ -45,6 +45,9 @@ MIN_SPEED="400MHz"
 MAX_SPEED="1600MHz"
 EOL
 
+# Add user to 'video' group to allow brightness control
+usermod -aG video $USER
+
 # Disable ondemand CPU scaling
 systemctl disable ondemand
 
