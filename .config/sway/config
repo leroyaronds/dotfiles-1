@@ -72,6 +72,11 @@ set $docking_screen HDMI1
 
 ## Key bindings
 #
+# Application launcher
+set $menu compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec
+bindsym $mod+d exec $term --class kitty-menu --override background_opacity=0.8 /bin/bash -c '$menu'
+for_window [app_id="kitty-menu"] floating enable, resize set height 250 px, resize set width 800 px, move position center
+#
 # Start a terminal
 bindsym $mod+Return exec $term
 #
@@ -192,13 +197,22 @@ bindsym XF86MonBrightnessDown exec "brightnessctl s 20%-"
 bar {
     position top
     tray_output none
-    font pango: DejaVu Sans Mono bold 10
     status_command i3status
+    colors {
+        # Text
+        statusline #888888
+        # Background
+        background #000000
+        # Separator
+        separator #000088
+    }
+    separator_symbol " "
+    font pango:DejaVu Sans Mono bold 10
 }
 
 ## Scratchpad terminal
 #
-exec $term --class=kitty-scratch --override background_opacity=0.8
+exec $term --class kitty-scratch --override background_opacity=0.8
 for_window [app_id="kitty-scratch"] floating enable, resize set height 500 px, resize set width 800 px, move position center, move scratchpad
 bindsym $mod+t [app_id="kitty-scratch"] scratchpad show
 
