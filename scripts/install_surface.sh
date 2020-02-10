@@ -23,7 +23,7 @@ $APT autoremove
 $APT autoclean
 
 # Install packages
-$APT install brightnessctl cmus cpufrequtils git gpg i3status libgfshare-bin linux-headers-$(uname -r) mutt resolvconf kitty scdaemon sway swayidle swaylock tomb vim wireguard wpasupplicant zsh
+$APT install brightnessctl cmus cpufrequtils git gpg i3status kitty libgfshare-bin linux-headers-$(uname -r) mutt qrencode pinentry-tty resolvconf scdaemon steghide sway swayidle swaylock tomb vim wireguard wpasupplicant zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig ~/.gitconfig

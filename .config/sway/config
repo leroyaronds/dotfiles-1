@@ -204,7 +204,7 @@ bar {
         # Background
         background #000000
         # Separator
-        separator #000088
+        separator #888888
     }
     separator_symbol " "
     font pango:DejaVu Sans Mono bold 10
