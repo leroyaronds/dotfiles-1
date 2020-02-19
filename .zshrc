@@ -23,11 +23,10 @@ HISTSIZE=2000
 SAVEHIST=2000
 
 # Aliases
-alias g="git"
-alias k="kubectl"
-alias ll="ls -l"
-alias t="vim ~/todo.txt"
-alias v="vim"
+alias g='git'
+alias k='kubectl'
+alias t='vim ~/todo.txt'
+alias v='vim'
 
 # Update GPG agent and socket
 if command -v gpg-connect-agent >/dev/null; then
