@@ -56,6 +56,11 @@ input "1118:2415:Microsoft_Surface_Type_Cover_Touchpad" {
     natural_scroll disabled
 }
 
+# Surface GO mouse (Disabled: conflicting with Touchpad)
+input "1118:2415:Microsoft_Surface_Type_Cover_Mouse" {
+    events disabled
+}
+
 ## Outputs
 #
 # [swaymsg -t get_outputs]
