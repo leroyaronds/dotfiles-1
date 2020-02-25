@@ -51,6 +51,9 @@ usermod -aG video $USER
 # Disable ondemand CPU scaling
 systemctl disable ondemand
 
+# Fix mouse pointer in Firefox
+gsettings set org.gnome.desktop.interface cursor-theme 'DMZ-White'
+
 # Remove kernel splash and enable login shell (Remove 'splash' and 'quiet')
 # vim /etc/default/grub
 # update-grub2
