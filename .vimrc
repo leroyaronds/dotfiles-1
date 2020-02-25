@@ -114,6 +114,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_puppet_checkers=['puppetlint']
 
+" Ctrl P
+let g:ctrlp_show_hidden = 1
+
 " Airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#buffer_nr_show=1
