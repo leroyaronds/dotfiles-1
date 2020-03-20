@@ -8,6 +8,13 @@ APT="apt --quiet --assume-yes --no-install-recommends"
 # Elevate permissions
 [ "$UID" -eq 0 ] || exec sudo "$0" "$@"
 
+# Fix ath10k
+curl http://www.killernetworking.com/support/K1535_Debian/board.bin > board.bin
+rm /lib/firmware/ath10k/QCA6174/hw2.1/board*
+cp board.bin /lib/firmware/ath10k/QCA6174/hw2.1/
+rm /lib/firmware/ath10k/QCA6174/hw3.0/board*
+cp board.bin /lib/firmware/ath10k/QCA6174/hw3.0/
+
 # Remove installed packages
 #
 # bluez - Bluetooth
