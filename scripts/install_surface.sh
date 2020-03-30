@@ -30,7 +30,7 @@ $APT autoremove
 $APT autoclean
 
 # Install packages
-$APT install brightnessctl cmus cpufrequtils git gpg i3status kitty libgfshare-bin linux-headers-$(uname -r) mutt qrencode pinentry-curses resolvconf scdaemon steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wlfreerdp wpasupplicant zbar-tools zsh
+$APT install brightnessctl cmus cpufrequtils git gpg i3status kitty libgfshare-bin linux-headers-$(uname -r) mutt qrencode pinentry-curses pinentry-gnome3 resolvconf scdaemon steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wlfreerdp wpasupplicant zbar-tools zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig ~/.gitconfig
@@ -68,7 +68,7 @@ EOL
 gsettings set org.gnome.desktop.interface cursor-theme 'DMZ-White'
 
 # Fix Microsoft Type Cover init fail
-cat >"/etc/modprobe.d/i2c_hid.conf" <<EOL
+cat >"/etc/modprobe.d/blacklist-i2c-hid.conf" <<EOL
 blacklist i2c_hid
 EOL
 
