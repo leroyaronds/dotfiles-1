@@ -28,6 +28,11 @@ alias k='kubectl'
 alias t='vim ~/todo.txt'
 alias v='vim'
 
+# Auto start SWAY
+if [ -z $DISPLAY_WAYLAND ] && [ $(tty) = /dev/tty1 ] && command -v sway >/dev/null; then
+	sway
+fi
+
 # Update GPG agent and socket
 if command -v gpg-connect-agent >/dev/null; then
 	export GPG_TTY="$(tty)"
