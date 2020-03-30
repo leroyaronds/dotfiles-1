@@ -58,8 +58,19 @@ usermod -aG video $USER
 # Disable ondemand CPU scaling
 systemctl disable ondemand
 
+# Set powerbutton to suspend
+cat >"/etc/systemd/logind.conf" <<EOL
+[Login]
+HandlePowerKey=suspend
+EOL
+
 # Fix mouse pointer in Firefox
 gsettings set org.gnome.desktop.interface cursor-theme 'DMZ-White'
+
+# Fix Microsoft Type Cover init fail
+cat >"/etc/modprobe.d/i2c_hid.conf" <<EOL
+blacklist i2c_hid
+EOL
 
 # Remove kernel splash and enable login shell (Remove 'splash' and 'quiet')
 # vim /etc/default/grub
