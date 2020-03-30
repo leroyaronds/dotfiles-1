@@ -34,8 +34,7 @@ if [ -z $DISPLAY_WAYLAND ] && [ $(tty) = /dev/tty1 ] && command -v sway >/dev/nu
 fi
 
 # Update GPG agent and socket
-if command -v gpg-connect-agent >/dev/null; then
+if command -v gpgconf >/dev/null; then
 	export GPG_TTY="$(tty)"
 	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-	gpg-connect-agent updatestartuptty /bye >/dev/null
 fi
