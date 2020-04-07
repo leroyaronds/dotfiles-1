@@ -19,12 +19,12 @@ antigen apply
 
 # History
 HISTFILE=~/.zsh_history
-HISTSIZE=2000
+HISTORY_IGNORE="(gpg*|ssh*|tomb*)"
+HISTSIZE=4000
 SAVEHIST=2000
 
 # Aliases
 alias g='git'
-alias k='kubectl'
 alias t='vim ~/todo.txt'
 alias v='vim'
 
