@@ -1,7 +1,3 @@
-# ALIASES
-alias g='git'
-alias ll='ls -l'
-
 # TMUX SCRIPTING
 if command -v tmux >/dev/null; then
   if [ -z ${TMUX} ]; then
