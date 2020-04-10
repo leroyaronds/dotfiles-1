@@ -23,6 +23,15 @@ HISTORY_IGNORE="(gpg*|ssh*|tomb*)"
 HISTSIZE=4000
 SAVEHIST=2000
 
+# Set default editor
+export EDITOR=vim
+
+# Update GPG agent and socket
+if command -v gpgconf >/dev/null; then
+	export GPG_TTY="$(tty)"
+	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+
 # Aliases
 alias g='git'
 alias t='vim ~/todo.txt'
@@ -31,10 +40,4 @@ alias v='vim'
 # Auto start SWAY
 if [ -z $DISPLAY_WAYLAND ] && [ $(tty) = /dev/tty1 ] && command -v sway >/dev/null; then
 	sway
-fi
-
-# Update GPG agent and socket
-if command -v gpgconf >/dev/null; then
-	export GPG_TTY="$(tty)"
-	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi

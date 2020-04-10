@@ -1,5 +1,3 @@
-# Set default editor
-export EDITOR=vim
 # Set default browser
 export BROWSER=firefox
 # Set cache to RAM disk
