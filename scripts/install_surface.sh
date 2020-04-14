@@ -29,6 +29,15 @@ $APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-sett
 $APT autoremove
 $APT autoclean
 
+# Cleanup repositories
+cat >"/etc/apt/sources.list" <<EOL
+deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal main
+deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal-updates main
+deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal-security main
+EOL
+# Update repositories
+$APT update
+
 # Install packages
 $APT install brightnessctl cmus cpufrequtils git gpg i3status kitty knockd libgfshare-bin linux-headers-$(uname -r) qrencode pinentry-gnome3 resolvconf scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wlfreerdp wpasupplicant zbar-tools zsh
 
