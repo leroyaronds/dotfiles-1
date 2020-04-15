@@ -73,7 +73,8 @@ bindswitch --reload lid:off output $surface_screen enable
 #
 # Docking station
 set $docking_screen HDMI1
-#output $docking_screen resolution 1920x1200 position 1920,0
+output $docking_screen scale 1.0
+output $docking_screen resolution 1920x1200 position 1920,0
 
 ## Key bindings
 #

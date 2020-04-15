@@ -29,6 +29,15 @@ $APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-sett
 $APT autoremove
 $APT autoclean
 
+# Cleanup repositories
+cat >"/etc/apt/sources.list" <<EOL
+deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal main
+deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal-updates main
+deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal-security main
+EOL
+# Update repositories
+$APT update
+
 # Install packages
 $APT install brightnessctl cmus cpufrequtils git gpg i3status kitty knockd libgfshare-bin linux-headers-$(uname -r) qrencode pinentry-gnome3 resolvconf scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wlfreerdp wpasupplicant zbar-tools zsh
 
@@ -45,9 +54,9 @@ ln --symbolic ../.config/kitty ~/.config/kitty
 # Change shell
 chsh --shell /usr/bin/zsh
 
-# Set CPU goverer to 'performance'
+# Set CPU goverer to 'performance' or 'powersave'
 cat >"/etc/default/cpufrequtils" <<EOL
-GOVERNOR="powersave"
+GOVERNOR="performance"
 MIN_SPEED="400MHz"
 MAX_SPEED="1600MHz"
 EOL
@@ -67,16 +76,10 @@ EOL
 # Fix mouse pointer in Firefox
 gsettings set org.gnome.desktop.interface cursor-theme 'DMZ-White'
 
-# Fix Microsoft Type Cover init fail
-cat >"/etc/modprobe.d/blacklist-i2c-hid.conf" <<EOL
-blacklist i2c_hid
-EOL
-
 # Install Ledger USB detection
 cat <<EOF > /etc/udev/rules.d/20-hw1.rules
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", ATTRS{idProduct}=="0004|4000|4001|4002|4003|4004|4005|4006|4007|4008|4009|400a|400b|400c|400d|400e|400f|4010|4011|4012|4013|4014|4015|4016|4017|4018|4019|401a|401b|401c|401d|401e|401f", TAG+="uaccess", TAG+="udev-acl"
 EOF
-
 udevadm trigger
 udevadm control --reload-rules
 
