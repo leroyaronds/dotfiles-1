@@ -31,9 +31,9 @@ $APT autoclean
 
 # Cleanup repositories
 cat >"/etc/apt/sources.list" <<EOL
-deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal main
-deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal-updates main
-deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal-security main
+deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal main universe
+deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal-updates main universe
+deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal-security main universe
 EOL
 # Update repositories
 $APT update
