@@ -51,6 +51,12 @@ ln --symbolic ../.config/sway ~/.config/sway
 ln --symbolic ../.config/i3status ~/.config/i3status
 ln --symbolic ../.config/kitty ~/.config/kitty
 
+# Set locale
+cat >"/etc/default/locale" <<EOL
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+EOL
+
 # Change shell
 chsh --shell /usr/bin/zsh
 
