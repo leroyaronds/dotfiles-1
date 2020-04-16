@@ -26,8 +26,8 @@ load {
 memory {
 	format = "M: %used"
 	memory_used_method = classical
-	threshold_degraded = 50%
-	threshold_critical = 10%
+	threshold_degraded = 50
+	threshold_critical = 10
 }
 
 cpu_temperature 7 {
@@ -71,10 +71,10 @@ battery all {
 	format = "P: %remaining [%status]"
 	low_threshold = 30
 	threshold_type = time
-	status_chr = CHR
-	status_bat = BAT
-	status_unk = ?
-	status_full = FULL
+	status_chr = "CHR"
+	status_bat = "BAT"
+	status_unk = "?"
+	status_full = "FULL"
 	format_down = ""
 }
 
