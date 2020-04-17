@@ -95,9 +95,6 @@ bindsym $mod+Shift+q kill
 # Toggle status bar
 bindsym $mod+b bar mode toggle
 #
-# Reload the configuration file
-bindsym $mod+Shift+c reload
-#
 # Move focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down

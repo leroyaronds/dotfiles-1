@@ -16,18 +16,19 @@ order += "wireless _first_"
 order += "path_exists WG"
 order += "path_exists OVPN"
 order += "volume master"
-order += "battery all"
+order += "battery 1"
 order += "time"
 
 load {
 	format = "L: %1min"
+	max_threshold = "1.0"
 }
 
 memory {
-	format = "M: %used"
-	memory_used_method = classical
-	threshold_degraded = 50
-	threshold_critical = 10
+	format = "M: %percentage_used"
+	memory_used_method = "classical"
+	threshold_degraded = "50%"
+	threshold_critical = "10%"
 }
 
 cpu_temperature 7 {
@@ -36,7 +37,7 @@ cpu_temperature 7 {
 }
 
 disk "/" {
-	format = "D: %avail"
+	format = "D: %percentage_used"
 }
 
 ethernet _first_ {
@@ -67,14 +68,14 @@ volume master {
 	device = "default"
 }
 
-battery all {
+battery 1 {
 	format = "P: %remaining [%status]"
 	low_threshold = 30
 	threshold_type = time
-	status_chr = "CHR"
-	status_bat = "BAT"
+	status_chr = "C"
+	status_bat = "B"
 	status_unk = "?"
-	status_full = "FULL"
+	status_full = "F"
 	format_down = ""
 }
 
