@@ -21,7 +21,7 @@ order += "time"
 
 load {
 	format = "L: %1min"
-	max_threshold = "1.5"
+	max_threshold = "2.0"
 }
 
 memory {
