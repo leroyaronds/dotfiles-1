@@ -21,11 +21,11 @@ order += "time"
 
 load {
 	format = "L: %1min"
-	max_threshold = "1.0"
+	max_threshold = "1.5"
 }
 
 memory {
-	format = "M: %percentage_used"
+	format = "M: %used"
 	memory_used_method = "classical"
 	threshold_degraded = "50%"
 	threshold_critical = "10%"
@@ -37,7 +37,7 @@ cpu_temperature 7 {
 }
 
 disk "/" {
-	format = "D: %percentage_used"
+	format = "D: %used"
 }
 
 ethernet _first_ {
