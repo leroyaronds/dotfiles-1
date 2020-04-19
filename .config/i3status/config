@@ -4,9 +4,10 @@ general {
 	color_good = "#008800"
 	color_degraded = "#888800"
 	color_bad = "#880000"
-	interval = 10
+	interval = 5
 }
 
+order += "read_file I3STATUS"
 order += "load"
 order += "memory"
 order += "cpu_temperature 7"
@@ -18,6 +19,13 @@ order += "path_exists OVPN"
 order += "volume master"
 order += "battery 1"
 order += "time"
+
+read_file I3STATUS {
+	color_good = "#888888"
+	format = "[%content]"
+	format_bad = ""
+	path = "/tmp/i3status"
+}
 
 load {
 	format = "L: %1min"
