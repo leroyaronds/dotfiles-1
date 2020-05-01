@@ -61,12 +61,6 @@ input "1118:2415:Microsoft_Surface_Type_Cover_Mouse" {
     events disabled
 }
 
-# Enable capslock LED
-input * xkb_capslock enable
-
-# Enable numlock LED
-input * xkb_numlock enable
-
 ## Outputs
 #
 # [swaymsg -t get_outputs]
