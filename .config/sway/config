@@ -7,8 +7,11 @@ xwayland disable
 
 ## Variables
 #
-# Modifier key
+# Modifier key 1 (WIN)
 set $mod Mod4
+#
+# Modifier key 2 (CAPS)
+set $mod2 Mod5+
 #
 # Device lock
 set $lock swaylock -c 000000 -f -F && cmus-remote --stop
@@ -50,14 +53,22 @@ focus_follows_mouse no
 #
 # [swaymsg -t get_inputs]
 #
-# Surface GO touchpad
-input "1118:2415:Microsoft_Surface_Type_Cover_Touchpad" {
+# Keyboard
+input type:keyboard {
+    xkb_layout us
+    # Remap CAPS to MOD5+
+    xkb_options lv3:caps_switch
+}
+#
+# Touchpad
+input type:touchpad {
     tap enabled
     natural_scroll disabled
 }
-
-# Surface GO mouse (Disabled: conflicting with Touchpad)
+#
+# Surface GO mouse
 input "1118:2415:Microsoft_Surface_Type_Cover_Mouse" {
+    # Disable (conflicting with Touchpad)
     events disabled
 }
 
@@ -66,15 +77,17 @@ input "1118:2415:Microsoft_Surface_Type_Cover_Mouse" {
 # [swaymsg -t get_outputs]
 #
 # Primary screen
-set $surface_screen eDP-1
-output $surface_screen scale 1.25
-bindswitch --reload lid:on output $surface_screen disable
-bindswitch --reload lid:off output $surface_screen enable
+output "eDP-1" {
+    scale 1.25
+}
+bindswitch --reload lid:on output "eDP-1" disable
+bindswitch --reload lid:off output "eDP-1" enable
 #
 # Docking station
-set $docking_screen HDMI1
-output $docking_screen scale 1.0
-output $docking_screen resolution 1920x1200 position 1920,0
+output "HDMI1" {
+    scale 1.0
+    resolution 1920x1200 position 1920,0
+}
 
 ## Key bindings
 #
@@ -195,6 +208,20 @@ bindsym pause exec "cmus-remote --pause"
 # Brightness
 bindsym XF86MonBrightnessUp exec "brightnessctl s +20%"
 bindsym XF86MonBrightnessDown exec "brightnessctl s 20%-"
+#
+# Move pointer with keyboard
+bindsym $mod2+j seat - cursor move 0 -10
+bindsym $mod2+k seat - cursor move 0 10
+bindsym $mod2+h seat - cursor move -10 0
+bindsym $mod2+l seat - cursor move 10 0
+bindsym $mod2+Shift+j seat - cursor move 0 -50
+bindsym $mod2+Shift+k seat - cursor move 0 50
+bindsym $mod2+Shift+h seat - cursor move -50 0
+bindsym $mod2+Shift+l seat - cursor move 50 0
+bindsym $mod2+u seat - cursor press "BTN_LEFT"
+bindsym --release $mod2+u seat - cursor release "BTN_LEFT"
+bindsym $mod2+i seat - cursor press "BTN_RIGHT"
+bindsym --release $mod2+i seat - cursor release "BTN_RIGHT"
 
 ## Statusbar
 #
