@@ -50,6 +50,7 @@ ln --symbolic ../.zshrc ~/.zshrc
 ln --symbolic ../.config/sway ~/.config/sway
 ln --symbolic ../.config/i3status ~/.config/i3status
 ln --symbolic ../.config/kitty ~/.config/kitty
+ln --symbolic ../.config/mutt ~/.config/mutt
 
 # Set locale
 cat >"/etc/default/locale" <<EOL
