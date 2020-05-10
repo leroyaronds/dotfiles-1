@@ -26,6 +26,12 @@ SAVEHIST=2000
 # Set default editor
 export EDITOR=vim
 
+# Vim style cursor movement
+bindkey '^h' vi-backward-char
+bindkey '^k' vi-up-line-or-history
+bindkey '^l' vi-forward-char
+bindkey '^j' vi-down-line-or-history
+
 # Update GPG agent and socket
 if command -v gpgconf >/dev/null; then
 	export GPG_TTY="$(tty)"
