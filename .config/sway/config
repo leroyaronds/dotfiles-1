@@ -10,9 +10,6 @@ xwayland disable
 # Modifier key 1 (WIN)
 set $mod Mod4
 #
-# Modifier key 2 (CAPS)
-set $mod2 Mod5+
-#
 # Device lock
 set $lock swaylock -c 000000 -f -F && cmus-remote --stop
 #
@@ -60,7 +57,7 @@ seat * hide_cursor 5000
 input type:keyboard {
     xkb_layout us
     # Remap CAPS to MOD5+
-    xkb_options lv3:caps_switch
+    #xkb_options lv3:caps_switch
 }
 #
 # Touchpad
@@ -211,20 +208,6 @@ bindsym pause exec "cmus-remote --pause"
 # Brightness
 bindsym XF86MonBrightnessUp exec "brightnessctl s +20%"
 bindsym XF86MonBrightnessDown exec "brightnessctl s 20%-"
-#
-# Move pointer with keyboard
-bindsym $mod2+i seat - cursor move 0 -10
-bindsym $mod2+k seat - cursor move 0 10
-bindsym $mod2+j seat - cursor move -10 0
-bindsym $mod2+l seat - cursor move 10 0
-bindsym $mod2+Shift+i seat - cursor move 0 -50
-bindsym $mod2+Shift+k seat - cursor move 0 50
-bindsym $mod2+Shift+j seat - cursor move -50 0
-bindsym $mod2+Shift+l seat - cursor move 50 0
-bindsym $mod2+u seat - cursor press "BTN_LEFT"
-bindsym --release $mod2+u seat - cursor release "BTN_LEFT"
-bindsym $mod2+o seat - cursor press "BTN_RIGHT"
-bindsym --release $mod2+o seat - cursor release "BTN_RIGHT"
 
 ## Statusbar
 #
