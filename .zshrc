@@ -34,6 +34,7 @@ fi
 
 # Aliases
 alias g='git'
+alias sshb='ssh -fNT'
 alias t='vim ~/todo.txt'
 alias v='vim'
 
