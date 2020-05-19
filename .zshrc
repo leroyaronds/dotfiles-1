@@ -1,8 +1,8 @@
 # Install Antigen if needed
 ANTIGEN="${HOME}/.antigen/antigen.zsh"
 if [ ! -f $ANTIGEN ]; then
-	echo "Installing Antigen ..."
-	curl --create-dirs -#sSLo $ANTIGEN git.io/antigen-nightly
+    echo "Installing Antigen ..."
+    curl --create-dirs -#sSLo $ANTIGEN git.io/antigen-nightly
 fi
 
 # Load Antigen
@@ -28,17 +28,28 @@ export EDITOR=vim
 
 # Update GPG agent and socket
 if command -v gpgconf >/dev/null; then
-	export GPG_TTY="$(tty)"
-	export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+    export GPG_TTY="$(tty)"
+    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
+
+# Global aliases
+alias -g apt='apt --quiet --assume-yes --no-install-recommends'
+
+# Suffix aliases
+alias -s txt=vim
+alias -s md=vim
+alias -s pdf=firefox
 
 # Aliases
 alias g='git'
+alias otp2secret='zbarimg -q --raw'
+alias otp2image='qrencode -t ansiutf8'
 alias sshb='ssh -fNT'
 alias t='vim ~/todo.txt'
+alias update='sudo apt update; sudo apt upgrade; sudo apt autoremove; sudo apt autoclean'
 alias v='vim'
 
 # Auto start SWAY
 if [ -z $DISPLAY_WAYLAND ] && [ $(tty) = /dev/tty1 ] && command -v sway >/dev/null; then
-	sway
+    sway
 fi
