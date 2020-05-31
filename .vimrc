@@ -98,11 +98,13 @@ set colorcolumn=110
 silent! colorscheme jellybeans
 
 " NERDTree
-map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
+noremap <C-w>n :NERDTreeToggle<cr>
+noremap <C-w>- :split<cr>
+noremap <C-w>\ :vsplit<cr>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
