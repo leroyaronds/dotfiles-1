@@ -121,6 +121,9 @@ let g:syntastic_puppet_checkers=['puppetlint']
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_yaml_checkers = ['yamllint']
 
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion = 1
+
 " Ctrl P
 let g:ctrlp_show_hidden = 1
 
