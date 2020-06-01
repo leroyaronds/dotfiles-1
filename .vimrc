@@ -30,12 +30,10 @@ set tabpagemax=50
 set scrolloff=10
 " turn off alt shortcuts
 set winaltkeys=no
-
 " disable annoying sound on errors
 set noerrorbells
 set novisualbell
 set vb t_vb=
-
 " set ident defaults
 set tabstop=4
 set softtabstop=4
@@ -50,36 +48,39 @@ set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
 
 " Install vim-plug if not available
 if empty(glob("~/.vim/autoload/plug.vim"))
-	execute '!curl --create-dirs -SLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+    execute '!curl --create-dirs -SLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 else
-	" Start vim-plug manager
-	call plug#begin('~/.vim/plugged') 
-	" Jellybeans (Theme)
-	Plug 'nanotech/jellybeans.vim'
-	" Airline (Status bar)
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
-	" NERDTree (File browser)
-	Plug 'preservim/nerdtree'
-	" CtrlP (File browser)
-	Plug 'ctrlpvim/ctrlp.vim'
-	" Fugitive (Git)
-	Plug 'tpope/vim-fugitive'
-	" GitGutter (Git diff)
-	Plug 'airblade/vim-gitgutter'
-	" Todo (Todo.txt)
-	Plug 'freitass/todo.txt-vim'
-	" Syntastic (Syntax checking)
-	Plug 'vim-syntastic/syntastic'
-	" Puppet (Puppet)
-	Plug 'rodjek/vim-puppet'
-	" Tabular (Identing shortcuts)
-	Plug 'godlygeek/tabular'
-	" Markdown (Markdown preview)
-	Plug 'plasticboy/vim-markdown'
-	" GPG (GPG encrypt/decrypt)
-	Plug 'jamessan/vim-gnupg'
-	call plug#end()
+    " Start vim-plug manager
+    call plug#begin('~/.vim/plugged')
+    " Jellybeans (Theme)
+    Plug 'nanotech/jellybeans.vim'
+    " Airline (Status bar)
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    " NERDTree (File browser)
+    Plug 'preservim/nerdtree'
+    " CtrlP (File browser)
+    Plug 'ctrlpvim/ctrlp.vim'
+    " Fugitive (Git)
+    Plug 'tpope/vim-fugitive'
+    " GitGutter (Git diff)
+    Plug 'airblade/vim-gitgutter'
+    " Todo (Todo.txt)
+    Plug 'freitass/todo.txt-vim'
+    " Syntastic (Syntax checking)
+    Plug 'vim-syntastic/syntastic'
+    " YouCompleteMe (Code completion)
+    Plug 'Valloric/YouCompleteMe'
+    " Puppet (Puppet)
+    Plug 'rodjek/vim-puppet'
+    " Tabular (Identing shortcuts)
+    Plug 'godlygeek/tabular'
+    " Markdown (Markdown preview)
+    Plug 'plasticboy/vim-markdown'
+    " GPG (GPG encrypt/decrypt)
+    Plug 'jamessan/vim-gnupg'
+    " End vim-plug manager
+    call plug#end()
 endif
 
 " todo command
@@ -118,6 +119,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_puppet_checkers=['puppetlint']
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_yaml_checkers = ['yamllint']
 
 " Ctrl P
 let g:ctrlp_show_hidden = 1
