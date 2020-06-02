@@ -39,12 +39,12 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-
-syntax on
-filetype plugin indent on
 " show special chars
 set list
 set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
+
+syntax on
+filetype plugin indent on
 
 " Install vim-plug if not available
 if empty(glob("~/.vim/autoload/plug.vim"))
@@ -59,6 +59,10 @@ else
     Plug 'vim-airline/vim-airline-themes'
     " NERDTree (File browser)
     Plug 'preservim/nerdtree'
+    " NERDTree (Git)
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    " Tagbar (Tags browser)
+    Plug 'majutsushi/tagbar'
     " CtrlP (File browser)
     Plug 'ctrlpvim/ctrlp.vim'
     " Fugitive (Git)
@@ -103,11 +107,26 @@ let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
-noremap <C-w>n :NERDTreeToggle<cr>
-noremap <C-w>- :split<cr>
-noremap <C-w>\ :vsplit<cr>
+noremap <C-w>t :TagbarToggle<CR>
+noremap <C-w>n :NERDTreeToggle<CR>
+noremap <C-w>- :split<CR>
+noremap <C-w>\ :vsplit<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" NERDTree Git
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 
 " Syntastic
 set statusline+=%#warningmsg#
