@@ -1,21 +1,9 @@
-# Install Antigen if needed
-ANTIGEN="${HOME}/.antigen/antigen.zsh"
-if [ ! -f $ANTIGEN ]; then
-    echo "Installing Antigen ..."
-    curl --create-dirs -#sSLo $ANTIGEN git.io/antigen-nightly
-fi
-
-# Load Antigen
-source $ANTIGEN
-# Use oh-my-zsh
-antigen use oh-my-zsh
-# Load plugins
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-# Set theme
-antigen theme minimal
-# Apply settings
-antigen apply
+# Include extentions
+source ~/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/dotfiles/zsh/ohmyzsh/lib/directories.zsh
+source ~/dotfiles/zsh/ohmyzsh/lib/git.zsh
+source ~/dotfiles/zsh/ohmyzsh/lib/theme-and-appearance.zsh
+source ~/dotfiles/zsh/ohmyzsh/themes/minimal.zsh-theme
 
 # History
 HISTFILE=~/.zsh_history
