@@ -1,4 +1,8 @@
-# compiled source
+# Python cached file
+__pycache__/
+*.py[cod]
+
+# Compiled source
 *.com
 *.class
 *.dll
