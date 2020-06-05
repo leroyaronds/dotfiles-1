@@ -14,6 +14,7 @@ rm /lib/firmware/ath10k/QCA6174/hw2.1/board*
 cp board.bin /lib/firmware/ath10k/QCA6174/hw2.1/
 rm /lib/firmware/ath10k/QCA6174/hw3.0/board*
 cp board.bin /lib/firmware/ath10k/QCA6174/hw3.0/
+rm board.bin
 
 # Remove installed packages
 #
@@ -39,18 +40,16 @@ EOL
 $APT update
 
 # Install packages
-$APT install brightnessctl cmus cpufrequtils git gpg grim i3status kitty knockd libgfshare-bin linux-headers-$(uname -r) qrencode pinentry-gnome3 resolvconf scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wlfreerdp wpasupplicant zbar-tools zsh
+$APT install brightnessctl cmus cpufrequtils git gpg grim i3status kitty knockd libgfshare-bin linux-headers-$(uname -r) qrencode pinentry-gnome3 resolvconf ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wlfreerdp wpasupplicant zbar-tools zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig ~/.gitconfig
 ln --symbolic ../.gitignore ~/.gitignore
 ln --symbolic ../.vimrc ~/.vimrc
-ln --symbolic ../.zshenv ~/.zshenv
 ln --symbolic ../.zshrc ~/.zshrc
 ln --symbolic ../.config/sway ~/.config/sway
 ln --symbolic ../.config/i3status ~/.config/i3status
 ln --symbolic ../.config/kitty ~/.config/kitty
-ln --symbolic ../.config/mutt ~/.config/mutt
 
 # Set locale
 cat >"/etc/default/locale" <<EOL
