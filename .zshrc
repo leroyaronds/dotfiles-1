@@ -1,4 +1,5 @@
-# Tab completion
+# Completion
+autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -6,6 +7,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 bindkey '^[[Z' reverse-menu-complete
 
 # Fast directory switching
+setopt autocd
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
@@ -34,13 +36,26 @@ zstyle ':vcs_info:git:*' actionformats '[%F{cyan}%b (%a)%f%c%u]'
 
 setopt PROMPT_PERCENT
 setopt PROMPT_SUBST
-PROMPT='%2~ $vcs_info_msg_0_»%b '
+PROMPT='%2~ ${vcs_info_msg_0_}»%b '
 
-# Include extentions
+# ZSH-syntax-highlighting
 source ~/dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/dotfiles/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
+ZSH_HIGHLIGHT_MAXLENGTH=250
+# Declare the variable
+typeset -A ZSH_HIGHLIGHT_STYLES
+# To differentiate aliases from other command types
+ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
+# To have paths colored instead of underlined
+ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+# To disable highlighting of globbing expressions
+ZSH_HIGHLIGHT_STYLES[globbing]='none'
 
-# Substring search
+# ZSH-autosuggestions
+source ~/dotfiles/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
+# ZSH-history-substring-search
 source ~/dotfiles/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[1;5A' history-substring-search-up
 bindkey '^[[1;5B' history-substring-search-down
@@ -50,6 +65,8 @@ HISTFILE=~/.zsh_history
 HISTORY_IGNORE="(gpg*|ssh*|tomb*)"
 HISTSIZE=4000
 SAVEHIST=2000
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
 
 # Set default editor
 export EDITOR=vim
