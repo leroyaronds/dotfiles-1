@@ -14,7 +14,7 @@ set $mod Mod4
 set $lock swaylock -c 000000 -f -F && cmus-remote --stop
 #
 # Terminal
-set $term kitty --single-instance
+set $term kitty
 #
 # Browser
 set $browser firefox
@@ -103,7 +103,7 @@ bindsym $mod+d exec $term --class kitty-menu --override background_opacity=0.8 /
 for_window [app_id="kitty-menu"] floating enable, resize set height 250 px, resize set width 800 px, move position center
 #
 # Start a terminal
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec $term --single-instance --instance-group terminal
 #
 # Start internet browser
 bindsym $mod+i exec $browser
