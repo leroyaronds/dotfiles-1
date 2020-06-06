@@ -71,10 +71,6 @@ if command -v gpgconf >/dev/null; then
 fi
 
 # Global aliases
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
 alias -g apt='apt --quiet --assume-yes --no-install-recommends'
 alias -g ls='ls --color=tty'
 
@@ -84,7 +80,6 @@ alias -s md=vim
 alias -s pdf=firefox
 
 # Aliases
-alias -- -='cd -'
 alias 1='cd -'
 alias 2='cd -2'
 alias 3='cd -3'
@@ -96,14 +91,10 @@ alias 8='cd -8'
 alias 9='cd -9'
 alias f='rg -i'
 alias g='git'
-alias lsa='ls -lah'
 alias l='ls -lah'
 alias ll='ls -lh'
-alias la='ls -lAh'
-alias md='mkdir -p'
 alias otp2secret='zbarimg -q --raw'
 alias otp2image='qrencode -t ansiutf8'
-alias rd=rmdir
 alias sshb='ssh -fNT'
 alias t='vim ~/todo.txt'
 alias update='sudo apt update; sudo apt upgrade; sudo apt --purge autoremove; sudo apt autoclean'
