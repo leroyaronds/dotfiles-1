@@ -110,7 +110,7 @@ alias otp2image='qrencode -t ansiutf8'
 alias rd=rmdir
 alias sshb='ssh -fNT'
 alias t='vim ~/todo.txt'
-alias update='sudo apt update; sudo apt upgrade; sudo apt autoremove; sudo apt autoclean'
+alias update='sudo apt update; sudo apt upgrade; sudo apt --purge autoremove; sudo apt autoclean'
 alias v='vim'
 
 # Auto start SWAY
