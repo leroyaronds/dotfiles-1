@@ -42,13 +42,9 @@ PROMPT='%2~ ${vcs_info_msg_0_}»%b '
 source ~/dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
 ZSH_HIGHLIGHT_MAXLENGTH=250
-# Declare the variable
 typeset -A ZSH_HIGHLIGHT_STYLES
-# To differentiate aliases from other command types
 ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
-# To have paths colored instead of underlined
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
-# To disable highlighting of globbing expressions
 ZSH_HIGHLIGHT_STYLES[globbing]='none'
 
 # ZSH-autosuggestions
