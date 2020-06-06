@@ -32,20 +32,21 @@ $APT autoclean
 
 # Cleanup repositories
 cat >"/etc/apt/sources.list" <<EOL
-deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal main universe
-deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal-updates main universe
-deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ focal-security main universe
+deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy main universe
+deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy-updates main universe
+deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy-security main universe
 EOL
 # Update repositories
 $APT update
 
 # Install packages
-$APT install brightnessctl cmus cpufrequtils git gpg grim i3status kitty knockd libgfshare-bin linux-headers-$(uname -r) qrencode pinentry-gnome3 resolvconf ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wlfreerdp wpasupplicant zbar-tools zsh
+$APT install brightnessctl cmus cpufrequtils freerdp2-wayland git gpg grim i3status kitty knockd libgfshare-bin linux-headers-$(uname -r) qrencode pinentry-gnome3 resolvconf ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant zbar-tools zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig ~/.gitconfig
 ln --symbolic ../.gitignore ~/.gitignore
 ln --symbolic ../.vimrc ~/.vimrc
+ln --symbolic ../.zshenv ~/.zshenv
 ln --symbolic ../.zshrc ~/.zshrc
 ln --symbolic ../.config/sway ~/.config/sway
 ln --symbolic ../.config/i3status ~/.config/i3status
