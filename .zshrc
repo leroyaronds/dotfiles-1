@@ -39,7 +39,7 @@ setopt PROMPT_SUBST
 PROMPT='%2~ ${vcs_info_msg_0_}»%b '
 
 # ZSH-syntax-highlighting
-source ~/dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
 ZSH_HIGHLIGHT_MAXLENGTH=250
 typeset -A ZSH_HIGHLIGHT_STYLES
@@ -48,11 +48,11 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[globbing]='none'
 
 # ZSH-autosuggestions
-source ~/dotfiles/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/dotfiles/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 # ZSH-history-substring-search
-source ~/dotfiles/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/dotfiles/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh 2>/dev/null
 bindkey '^[[1;5A' history-substring-search-up
 bindkey '^[[1;5B' history-substring-search-down
 
