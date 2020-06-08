@@ -89,7 +89,7 @@ inoremap <script> <silent> <buffer> time<Tab> <C-R>=strftime("%H:%M")<CR>
 inoremap <script> <silent> <buffer> date<Tab> <C-R>=strftime("%Y-%m-%d")<CR>
 noremap <C-w>t :TagbarToggle<CR>
 noremap <C-w>- :split<CR>
-noremap <C-w>| :vsplit<CR>
+noremap <C-w>\ :vsplit<CR>
 
 " set column identifier
 set colorcolumn=110
