@@ -66,9 +66,10 @@ setopt hist_ignore_space
 
 # Update GPG agent and socket
 if command -v gpgconf >/dev/null; then
+    gpgconf --launch gpg-agent
     export GPG_TTY="$(tty)"
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-    gpg-connect-agent updatestartuptty /bye > /dev/null
+#    gpg-connect-agent updatestartuptty /bye > /dev/null
 fi
 
 # Global aliases
