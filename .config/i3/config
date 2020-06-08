@@ -8,7 +8,7 @@ set $mod Mod4
 # terminal
 set $terminal kitty
 # screen locker command
-set $locker ~/dotfiles/scripts/lock.sh
+set $locker i3lock -c 000000 -f -n && cmus-remote --stop⏎
 # browser
 set $browser firefox
 
