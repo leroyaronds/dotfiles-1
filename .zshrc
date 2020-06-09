@@ -20,15 +20,6 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
 
-function d () {
-  if [[ -n $1 ]]; then
-    dirs "$@"
-  else
-    dirs -v | head -10
-  fi
-}
-compdef _dirs d
-
 # Prompt
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
@@ -63,6 +54,7 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
+alias d='dirs -v | head -10'
 alias f='rg -i'
 alias g='git'
 alias l='ls -lah'
