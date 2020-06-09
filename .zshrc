@@ -6,6 +6,14 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 bindkey '^[[Z' reverse-menu-complete
 
+# History
+HISTFILE=~/.zsh_history
+HISTORY_IGNORE="(gpg*|ssh*|tomb*)"
+HISTSIZE=4000
+SAVEHIST=2000
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+
 # Fast directory switching
 setopt autocd
 setopt auto_pushd
@@ -25,7 +33,6 @@ compdef _dirs d
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' disable-patterns "${HOME}/work(|/*)"
@@ -33,42 +40,9 @@ zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
 zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'
 zstyle ':vcs_info:git:*' formats '[%F{cyan}%b%f%c%u]'
 zstyle ':vcs_info:git:*' actionformats '[%F{cyan}%b (%a)%f%c%u]'
-
 setopt PROMPT_PERCENT
 setopt PROMPT_SUBST
 PROMPT='%2~ ${vcs_info_msg_0_}»%b '
-
-# ZSH-syntax-highlighting
-source ~/dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
-ZSH_HIGHLIGHT_MAXLENGTH=250
-typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
-ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[globbing]='none'
-
-# ZSH-autosuggestions
-source ~/dotfiles/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-
-# ZSH-history-substring-search
-source ~/dotfiles/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh 2>/dev/null
-bindkey '^[[1;5A' history-substring-search-up
-bindkey '^[[1;5B' history-substring-search-down
-
-# History
-HISTFILE=~/.zsh_history
-HISTORY_IGNORE="(gpg*|ssh*|tomb*)"
-HISTSIZE=4000
-SAVEHIST=2000
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-
-# Update GPG agent and socket
-if command -v gpgconf >/dev/null; then
-    export GPG_TTY="$(tty)"
-    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
 
 # Global aliases
 alias -g apt='apt --quiet --assume-yes --no-install-recommends'
@@ -100,7 +74,37 @@ alias t='vim ~/todo.txt'
 alias update='sudo apt update; sudo apt upgrade; sudo apt --purge autoremove; sudo apt autoclean'
 alias v='vim'
 
+# ZSH-syntax-highlighting
+if [[ -a ~/dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source ~/dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
+    ZSH_HIGHLIGHT_MAXLENGTH=250
+    typeset -A ZSH_HIGHLIGHT_STYLES
+    ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
+    ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[globbing]='none'
+fi
+
+# ZSH-autosuggestions
+if [[ -a ~/dotfiles/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source ~/dotfiles/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+    ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+fi
+
+# ZSH-history-substring-search
+if [[ -a ~/dotfiles/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
+    source ~/dotfiles/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+    bindkey '^[[1;5A' history-substring-search-up
+    bindkey '^[[1;5B' history-substring-search-down
+fi
+
+# Update GPG agent and socket
+if command -v gpgconf >/dev/null; then
+    export GPG_TTY="$(tty)"
+    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+
 # Auto start SWAY
-if [ -z $DISPLAY_WAYLAND ] && [ $(tty) = /dev/tty1 ] && command -v sway >/dev/null; then
+if [[ -z $DISPLAY_WAYLAND && $(tty) = /dev/tty1 ]] && command -v sway >/dev/null; then
     sway
 fi
