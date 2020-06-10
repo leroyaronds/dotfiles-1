@@ -42,7 +42,6 @@ PROMPT='%2~ ${vcs_info_msg_0_}»%b '
 
 # Global aliases
 alias -g apt='apt --quiet --assume-yes --no-install-recommends'
-alias -g ls='ls --color=tty'
 
 # Suffix aliases
 alias -s txt=vim
@@ -64,6 +63,7 @@ alias f='rg -i'
 alias g='git'
 alias l='ls -lah'
 alias ll='ls -lh'
+alias ls='ls --color=tty'
 alias otp2secret='zbarimg -q --raw'
 alias otp2image='qrencode -t ansiutf8'
 alias sshb='ssh -fNT'
