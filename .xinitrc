@@ -1,5 +1,8 @@
-# Fix pinentry-gnome3 on X11
-dbus-update-activation-environment DISPLAY XAUTHORITY
+# Init dbus
+systemctl --user import-environment DISPLAY XAUTHORITY
+if command -v dbus-update-activation-environment >/dev/null; then
+    dbus-update-activation-environment DISPLAY XAUTHORITY
+fi
 # Set background
 if command -v feh >/dev/null; then
 	feh --bg-center ~/dotfiles/background.png &
