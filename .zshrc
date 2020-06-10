@@ -62,7 +62,7 @@ alias ll='ls -lh'
 alias otp2secret='zbarimg -q --raw'
 alias otp2image='qrencode -t ansiutf8'
 alias sshb='ssh -fNT'
-alias t='vim ~/todo.txt'
+alias t='tmux attach -t $(hostname) || tmux new -s $(hostname)'
 alias update='sudo apt update; sudo apt upgrade; sudo apt --purge autoremove; sudo apt autoclean'
 alias v='vim'
 

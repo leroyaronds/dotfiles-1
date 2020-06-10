@@ -65,8 +65,6 @@ else
     Plug 'tpope/vim-fugitive'
     " GitGutter (Git diff)
     Plug 'airblade/vim-gitgutter'
-    " Todo (Todo.txt)
-    Plug 'freitass/todo.txt-vim'
     " Syntastic (Syntax checking)
     Plug 'vim-syntastic/syntastic'
     " YouCompleteMe (Code completion)
