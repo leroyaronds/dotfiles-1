@@ -15,7 +15,7 @@ bindkey '^[[Z' reverse-menu-complete
 HISTFILE=~/.zsh_history
 HISTORY_IGNORE="(gpg*|ssh*|tomb*)"
 HISTSIZE=4000
-SAVEHIST=2000
+SAVEHIST=$HISTSIZE
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
@@ -31,14 +31,14 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' disable-patterns "${HOME}/work(|/*)"
+zstyle ':vcs_info:*' disable-patterns "~/ssh-mount(|/*)"
 zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
 zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'
 zstyle ':vcs_info:git:*' formats '[%F{cyan}%b%f%c%u]'
 zstyle ':vcs_info:git:*' actionformats '[%F{cyan}%b (%a)%f%c%u]'
 setopt PROMPT_PERCENT
 setopt PROMPT_SUBST
-PROMPT='%2~ ${vcs_info_msg_0_}»%b '
+PROMPT='%2~ ${vcs_info_msg_0_}» '
 
 # Global aliases
 alias -g apt='apt --quiet --assume-yes --no-install-recommends'
