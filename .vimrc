@@ -46,36 +46,27 @@ set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
 syntax on
 filetype plugin indent on
 
-" Install vim-plug if not available
-if empty(glob("~/.vim/autoload/plug.vim"))
-    execute '!curl --create-dirs -SLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
-else
-    " Start vim-plug manager
-    call plug#begin('~/.vim/plugged')
-    " Jellybeans (Theme)
-    Plug 'nanotech/jellybeans.vim'
-    " Airline (Status bar)
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    " Tagbar (Tags browser)
-    Plug 'majutsushi/tagbar'
-    " CtrlP (File browser)
-    Plug 'ctrlpvim/ctrlp.vim'
-    " Fugitive (Git)
-    Plug 'tpope/vim-fugitive'
-    " GitGutter (Git diff)
-    Plug 'airblade/vim-gitgutter'
-    " Syntastic (Syntax checking)
-    Plug 'vim-syntastic/syntastic'
-    " YouCompleteMe (Code completion)
-    Plug 'Valloric/YouCompleteMe'
-    " Puppet (Puppet)
-    Plug 'rodjek/vim-puppet'
-    " GPG (GPG encrypt/decrypt)
-    Plug 'jamessan/vim-gnupg'
-    " End vim-plug manager
-    call plug#end()
-endif
+" Jellybeans (Theme)
+set runtimepath^=~/dotfiles/submodules/jellybeans.vim
+" Airline (Status bar)
+set runtimepath^=~/dotfiles/submodules/vim-airline
+set runtimepath^=~/dotfiles/submodules/vim-airline-themes
+" Tagbar (Tags browser)
+set runtimepath^=~/dotfiles/submodules/tagbar
+" CtrlP (File browser)
+set runtimepath^=~/dotfiles/submodules/ctrlp.vim
+" Fugitive (Git)
+set runtimepath^=~/dotfiles/submodules/vim-fugitive
+" GitGutter (Git diff)
+set runtimepath^=~/dotfiles/submodules/vim-gitgutter
+" Syntastic (Syntax checking)
+set runtimepath^=~/dotfiles/submodules/syntastic
+" YouCompleteMe (Code completion)
+set runtimepath^=~/dotfiles/submodules/YouCompleteMe
+" Puppet (Puppet)
+set runtimepath^=~/dotfiles/submodules/vim-puppet
+" GPG (GPG encrypt/decrypt)
+set runtimepath^=~/dotfiles/submodules/vim-gnupg
 
 " todo command
 command! Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
@@ -111,10 +102,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra'
-"if executable('rg')
-"  let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
-"endif
-"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 let g:ctrlp_max_files = 500
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn)$',

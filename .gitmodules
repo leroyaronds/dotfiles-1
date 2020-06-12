@@ -22,3 +22,36 @@
 [submodule "submodules/tmux-yank"]
 	path = submodules/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
+[submodule "submodules/jellybeans.vim"]
+	path = submodules/jellybeans.vim
+	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "submodules/vim-airline"]
+	path = submodules/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "submodules/vim-airline-themes"]
+	path = submodules/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "submodules/syntastic"]
+	path = submodules/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "submodules/ctrlp.vim"]
+	path = submodules/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "submodules/tagbar"]
+	path = submodules/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "submodules/vim-fugitive"]
+	path = submodules/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "submodules/vim-gitgutter"]
+	path = submodules/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule "submodules/YouCompleteMe"]
+	path = submodules/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+[submodule "submodules/vim-puppet"]
+	path = submodules/vim-puppet
+	url = https://github.com/rodjek/vim-puppet
+[submodule "submodules/vim-gnupg"]
+	path = submodules/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg
