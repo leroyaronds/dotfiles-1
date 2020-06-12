@@ -16,3 +16,9 @@
 [submodule "submodules/zsh-history-substring-search"]
 	path = submodules/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "submodules/tmux-resurrect"]
+	path = submodules/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule "submodules/tmux-yank"]
+	path = submodules/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank.git
