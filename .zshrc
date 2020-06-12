@@ -73,8 +73,8 @@ alias update='sudo apt update; sudo apt upgrade; sudo apt --purge autoremove; su
 alias v='vim'
 
 # ZSH-syntax-highlighting
-if [[ -a ~/dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-    source ~/dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -a ~/dotfiles/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source ~/dotfiles/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
     ZSH_HIGHLIGHT_MAXLENGTH=250
     typeset -A ZSH_HIGHLIGHT_STYLES
@@ -84,14 +84,14 @@ if [[ -a ~/dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]];
 fi
 
 # ZSH-autosuggestions
-if [[ -a ~/dotfiles/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
-    source ~/dotfiles/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ -a ~/dotfiles/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source ~/dotfiles/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh
     ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 fi
 
 # ZSH-history-substring-search
-if [[ -a ~/dotfiles/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
-    source ~/dotfiles/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+if [[ -a ~/dotfiles/submodules/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
+    source ~/dotfiles/submodules/zsh-history-substring-search/zsh-history-substring-search.zsh
     bindkey '^[[1;5A' history-substring-search-up
     bindkey '^[[1;5B' history-substring-search-down
 fi

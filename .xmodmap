@@ -22,4 +22,4 @@ keysym 9 = 9 parenleft F9
 keysym 0 = 0 parenright F10
 keysym minus = minus underscore F11
 keysym equal = equal plus F12
-keysym grave = Escape grave asciitilde
+keysym grave = Escape NoSymbol grave asciitilde
