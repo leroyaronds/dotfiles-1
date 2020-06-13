@@ -46,38 +46,27 @@ set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
 syntax on
 filetype plugin indent on
 
-" Install vim-plug if not available
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fSLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-" Start vim-plug manager
-call plug#begin('~/.vim/plugged')
 " Jellybeans (Theme)
-Plug 'nanotech/jellybeans.vim'
+set runtimepath^=~/dotfiles/submodules/vim-jellybeans
 " Airline (Status bar)
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+set runtimepath^=~/dotfiles/submodules/vim-airline
+set runtimepath^=~/dotfiles/submodules/vim-airline-themes
 " Tagbar (Tags browser)
-Plug 'majutsushi/tagbar'
+set runtimepath^=~/dotfiles/submodules/vim-tagbar
 " CtrlP (File browser)
-Plug 'ctrlpvim/ctrlp.vim'
+set runtimepath^=~/dotfiles/submodules/vim-ctrlp
 " Fugitive (Git)
-Plug 'tpope/vim-fugitive'
+set runtimepath^=~/dotfiles/submodules/vim-fugitive
 " GitGutter (Git diff)
-Plug 'airblade/vim-gitgutter'
+set runtimepath^=~/dotfiles/submodules/vim-gitgutter
 " Syntastic (Syntax checking)
-Plug 'vim-syntastic/syntastic'
+set runtimepath^=~/dotfiles/submodules/vim-syntastic
 " YouCompleteMe (Code completion)
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+set runtimepath^=~/dotfiles/submodules/vim-youcompleteme
 " Puppet (Puppet)
-Plug 'rodjek/vim-puppet'
+set runtimepath^=~/dotfiles/submodules/vim-puppet
 " GPG (GPG encrypt/decrypt)
-Plug 'jamessan/vim-gnupg'
-" End vim-plug manager
-call plug#end()
+set runtimepath^=~/dotfiles/submodules/vim-gnupg
 
 " todo command
 command! Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw

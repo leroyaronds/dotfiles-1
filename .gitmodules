@@ -18,3 +18,43 @@
 	path = submodules/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
 	shallow = true
+[submodule "submodules/vim-jellybeans"]
+	path = submodules/vim-jellybeans
+	url = https://github.com/nanotech/jellybeans.vim.git
+	shallow = true
+[submodule "submodules/vim-airline"]
+	path = submodules/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+	shallow = true
+[submodule "submodules/vim-airline-themes"]
+	path = submodules/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+	shallow = true
+[submodule "submodules/vim-syntastic"]
+	path = submodules/vim-syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+	shallow = true
+[submodule "submodules/vim-ctrlp"]
+	path = submodules/vim-ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+	shallow = true
+[submodule "submodules/vim-tagbar"]
+	path = submodules/vim-tagbar
+	url = https://github.com/majutsushi/tagbar.git
+	shallow = true
+[submodule "submodules/vim-fugitive"]
+	path = submodules/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+	shallow = true
+[submodule "submodules/vim-gitgutter"]
+	path = submodules/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+	shallow = true
+[submodule "submodules/vim-puppet"]
+	path = submodules/vim-puppet
+	url = https://github.com/rodjek/vim-puppet
+	shallow = true
+[submodule "submodules/vim-gnupg"]
+	path = submodules/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg
+	shallow = true
