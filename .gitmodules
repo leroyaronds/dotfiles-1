@@ -58,3 +58,7 @@
 	path = submodules/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg
 	shallow = true
+[submodule "submodules/vim-youcompleteme"]
+	path = submodules/vim-youcompleteme
+	url = https://github.com/ycm-core/YouCompleteMe.git
+	shallow = true
