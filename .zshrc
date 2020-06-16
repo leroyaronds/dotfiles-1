@@ -73,13 +73,6 @@ alias t='tmux attach -t $(hostname) || tmux new -s $(hostname)'
 alias update='sudo apt update; sudo apt upgrade; sudo apt --purge autoremove; sudo apt autoclean'
 alias v='vim'
 
-# Multi pass
-compdef _pass passw
-zstyle ':completion::complete:passw::' prefix "$HOME/.password-store-work"
-passw() {
-  PASSWORD_STORE_DIR=$HOME/.password-store-work pass $@
-}
-
 # ZSH-syntax-highlighting
 if [[ -a ~/dotfiles/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
     source ~/dotfiles/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
