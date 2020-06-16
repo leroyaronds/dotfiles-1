@@ -99,7 +99,7 @@ let g:syntastic_yaml_checkers = ['yamllint']
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 " CtrlP
-let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_files = 500
