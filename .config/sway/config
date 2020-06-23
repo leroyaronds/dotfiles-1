@@ -3,7 +3,7 @@
 ###############
 
 # Disable Xwayland
-xwayland disable
+#xwayland disable
 
 ## Variables
 #
@@ -254,3 +254,6 @@ exec swayidle -w \
     resume 'swaymsg "output * dpms on"' \
     before-sleep '$lock'
 
+## X11 systemd environment
+#
+exec systemctl --user import-environment DISPLAY XAUTHORITY
