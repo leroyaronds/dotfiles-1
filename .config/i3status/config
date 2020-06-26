@@ -1,10 +1,10 @@
 general {
-	output_format = "i3bar"
-	colors = true
-	color_good = "#008800"
-	color_degraded = "#888800"
-	color_bad = "#880000"
-	interval = 5
+    output_format = "i3bar"
+    colors = true
+    color_good = "#008800"
+    color_degraded = "#888800"
+    color_bad = "#880000"
+    interval = 5
 }
 
 order += "load"
@@ -20,66 +20,66 @@ order += "battery 1"
 order += "time"
 
 load {
-	format = "L: %1min"
-	max_threshold = "2.0"
+    format = "L: %1min"
+    max_threshold = "2.0"
 }
 
 memory {
-	format = "M: %used"
-	memory_used_method = "classical"
-	threshold_degraded = "50%"
-	threshold_critical = "10%"
+    format = "M: %used"
+    memory_used_method = "classical"
+    threshold_degraded = "40%"
+    threshold_critical = "10%"
 }
 
 cpu_temperature 7 {
-	format = "T: %degrees°C"
-	max_threshold = 50
+    format = "T: %degrees°C"
+    max_threshold = 55
 }
 
 disk "/" {
-	format = "D: %used"
+    format = "D: %used"
 }
 
 ethernet _first_ {
-	format_up = "E: %ip"
-	format_down = ""
+    format_up = "E: %ip"
+    format_down = ""
 }
 
 wireless _first_ {
-	format_up = "W: %quality %ip"
-	format_down = ""
-	format_quality = "%d%s"
+    format_up = "W: %quality %ip"
+    format_down = ""
+    format_quality = "%d%s"
 }
 
 path_exists WG {
-	format = "[%title]"
-	format_down = ""
-	path = "/proc/sys/net/ipv4/conf/wg0"
+    format = "[%title]"
+    format_down = ""
+    path = "/proc/sys/net/ipv4/conf/wg0"
 }
 
 path_exists OVPN {
-	format = "[%title]"
-	format_down = ""
-	path = "/proc/sys/net/ipv4/conf/tun0"
+    format = "[%title]"
+    format_down = ""
+    path = "/proc/sys/net/ipv4/conf/tun0"
 }
 
 volume master {
-	format = "V: %volume"
-	format_muted = "V: M"
-	device = "default"
+    format = "V: %volume"
+    format_muted = "V: M"
+    device = "default"
 }
 
 battery 1 {
-	format = "P: %remaining [%status]"
-	low_threshold = 30
-	threshold_type = time
-	status_chr = "C"
-	status_bat = "B"
-	status_unk = "?"
-	status_full = "F"
-	format_down = ""
+    format = "P: %remaining [%status]"
+    low_threshold = 30
+    threshold_type = time
+    status_chr = "C"
+    status_bat = "B"
+    status_unk = "?"
+    status_full = "F"
+    format_down = ""
 }
 
 time {
-	format = "%d-%m %H:%M"
+    format = "%d-%m %H:%M"
 }
