@@ -83,11 +83,14 @@ input "1118:2415:Microsoft_Surface_Type_Cover_Mouse" {
 # [swaymsg -t get_outputs]
 #
 # Primary screen
-output "eDP-1" {
+set $primary "eDP-1"
+output $primary {
     scale 1.25
 }
-bindswitch --reload lid:on output "eDP-1" disable
-bindswitch --reload lid:off output "eDP-1" enable
+# Clamshell mode
+bindswitch --reload --locked lid:on output $primary disabled
+bindswitch --reload --locked lid:off output $primary enable
+
 #
 # Docking station
 output "HDMI1" {
