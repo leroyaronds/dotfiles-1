@@ -78,3 +78,8 @@
 	url = https://github.com/ycm-core/YouCompleteMe.git
 	shallow = true
 	ignore = dirty
+[submodule "submodules/tmux-ssh-host"]
+	path = submodules/tmux-ssh-host
+	url = https://github.com/yuuan/tmux-ssh-host.git
+	shallow = true
+	ignore = dirty
