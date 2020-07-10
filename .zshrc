@@ -105,6 +105,11 @@ if command -v gpgconf >/dev/null; then
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
 
+# Include local zshrc file if exists
+if [[ -a ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
+
 # Auto start SWAY
 if [[ -z "$DISPLAY_WAYLAND" ]] && [[ $(tty) == /dev/tty1 ]] && command -v sway >/dev/null; then
     sway
