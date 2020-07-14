@@ -9,6 +9,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*:(ssh|sshs):argument-1:*' tag-order hosts
 bindkey '^[[Z' reverse-menu-complete
 
 # History
@@ -79,6 +80,7 @@ function sshs() {
         ssh $@ "cat > ~/.zshrc" < ~/.zshrc.remote
         ssh -t $@ "/bin/zsh; rm ~/.zshrc"
 }
+compdef sshs='ssh'
 
 # ZSH-syntax-highlighting
 if [[ -a ~/dotfiles/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
