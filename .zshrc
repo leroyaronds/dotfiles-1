@@ -77,7 +77,7 @@ alias v='vim'
 
 # Use zshrc.remote config on remote machines
 function sshs() {
-    # Copy .zshrc.remote to remove node if ~/ exists
+    # Copy .zshrc.remote to remote node if we have a home folder
     ssh $@ "test -d ~/ && cat > ~/.zshrc" < ~/.zshrc.remote 2>/dev/null
     # Start zsh with copied .zshrc and remove on disconnect
     ssh -t $@ "test -f ~/.zshrc && /bin/zsh && rm ~/.zshrc || echo 'Remote .zshrc not found ...'"
