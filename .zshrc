@@ -100,7 +100,8 @@ fi
 
 # Update GPG agent and socket
 if command -v gpgconf >/dev/null; then
-    gpgconf --launch gpg-agent
+    gpg-connect-agent /bye
+    # gpgconf --launch gpg-agent
     export GPG_TTY="$(tty)"
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
