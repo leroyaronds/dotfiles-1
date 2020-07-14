@@ -74,6 +74,12 @@ alias t='tmux attach -t $(hostname) || tmux new -s $(hostname)'
 alias update='sudo apt update; sudo apt upgrade; sudo apt --purge autoremove; sudo apt autoclean'
 alias v='vim'
 
+# Use zshrc.remote config on remote machines
+function sshs() {
+        ssh $@ "cat > ~/.zshrc" < ~/.zshrc.remote
+        ssh -t $@ "/bin/zsh; rm ~/.zshrc"
+}
+
 # ZSH-syntax-highlighting
 if [[ -a ~/dotfiles/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
     source ~/dotfiles/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
