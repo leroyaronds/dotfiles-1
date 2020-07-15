@@ -39,7 +39,7 @@ zstyle ':vcs_info:git:*' formats '[%F{cyan}%b%f%c%u]'
 zstyle ':vcs_info:git:*' actionformats '[%F{cyan}%b (%a)%f%c%u]'
 setopt PROMPT_PERCENT
 setopt PROMPT_SUBST
-PROMPT='%2~ ${vcs_info_msg_0_}» '
+PROMPT='%(?..%F{red}[%?] )%f%2~ ${vcs_info_msg_0_}%(!.%F{red}#%f.%f») '
 
 # Global aliases
 alias -g apt='apt --quiet --assume-yes --no-install-recommends'
@@ -70,6 +70,7 @@ alias ls='ls --color=tty'
 alias otp2secret='zbarimg -q --raw'
 alias otp2image='qrencode -t ansiutf8'
 alias sd='shred -u'
+alias sz='sudo HOME=$HOME /bin/zsh'
 alias sshb='ssh -fNT'
 alias t='tmux attach -t $(hostname) || tmux new -s $(hostname)'
 alias update='sudo apt update; sudo apt upgrade; sudo apt --purge autoremove; sudo apt autoclean'
