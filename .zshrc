@@ -9,7 +9,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*:(ssh|sshs):argument-1:*' tag-order hosts
+zstyle ':completion:*:(ssh|sshz):argument-1:*' tag-order hosts
 bindkey '^[[Z' reverse-menu-complete
 
 # History
@@ -76,13 +76,13 @@ alias update='sudo apt update; sudo apt upgrade; sudo apt --purge autoremove; su
 alias v='vim'
 
 # Use zshrc.remote config on remote machines
-function sshs() {
+function sshz() {
     # Copy .zshrc.remote to remote node if we have a home folder
     ssh $@ "test -d ~/ && cat > ~/.zshrc" < ~/.zshrc.remote 2>/dev/null
     # Start zsh with copied .zshrc and remove on disconnect
     ssh -t $@ "test -f ~/.zshrc && /bin/zsh && rm ~/.zshrc || echo 'Remote .zshrc not found ...'"
 }
-compdef sshs='ssh'
+compdef sshz='ssh'
 
 # ZSH-syntax-highlighting
 if [[ -a ~/dotfiles/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
