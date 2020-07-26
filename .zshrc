@@ -111,10 +111,10 @@ fi
 
 # Update GPG agent and socket
 if [[ -z "$SSH_CLIENT" ]] && [[ -z "$SSH_TTY" ]] && command -v gpgconf >/dev/null; then
-    # gpg-connect-agent /bye >/dev/null
-    gpgconf --launch gpg-agent
     export GPG_TTY="$(tty)"
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+    # gpg-connect-agent /bye >/dev/null
+    gpgconf --launch gpg-agent
 fi
 
 # Include local zshrc file if exists
