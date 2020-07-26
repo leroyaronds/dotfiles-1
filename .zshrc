@@ -110,7 +110,8 @@ if [[ -a ~/dotfiles/submodules/zsh-history-substring-search/zsh-history-substrin
 fi
 
 # Update GPG agent and socket
-if [[ -z "$SSH_CLIENT" ]] && [[ -z "$SSH_TTY" ]] && command -v gpgconf >/dev/null; then
+#if [[ -z "$SSH_CLIENT" ]] && [[ -z "$SSH_TTY" ]] && command -v gpgconf >/dev/null; then
+if command -v gpgconf >/dev/null; then
     export GPG_TTY="$(tty)"
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
     # gpg-connect-agent /bye >/dev/null
