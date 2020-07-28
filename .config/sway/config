@@ -259,4 +259,4 @@ exec swayidle -w \
 
 ## X11 systemd environment
 #
-exec systemctl --user import-environment DISPLAY XAUTHORITY
+exec systemctl --user import-environment DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
