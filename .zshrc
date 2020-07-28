@@ -113,7 +113,7 @@ fi
 if [[ -z "$SSH_CLIENT" ]] && [[ -z "$SSH_TTY" ]] && command -v gpgconf >/dev/null; then
     export GPG_TTY="$(tty)"
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-    # gpg-connect-agent /bye >/dev/null
+    # gpg-connect-agent updatestartuptty /bye >/dev/null
     gpgconf --launch gpg-agent
 fi
 
