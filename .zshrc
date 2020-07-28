@@ -109,17 +109,17 @@ if [[ -a ~/dotfiles/submodules/zsh-history-substring-search/zsh-history-substrin
     bindkey '^[[1;5B' history-substring-search-down
 fi
 
+# Include local zshrc file if exists
+if [[ -a ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
+
 # Update GPG agent and socket
 if [[ -z "$SSH_CLIENT" ]] && [[ -z "$SSH_TTY" ]] && command -v gpgconf >/dev/null; then
     export GPG_TTY="$(tty)"
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
     gpg-connect-agent updatestartuptty /bye >/dev/null
     # gpgconf --launch gpg-agent
-fi
-
-# Include local zshrc file if exists
-if [[ -a ~/.zshrc.local ]]; then
-    source ~/.zshrc.local
 fi
 
 # Auto start SWAY
