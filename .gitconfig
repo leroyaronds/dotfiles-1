@@ -51,7 +51,7 @@
     ib = --bare init
     r = reflog
     rp = remote prune origin
-    rmr = "!git checkout master && git branch --merged | xargs git branch -d"
+    rmr = "!git checkout master && git branch --merged | egrep -v '(master)' | xargs git branch -d"
     up = "!git add -A && git commit -m \"Commit from $(uname -n) on $(date '+%d-%m-%Y @ %H:%M:%S')\" && git push"
     lines = "!git ls-files | xargs wc -l"
 [user]
