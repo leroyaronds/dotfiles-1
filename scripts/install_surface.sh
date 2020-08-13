@@ -40,7 +40,7 @@ EOL
 $APT update
 
 # Install packages
-$APT install brightnessctl cmus cpufrequtils freerdp2-wayland git gpg grim i3status kitty knockd libgfshare-bin linux-headers-$(uname -r) qrencode pinentry-gnome3 resolvconf ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant zbar-tools zsh
+$APT install brightnessctl cmus cpufrequtils freerdp2-wayland git gpg grim i3status kitty knockd libgfshare-bin linux-headers-$(uname -r) qrencode pinentry-gnome3 resolvconf ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant xwayland zbar-tools zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig ~/.gitconfig
