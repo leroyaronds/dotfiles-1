@@ -114,11 +114,9 @@ if [[ -a ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
 
-# Update GPG_TTY
-export GPG_TTY="$(tty)"
-
-# Update SSH_AUTH_SOCKET to use GPG locally
-if [[ -z "$SSH_CLIENT" ]] && [[ -z "$SSH_TTY" ]] && command -v gpgconf >/dev/null; then
+# Update GPG variables
+if [[ -z "$SSH_TTY" ]] && command -v gpgconf >/dev/null; then
+    export GPG_TTY="$(tty)"
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
     # gpg-connect-agent updatestartuptty /bye >/dev/null
 fi
