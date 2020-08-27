@@ -15,6 +15,8 @@ cp board.bin /lib/firmware/ath10k/QCA6174/hw2.1/
 rm /lib/firmware/ath10k/QCA6174/hw3.0/board*
 cp board.bin /lib/firmware/ath10k/QCA6174/hw3.0/
 rm board.bin
+# curl -o /lib/firmware/ath10k/QCA6174/hw3.0/board.bin https://raw.githubusercontent.com/kvalo/ath10k-firmware/master/QCA6174/hw3.0/board-2.bin
+# curl -o /lib/firmware/ath10k/QCA6174/hw3.0/firmware-6.bin https://github.com/kvalo/ath10k-firmware/blob/master/QCA6174/hw3.0/4.4.1/firmware-6.bin_WLAN.RM.4.4.1-00157-QCARMSWPZ-1
 
 # Remove installed packages
 #
