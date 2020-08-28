@@ -18,6 +18,16 @@ rm board.bin
 # curl -o /lib/firmware/ath10k/QCA6174/hw3.0/board.bin https://raw.githubusercontent.com/kvalo/ath10k-firmware/master/QCA6174/hw3.0/board-2.bin
 # curl -o /lib/firmware/ath10k/QCA6174/hw3.0/firmware-6.bin https://github.com/kvalo/ath10k-firmware/blob/master/QCA6174/hw3.0/4.4.1/firmware-6.bin_WLAN.RM.4.4.1-00157-QCARMSWPZ-1
 
+# Auto start network interface
+cat >>"/etc/network/interfaces" <<EOL
+# Wifi
+auto wlp1s0
+iface wlp1s0 inet dhcp
+  pre-up wpa_supplicant -c /etc/wpa_supplicant.conf -i wlp1s0 &
+  pre-up sleep 4
+  post-down pkill wpa_supplicant
+EOL
+
 # Remove installed packages
 #
 # bluez - Bluetooth
@@ -28,7 +38,7 @@ rm board.bin
 # snapd - Extra package manager
 # thermald - Thermal manager CPU manager
 # xserver-xorg-video-intel - ** Intel driver which is causing screen FREEZES! (Removing this fixed the freezes) **
-$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text thermald unattended-upgrades xserver-xorg-video-intel
+$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups netplan plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text thermald unattended-upgrades xserver-xorg-video-intel
 $APT autoremove
 $APT autoclean
 
@@ -37,12 +47,12 @@ cat >"/etc/apt/sources.list" <<EOL
 deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy main universe
 deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy-updates main universe
 deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy-security main universe
-EOL
+IIEOL
 # Update repositories
 $APT update
 
 # Install packages
-$APT install brightnessctl cmus cpufrequtils freerdp2-wayland git gpg grim i3status kitty knockd libgfshare-bin linux-headers-$(uname -r) qrencode pinentry-gnome3 resolvconf ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant xwayland zbar-tools zsh
+$APT install brightnessctl cmus cpufrequtils freerdp2-wayland git gpg grim i3status ifupdown kitty knockd libgfshare-bin linux-headers-$(uname -r) qrencode pinentry-gnome3 resolvconf ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant zbar-tools zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig ~/.gitconfig
