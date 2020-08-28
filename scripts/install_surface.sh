@@ -38,7 +38,7 @@ EOL
 # snapd - Extra package manager
 # thermald - Thermal manager CPU manager
 # xserver-xorg-video-intel - ** Intel driver which is causing screen FREEZES! (Removing this fixed the freezes) **
-$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups netplan plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text thermald unattended-upgrades xserver-xorg-video-intel
+$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups netplan.io plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text thermald unattended-upgrades xserver-xorg-video-intel
 $APT autoremove
 $APT autoclean
 
