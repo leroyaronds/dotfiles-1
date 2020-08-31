@@ -28,6 +28,11 @@ iface wlp1s0 inet dhcp
   post-down pkill wpa_supplicant
 EOL
 
+# Override DNS from DHCP server
+cat >>"/etc/dhcp/dhclient.conf" <<EOL
+supersede domain-name-servers 10.1.0.1;
+EOL
+
 # Remove installed packages
 #
 # bluez - Bluetooth
