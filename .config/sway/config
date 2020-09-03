@@ -62,8 +62,8 @@ seat * hide_cursor 5000
 # Keyboard
 input type:keyboard {
     xkb_layout us
-    # Remap CAPS to MOD5+
-    #xkb_options lv3:caps_switch
+    # Make caps an additional MOD
+    xkb_options caps:super
 }
 #
 # Touchpad
