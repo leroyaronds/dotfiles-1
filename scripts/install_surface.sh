@@ -112,6 +112,9 @@ EOF
 udevadm trigger
 udevadm control --reload-rules
 
+# Fix DHCP client DNS override
+sed -i '/#prepend domain-name-servers 127.0.0.1;/c\prepend domain-name-servers 10.1.0.1;' /etc/dhcp/dhclient.conf
+
 # Remove kernel splash and enable login shell (Remove 'splash' and 'quiet')
 # vim /etc/default/grub
 # update-grub2
