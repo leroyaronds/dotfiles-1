@@ -86,16 +86,28 @@ input "1118:2415:Microsoft_Surface_Type_Cover_Mouse" {
 set $primary "eDP-1"
 output $primary {
     scale 1.25
+    resolution 1800x1200
+    position 0,768
 }
 # Clamshell mode
 bindswitch --reload --locked lid:on output $primary disabled
 bindswitch --reload --locked lid:off output $primary enable
 
 #
+# External monitor
+output "DP-1" {
+    scale 1.25
+    scale_filter smart
+    resolution 3840x2160
+    position 1440,0
+}
+
+#
 # Docking station
 output "HDMI1" {
     scale 1.0
-    resolution 1920x1200 position 1920,0
+    resolution 1920x1200
+#    position 0 0
 }
 
 ## Key bindings
