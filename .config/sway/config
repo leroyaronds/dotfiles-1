@@ -61,7 +61,7 @@ seat * hide_cursor 5000
 #
 # Keyboard
 input type:keyboard {
-    #xkb_layout us_custom
+    xkb_layout us_custom
     # Make caps HYPER
     #xkb_options caps:hyper
 }

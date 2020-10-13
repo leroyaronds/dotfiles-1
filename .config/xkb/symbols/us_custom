@@ -10,7 +10,7 @@ xkb_symbols "us_custom" {
 //
 //						Normal,			Shift,			Caps,		Shift+Caps
 //
-    key <TLDE> {	[	Escape,			NoSymbol,		grave,		asciitilde	]	};
+    key <ESC>  {	[	Escape,			NoSymbol,		grave,		asciitilde	]	};
     key <AE01> {	[	1,				exclam,			F1,			NoSymbol 	]	};
     key <AE02> {	[	2,				at,				F2,			NoSymbol	]	};
     key <AE03> {	[	3,				numbersign,		F3,			NoSymbol	]	};
