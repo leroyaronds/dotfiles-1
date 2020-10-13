@@ -57,7 +57,7 @@ IIEOL
 $APT update
 
 # Install packages
-$APT install brightnessctl cmus cpufrequtils freerdp2-wayland git gpg grim i3status ifupdown intel-media-va-driver kitty knockd libgfshare-bin qrencode pinentry-gnome3 resolvconf ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant zbar-tools zsh
+$APT install brightnessctl cmus cpufrequtils freerdp2-wayland git gpg grim i3status ifupdown intel-media-va-driver kitty knockd libgfshare-bin qrencode pinentry-gnome3 ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant zbar-tools zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ../.gitconfig ~/.gitconfig
