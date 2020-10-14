@@ -29,9 +29,9 @@ xkb_symbols "us_custom" {
     key <AD04> {    [   r,              R,              NoSymbol,               NoSymbol    ]   };
     key <AD05> {    [   t,              T,              NoSymbol,               NoSymbol    ]   };
     key <AD06> {    [   y,              Y,              NoSymbol,               NoSymbol    ]   };
-    key <AD07> {    [   u,              U,              Prior,                  NoSymbol    ]   };
-    key <AD08> {    [   i,              I,              Up,                     NoSymbol    ]   };
-    key <AD09> {    [   o,              O,              Next,                   NoSymbol    ]   };
+    key <AD07> {    [   u,              U,              Prior,                  Prior       ]   };
+    key <AD08> {    [   i,              I,              Up,                     Up          ]   };
+    key <AD09> {    [   o,              O,              Next,                   Next        ]   };
     key <AD10> {    [   p,              P,              NoSymbol,               NoSymbol    ]   };
     key <AD11> {    [   bracketleft,    braceleft,      NoSymbol,               NoSymbol    ]   };
     key <AD12> {    [   bracketright,   braceright,     Pause,                  NoSymbol    ]   };
@@ -44,7 +44,7 @@ xkb_symbols "us_custom" {
     key <AC05> {    [   g,              G,              NoSymbol,               NoSymbol    ]   };
     key <AC06> {    [   h,              H,              NoSymbol,               NoSymbol    ]   };
     key <AC07> {    [   j,              J,              Left,                   NoSymbol    ]   };
-    key <AC08> {    [   k,              K,              Down,                   NoSymbol    ]   };
+    key <AC08> {    [   k,              K,              Down,                   Down        ]   };
     key <AC09> {    [   l,              L,              Right,                  NoSymbol    ]   };
     key <AC10> {    [   semicolon,      colon,          Insert,                 NoSymbol    ]   };
     key <AC11> {    [   apostrophe,     quotedbl,       Delete,                 NoSymbol    ]   };
@@ -54,8 +54,8 @@ xkb_symbols "us_custom" {
     key <AB03> {    [   c,              C,              NoSymbol,               NoSymbol    ]   };
     key <AB04> {    [   v,              V,              NoSymbol,               NoSymbol    ]   };
     key <AB05> {    [   b,              B,              NoSymbol,               NoSymbol    ]   };
-    key <AB06> {    [   n,              N,              Home,                   NoSymbol    ]   };
-    key <AB07> {    [   m,              M,              End,                    NoSymbol    ]   };
+    key <AB06> {    [   n,              N,              Home,                   Home        ]   };
+    key <AB07> {    [   m,              M,              End,                    End         ]   };
     key <AB08> {    [   comma,          less,           XF86AudioMute,          NoSymbol    ]   };
     key <AB09> {    [   period,         greater,        XF86AudioLowerVolume,   NoSymbol    ]   };
     key <AB10> {    [   slash,          question,       XF86AudioRaiseVolume,   NoSymbol    ]   };
