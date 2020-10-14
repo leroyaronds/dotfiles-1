@@ -96,7 +96,7 @@ bindswitch --reload --locked lid:off output $primary enable
 #
 # External monitor
 output "DP-1" {
-    scale 1.5
+    scale 1.25
     scale_filter linear
     resolution 3840x2160
     position 1440,0
