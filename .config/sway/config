@@ -11,7 +11,7 @@
 set $mod Mod4
 #
 # Device lock
-set $lock swaylock -c 000000 -f -F && cmus-remote --stop
+set $lock swaylock -c 000000 -f -F && mpc --quiet stop
 #
 # Terminal
 set $term kitty
@@ -223,8 +223,8 @@ bindsym $mod+p mode $mode_system
 bindsym XF86AudioRaiseVolume exec "pactl -- set-sink-volume 0 +5%"
 bindsym XF86AudioLowerVolume exec "pactl -- set-sink-volume 0 -5%"
 bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
-bindsym XF86AudioPlay exec "cmus-remote --pause"
-bindsym pause exec "cmus-remote --pause"
+bindsym XF86AudioPlay exec "mpc --quiet play"
+bindsym pause exec "mpc --quiet pause"
 #
 # Brightness
 bindsym XF86MonBrightnessUp exec "brightnessctl s +20%"
