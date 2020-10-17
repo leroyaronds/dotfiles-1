@@ -121,6 +121,11 @@ if command -v gpgconf >/dev/null; then
     # gpg-connect-agent updatestartuptty /bye >/dev/null
 fi
 
+# Auto start MPD daemon
+if command -v mpd >/dev/null && [ ! -s ~/.config/mpd/pid ]; then
+    mpd
+fi
+
 # Auto start SWAY
 if [[ -z "$DISPLAY_WAYLAND" ]] && [[ $(tty) == /dev/tty1 ]] && command -v sway >/dev/null; then
     sway
