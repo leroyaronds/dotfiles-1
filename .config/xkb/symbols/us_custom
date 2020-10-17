@@ -34,7 +34,7 @@ xkb_symbols "us_custom" {
     key <AD09> {    [   o,              O,              Next,                   Next        ]   };
     key <AD10> {    [   p,              P,              NoSymbol,               NoSymbol    ]   };
     key <AD11> {    [   bracketleft,    braceleft,      NoSymbol,               NoSymbol    ]   };
-    key <AD12> {    [   bracketright,   braceright,     Pause,                  NoSymbol    ]   };
+    key <AD12> {    [   bracketright,   braceright,     XF86AudioPlay,          NoSymbol    ]   };
     key <BKSL> {    [   backslash,      bar,            NoSymbol,               NoSymbol    ]   };
 
     key <AC01> {    [   a,              A,              NoSymbol,               NoSymbol    ]   };
