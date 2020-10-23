@@ -113,7 +113,10 @@ udevadm trigger
 udevadm control --reload-rules
 
 # Fix DHCP client DNS override
-sed -i '/#prepend domain-name-servers 127.0.0.1;/c\prepend domain-name-servers 10.1.0.1;' /etc/dhcp/dhclient.conf
+echo 'make_resolv_conf() { :; }' > /etc/dhcp/dhclient-enter-hooks.d/leave_my_resolv_conf_alone
+chmod 755 /etc/dhcp/dhclient-enter-hooks.d/leave_my_resolv_conf_alone
+sed -i '/#DNS=/c\DNS=1.1.1.1#cloudflare-dns.com 9.9.9.9#dns.quad9.net' /etc/systemd/resolved.conf
+sed -i '/#FallbackDNS=/c\FallbackDNS=1.1.1.1' /etc/systemd/resolved.conf
 
 # Remove kernel splash and enable login shell (Remove 'splash' and 'quiet')
 # vim /etc/default/grub
