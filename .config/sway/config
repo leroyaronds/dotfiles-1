@@ -62,8 +62,6 @@ seat * hide_cursor 5000
 # Keyboard
 input type:keyboard {
     xkb_layout us_custom
-    # Make caps HYPER
-    #xkb_options caps:hyper
 }
 #
 # Touchpad
@@ -107,7 +105,6 @@ output "DP-1" {
 output "HDMI1" {
     scale 1.0
     resolution 1920x1200
-#    position 0 0
 }
 
 ## Key bindings
@@ -118,7 +115,7 @@ bindsym $mod+d exec $term --class kitty-menu --override background_opacity=0.8 /
 for_window [app_id="kitty-menu"] floating enable, resize set height 250 px, resize set width 800 px, move position center
 #
 # Start a terminal
-bindsym $mod+Return exec $term # --single-instance --instance-group terminal
+bindsym $mod+Return exec $term --single-instance --instance-group terminal
 #
 # Start internet browser
 bindsym $mod+i exec $browser
@@ -226,8 +223,8 @@ bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 bindsym XF86AudioPlay exec "mpc --quiet toggle"
 #
 # Brightness
-bindsym XF86MonBrightnessUp exec "brightnessctl s +20%"
-bindsym XF86MonBrightnessDown exec "brightnessctl s 20%-"
+bindsym XF86MonBrightnessUp exec "brightnessctl s +10%"
+bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-"
 
 ## Statusbar
 #
