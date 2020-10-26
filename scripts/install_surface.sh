@@ -9,12 +9,12 @@ APT="apt --quiet --assume-yes --no-install-recommends"
 [ "$UID" -eq 0 ] || exec sudo "$0" "$@"
 
 # Fix ath10k
-curl http://www.killernetworking.com/support/K1535_Debian/board.bin > board.bin
-rm /lib/firmware/ath10k/QCA6174/hw2.1/board*
-cp board.bin /lib/firmware/ath10k/QCA6174/hw2.1/
-rm /lib/firmware/ath10k/QCA6174/hw3.0/board*
-cp board.bin /lib/firmware/ath10k/QCA6174/hw3.0/
-rm board.bin
+#curl http://www.killernetworking.com/support/K1535_Debian/board.bin > board.bin
+#rm /lib/firmware/ath10k/QCA6174/hw2.1/board*
+#cp board.bin /lib/firmware/ath10k/QCA6174/hw2.1/
+#rm /lib/firmware/ath10k/QCA6174/hw3.0/board*
+#cp board.bin /lib/firmware/ath10k/QCA6174/hw3.0/
+#rm board.bin
 # curl -o /lib/firmware/ath10k/QCA6174/hw3.0/board.bin https://raw.githubusercontent.com/kvalo/ath10k-firmware/master/QCA6174/hw3.0/board-2.bin
 # curl -o /lib/firmware/ath10k/QCA6174/hw3.0/firmware-6.bin https://github.com/kvalo/ath10k-firmware/blob/master/QCA6174/hw3.0/4.4.1/firmware-6.bin_WLAN.RM.4.4.1-00157-QCARMSWPZ-1
 
@@ -28,10 +28,11 @@ iface wlp1s0 inet dhcp
   post-down pkill wpa_supplicant
 EOL
 
-# Override DNS from DHCP server
-cat >>"/etc/dhcp/dhclient.conf" <<EOL
-supersede domain-name-servers 10.1.0.1;
-EOL
+# Fix DHCP client DNS override
+echo 'make_resolv_conf() { :; }' > /etc/dhcp/dhclient-enter-hooks.d/leave_my_resolv_conf_alone
+chmod 755 /etc/dhcp/dhclient-enter-hooks.d/leave_my_resolv_conf_alone
+sed -i '/#DNS=/c\DNS=1.1.1.1#cloudflare-dns.com 9.9.9.9#dns.quad9.net' /etc/systemd/resolved.conf
+sed -i '/#FallbackDNS=/c\FallbackDNS=1.1.1.1' /etc/systemd/resolved.conf
 
 # Remove installed packages
 #
@@ -41,9 +42,8 @@ EOL
 # plymouth-theme-* - Stupid PURPLE ubuntu grub splashscreen
 # unattended-upgrades - Autmatic background update daemon
 # snapd - Extra package manager
-# thermald - Thermal manager CPU manager
 # xserver-xorg-video-intel - ** Intel driver which is causing screen FREEZES! (Removing this fixed the freezes) **
-$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups netplan.io plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text thermald unattended-upgrades xserver-xorg-video-intel
+$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups netplan.io plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text unattended-upgrades xserver-xorg-video-intel
 $APT autoremove
 $APT autoclean
 
@@ -52,7 +52,7 @@ cat >"/etc/apt/sources.list" <<EOL
 deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy main universe
 deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy-updates main universe
 deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy-security main universe
-IIEOL
+EOL
 # Update repositories
 $APT update
 
@@ -85,6 +85,37 @@ MIN_SPEED="400MHz"
 MAX_SPEED="1600MHz"
 EOL
 
+# Configure Thermald
+cat >"/etc/thermald/thermal-conf.xml" <<EOL
+<?xml version="1.0"?>
+<ThermalConfiguration>
+<Platform>
+    <Name>Surface Pro 7</Name>
+    <ProductName>*</ProductName>
+    <Preference>QUIET</Preference>
+    <ThermalZones>
+        <ThermalZone>
+            <Type>cpu</Type>
+            <TripPoints>
+                <TripPoint>
+                    <SensorType>x86_pkg_temp</SensorType>
+                    <Temperature>60000</Temperature>
+                    <type>passive</type>
+                    <ControlType>SEQUENTIAL</ControlType>
+                    <CoolingDevice>
+                        <index>1</index>
+                        <type>rapl_controller</type>
+                        <influence>100</influence>
+                        <SamplingPeriod>10</SamplingPeriod>
+                    </CoolingDevice>
+                </TripPoint>
+            </TripPoints>
+        </ThermalZone>
+    </ThermalZones>
+</Platform>
+</ThermalConfiguration>
+EOL
+
 # Add user to 'video' group to allow brightness control
 usermod -aG video $USER
 
@@ -111,12 +142,6 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="plugdev", ATTRS{idVe
 EOF
 udevadm trigger
 udevadm control --reload-rules
-
-# Fix DHCP client DNS override
-echo 'make_resolv_conf() { :; }' > /etc/dhcp/dhclient-enter-hooks.d/leave_my_resolv_conf_alone
-chmod 755 /etc/dhcp/dhclient-enter-hooks.d/leave_my_resolv_conf_alone
-sed -i '/#DNS=/c\DNS=1.1.1.1#cloudflare-dns.com 9.9.9.9#dns.quad9.net' /etc/systemd/resolved.conf
-sed -i '/#FallbackDNS=/c\FallbackDNS=1.1.1.1' /etc/systemd/resolved.conf
 
 # Remove kernel splash and enable login shell (Remove 'splash' and 'quiet')
 # vim /etc/default/grub
