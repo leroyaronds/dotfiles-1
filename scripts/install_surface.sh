@@ -46,7 +46,7 @@ sed -i '/#FallbackDNS=/c\FallbackDNS=1.1.1.1' /etc/systemd/resolved.conf
 # unattended-upgrades - Autmatic background update daemon
 # snapd - Extra package manager
 # xserver-xorg-video-intel - ** Intel driver which is causing screen FREEZES! (Removing this fixed the freezes) **
-$APT remove --purge gdm3 snapd bluez ubuntu-session gvfs gnome-session-bin gnome-settings-daemon cups netplan.io network-manager plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text sssd unattended-upgrades xserver-xorg-video-intel
+$APT remove --purge gdm3 snapd bluez ubuntu-session gvfs gvfs-common gnome-session-bin gnome-settings-daemon cups netplan.io network-manager sssd sssd-common unattended-upgrades xserver-xorg-video-intel
 $APT autoremove
 $APT autoclean
 
@@ -79,7 +79,7 @@ ln --symbolic ~/dotfiles/.config/kitty ~/.config/kitty
 #EOL
 
 # Change shell
-#chsh --shell /usr/bin/zsh
+chsh --shell /usr/bin/zsh
 
 # Set CPU goverer to 'performance' or 'powersave'
 #cat >"/etc/default/cpufrequtils" <<EOL
@@ -146,6 +146,13 @@ EOF
 udevadm trigger
 udevadm control --reload-rules
 
-# Remove kernel splash and enable login shell (Remove 'splash' and 'quiet')
-# vim /etc/default/grub
-# update-grub2
+# Add reboot fix for Surface Pro 7
+cat >"/etc/default/grub" <<EOL
+GRUB_CMDLINE_LINUX_DEFAULT="reboot=pci quiet splash"
+EOL
+update-grub2
+
+# Fix Plymouth login stuck on logo
+cat >"/lib/systemd/system/plymouth.service" <<EOL
+ExecStart=/bin/plymouth quit
+EOL
