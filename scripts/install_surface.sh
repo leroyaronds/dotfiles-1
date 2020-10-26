@@ -46,7 +46,7 @@ sed -i '/#FallbackDNS=/c\FallbackDNS=1.1.1.1' /etc/systemd/resolved.conf
 # unattended-upgrades - Autmatic background update daemon
 # snapd - Extra package manager
 # xserver-xorg-video-intel - ** Intel driver which is causing screen FREEZES! (Removing this fixed the freezes) **
-$APT remove --purge gdm3 snapd bluez ubuntu-session gvfs gnome-session-bin gnome-settings-daemon cups netplan.io network-manager plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text unattended-upgrades xserver-xorg-video-intel
+$APT remove --purge gdm3 snapd bluez ubuntu-session gvfs gnome-session-bin gnome-settings-daemon cups netplan.io network-manager plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text sssd unattended-upgrades xserver-xorg-video-intel
 $APT autoremove
 $APT autoclean
 
