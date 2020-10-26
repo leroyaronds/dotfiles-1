@@ -18,6 +18,9 @@ APT="apt --quiet --assume-yes --no-install-recommends"
 # curl -o /lib/firmware/ath10k/QCA6174/hw3.0/board.bin https://raw.githubusercontent.com/kvalo/ath10k-firmware/master/QCA6174/hw3.0/board-2.bin
 # curl -o /lib/firmware/ath10k/QCA6174/hw3.0/firmware-6.bin https://github.com/kvalo/ath10k-firmware/blob/master/QCA6174/hw3.0/4.4.1/firmware-6.bin_WLAN.RM.4.4.1-00157-QCARMSWPZ-1
 
+# Create wpc-supplicant config
+wpa_passphrase YOUR_SSID YOUR_PASSWORD > /etc/wpa_supplicant.conf
+
 # Auto start network interface
 cat >>"/etc/network/interfaces" <<EOL
 # Wifi
@@ -43,7 +46,7 @@ sed -i '/#FallbackDNS=/c\FallbackDNS=1.1.1.1' /etc/systemd/resolved.conf
 # unattended-upgrades - Autmatic background update daemon
 # snapd - Extra package manager
 # xserver-xorg-video-intel - ** Intel driver which is causing screen FREEZES! (Removing this fixed the freezes) **
-$APT remove --purge gdm3 snapd bluez ubuntu-session gnome-session-bin gnome-settings-daemon cups netplan.io plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text unattended-upgrades xserver-xorg-video-intel
+$APT remove --purge gdm3 snapd bluez ubuntu-session gvfs gnome-session-bin gnome-settings-daemon cups netplan.io network-manager plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text unattended-upgrades xserver-xorg-video-intel
 $APT autoremove
 $APT autoclean
 
@@ -57,33 +60,33 @@ EOL
 $APT update
 
 # Install packages
-$APT install brightnessctl cpufrequtils freerdp2-wayland git gpg grim i3status ifupdown intel-media-va-driver kitty knockd libgfshare-bin mpd mpc ncmpc qrencode pinentry-gnome3 ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant zbar-tools zsh
+$APT install brightnessctl cpufrequtils freerdp2-wayland git gpg grim i3status ifupdown intel-media-va-driver kitty knockd libgfshare-bin mpd mpc ncmpc qrencode pinentry-gnome3 ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant xwayland zbar-tools zsh
 
 # Create symbolic links to dotfiles
-ln --symbolic ../.gitconfig ~/.gitconfig
-ln --symbolic ../.gitignore ~/.gitignore
-ln --symbolic ../.vimrc ~/.vimrc
-ln --symbolic ../.zshenv ~/.zshenv
-ln --symbolic ../.zshrc ~/.zshrc
-ln --symbolic ../.config/sway ~/.config/sway
-ln --symbolic ../.config/i3status ~/.config/i3status
-ln --symbolic ../.config/kitty ~/.config/kitty
+ln --symbolic ~/dotfiles/.gitconfig ~/.gitconfig
+ln --symbolic ~/dotfiles/.gitignore ~/.gitignore
+ln --symbolic ~/dotfiles/.vimrc ~/.vimrc
+ln --symbolic ~/dotfiles/.zshenv ~/.zshenv
+ln --symbolic ~/dotfiles/.zshrc ~/.zshrc
+ln --symbolic ~/dotfiles/.config/sway ~/.config/sway
+ln --symbolic ~/dotfiles/.config/i3status ~/.config/i3status
+ln --symbolic ~/dotfiles/.config/kitty ~/.config/kitty
 
 # Set locale
-cat >"/etc/default/locale" <<EOL
-LANG=en_US.UTF-8
-LC_ALL=en_US.UTF-8
-EOL
+#cat >"/etc/default/locale" <<EOL
+#LANG=en_US.UTF-8
+#LC_ALL=en_US.UTF-8
+#EOL
 
 # Change shell
-chsh --shell /usr/bin/zsh
+#chsh --shell /usr/bin/zsh
 
 # Set CPU goverer to 'performance' or 'powersave'
-cat >"/etc/default/cpufrequtils" <<EOL
-GOVERNOR="performance"
-MIN_SPEED="400MHz"
-MAX_SPEED="1600MHz"
-EOL
+#cat >"/etc/default/cpufrequtils" <<EOL
+#GOVERNOR="performance"
+#MIN_SPEED="400MHz"
+#MAX_SPEED="1600MHz"
+#EOL
 
 # Configure Thermald
 cat >"/etc/thermald/thermal-conf.xml" <<EOL
@@ -120,7 +123,7 @@ EOL
 usermod -aG video $USER
 
 # Disable ondemand CPU scaling
-systemctl disable ondemand
+#systemctl disable ondemand
 
 # Set powerbutton to suspend
 cat >"/etc/systemd/logind.conf" <<EOL
@@ -129,7 +132,7 @@ HandlePowerKey=suspend
 EOL
 
 # Fix mouse pointer in Firefox
-gsettings set org.gnome.desktop.interface cursor-theme 'DMZ-White'
+#gsettings set org.gnome.desktop.interface cursor-theme 'DMZ-White'
 
 # Install Ledger USB detection
 cat <<EOF > /etc/udev/rules.d/20-hw1.rules
