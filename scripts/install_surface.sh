@@ -152,6 +152,9 @@ GRUB_CMDLINE_LINUX_DEFAULT="reboot=pci quiet splash"
 EOL
 update-grub2
 
+# Set default systemd runlevel to multi user
+systemctl set-default multi-user.target
+
 # Fix Plymouth login stuck on logo
 cat >"/lib/systemd/system/plymouth.service" <<EOL
 ExecStart=/bin/plymouth quit
