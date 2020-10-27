@@ -46,7 +46,7 @@ sed -i '/#FallbackDNS=/c\FallbackDNS=1.1.1.1' /etc/systemd/resolved.conf
 # unattended-upgrades - Autmatic background update daemon
 # snapd - Extra package manager
 # xserver-xorg-video-intel - ** Intel driver which is causing screen FREEZES! (Removing this fixed the freezes) **
-$APT remove --purge gdm3 snapd bluez ubuntu-session gvfs gvfs-common gnome-session-bin gnome-settings-daemon cups netplan.io network-manager sssd sssd-common unattended-upgrades xserver-xorg-video-intel
+$APT remove --purge --auto-remove gdm3 snapd bluez ubuntu-session gvfs-daemons gnome-session-bin gnome-settings-daemon cups netplan.io network-manager sssd unattended-upgrades xserver-xorg-video-intel
 $APT autoremove
 $APT autoclean
 
@@ -148,7 +148,7 @@ udevadm control --reload-rules
 
 # Add reboot fix for Surface Pro 7
 cat >"/etc/default/grub" <<EOL
-GRUB_CMDLINE_LINUX_DEFAULT="reboot=pci quiet splash"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash reboot=pci"
 EOL
 update-grub2
 
