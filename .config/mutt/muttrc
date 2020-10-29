@@ -1,28 +1,26 @@
-# Account settings
-source "gpg -d ~/.config/mutt/account.gpg |"
-set spoolfile = +INBOX
-mailboxes = +INBOX
-set date_format = "%d-%m %H:%M"
+# Account switch bindings
+macro index <f2> '<sync-mailbox><enter-command>source "gpg -d ~/.config/mutt/account.work.gpg |"<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source "gpg -d ~/.config/mutt/account.home.gpg |"<enter><change-folder>!<enter>'
+
+# Default account
+source "gpg -d ~/.config/mutt/account.work.gpg |"
+
 # Sort mail on date
+set date_format = "%d-%m %H:%M"
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
 set index_format = "%2C | %Z [%d] %-15.15F (%-4.4c) %-60.60s"
-# Store message headers locally to speed things up.
-set header_cache = "/dev/shm/mutt/"
-# Store messages locally to speed things up, like searching message bodies.
-set message_cachedir = "/dev/shm/mutt/"
-# Allow Mutt to open a new IMAP connection automatically.
-unset imap_passive
-# Keep the IMAP connection alive by polling intermittently (time in seconds).
-set imap_keepalive = 300
-# How often to check for new mail (time in seconds).
-set mail_check = 120
-set timeout = 30
-set beep_new = yes
+
+# Sidebar
+set sidebar_visible = yes
+set sidebar_width = 12
+
 # Fetch mail keybind on ^
 bind index ^ imap-fetch-mail
+
 # Show HTML message
 auto_view text/html
 alternative_order text/plain text/enriched text/html
+
 # Set mailcap path
 set mailcap_path = ~/.config/mutt/mailcap
