@@ -72,6 +72,7 @@ alias otp2image='qrencode -t ansiutf8'
 alias sd='shred -u'
 alias sz='sudo HOME=$HOME /bin/zsh'
 alias sshb='ssh -fNT'
+alias sshz=sshz
 alias t='tmux attach -t $(hostname) || tmux new -s $(hostname)'
 alias update='sudo apt update; sudo apt upgrade; sudo apt --purge autoremove; sudo apt autoclean'
 alias v='vim'
