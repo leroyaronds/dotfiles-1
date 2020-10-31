@@ -1,3 +1,8 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Colors
 if [[ -z "$LS_COLORS" ]]; then
     (( $+commands[dircolors] )) && eval "$(dircolors -b)"
@@ -108,6 +113,14 @@ if [[ -a ~/dotfiles/submodules/zsh-history-substring-search/zsh-history-substrin
     source ~/dotfiles/submodules/zsh-history-substring-search/zsh-history-substring-search.zsh
     bindkey '^[[1;5A' history-substring-search-up
     bindkey '^[[1;5B' history-substring-search-down
+fi
+
+# Powerlevel10k
+if [[ -a ~/dotfiles/submodules/zsh-powerlevel10k/powerlevel10k.zsh-theme ]]; then
+    source ~/dotfiles/submodules/zsh-powerlevel10k/powerlevel10k.zsh-theme
+
+    # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 fi
 
 # Include local zshrc file if exists
