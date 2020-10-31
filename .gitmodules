@@ -83,3 +83,8 @@
 	url = https://github.com/yuuan/tmux-ssh-host.git
 	shallow = true
 	ignore = dirty
+[submodule "submodules/zsh-powerlevel10k"]
+	path = submodules/zsh-powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+	shallow = true
+	ignore = dirty
