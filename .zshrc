@@ -31,21 +31,6 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
 
-# Prompt
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' disable-patterns "~/ssh-mount(|/*)"
-zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
-zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'
-zstyle ':vcs_info:git:*' formats '[%F{cyan}%b%f%c%u]'
-zstyle ':vcs_info:git:*' actionformats '[%F{cyan}%b (%a)%f%c%u]'
-setopt PROMPT_PERCENT
-setopt PROMPT_SUBST
-PROMPT='%(?..%F{red}[%?] )%f%2~ ${vcs_info_msg_0_}%(!.%F{red}#%f.%f») '
-
 # Global aliases
 alias -g apt='apt --quiet --assume-yes --no-install-recommends'
 
@@ -116,12 +101,27 @@ if [[ -a ~/dotfiles/submodules/zsh-history-substring-search/zsh-history-substrin
     bindkey '^[[1;5B' history-substring-search-down
 fi
 
-# Powerlevel10k
+# Powerlevel10k prompt
 if [[ -a ~/dotfiles/submodules/zsh-powerlevel10k/powerlevel10k.zsh-theme ]]; then
     source ~/dotfiles/submodules/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
     # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
     [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+else
+    # Minimal prompt
+    autoload -Uz vcs_info
+    precmd_vcs_info() { vcs_info }
+    precmd_functions+=( precmd_vcs_info )
+    zstyle ':vcs_info:*' enable git
+    zstyle ':vcs_info:*' check-for-changes true
+    zstyle ':vcs_info:*' disable-patterns "~/ssh-mount(|/*)"
+    zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
+    zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'
+    zstyle ':vcs_info:git:*' formats '[%F{cyan}%b%f%c%u]'
+    zstyle ':vcs_info:git:*' actionformats '[%F{cyan}%b (%a)%f%c%u]'
+    setopt PROMPT_PERCENT
+    setopt PROMPT_SUBST
+    PROMPT='%(?..%F{red}[%?] )%f%2~ ${vcs_info_msg_0_}%(!.%F{red}#%f.%f») '
 fi
 
 # Include local zshrc file if exists
