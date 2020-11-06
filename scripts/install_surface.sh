@@ -58,13 +58,11 @@ deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy-security main universe
 EOL
 
 # Extra repositories
-cat >"/etc/apt/sources.list.d/extra.list" <<EOL
-# Foliate e-reader
-deb http://ppa.launchpad.net/apandada1/foliate/ubuntu/ groovy main
-# Puppet 5
-deb http://apt.puppetlabs.com bionic puppet5
+cat >"/etc/apt/sources.list.d/vscode.list" <<EOL
 # Microsoft Visual Studio Code
 deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main
+# Puppet 5 (For puppet extention)
+deb http://apt.puppetlabs.com bionic puppet5
 EOL
 
 # Update repositories
