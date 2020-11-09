@@ -1,9 +1,9 @@
 # Account switch bindings
-macro index <f2> '<sync-mailbox><enter-command>source "gpg -d ~/.config/mutt/account.work.gpg |"<enter><change-folder>!<enter>'
-macro index <f3> '<sync-mailbox><enter-command>source "gpg -d ~/.config/mutt/account.home.gpg |"<enter><change-folder>!<enter>'
+macro index <f2> '<sync-mailbox><enter-command>source "gpg -qd ~/.config/mutt/account.work.gpg |"<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source "gpg -qd ~/.config/mutt/account.home.gpg |"<enter><change-folder>!<enter>'
 
 # Default account
-source "gpg -d ~/.config/mutt/account.work.gpg |"
+source "gpg --quiet --decrypt ~/.config/mutt/account.work.gpg |"
 
 # Sort mail on date
 set date_format = "%d-%m %H:%M"

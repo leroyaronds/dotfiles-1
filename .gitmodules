@@ -15,7 +15,7 @@
 	ignore = dirty
 [submodule "submodules/tmux-resurrect"]
 	path = submodules/tmux-resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
 	shallow = true
 	ignore = dirty
 [submodule "submodules/tmux-yank"]
@@ -55,22 +55,22 @@
 	ignore = dirty
 [submodule "submodules/vim-fugitive"]
 	path = submodules/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
 	shallow = true
 	ignore = dirty
 [submodule "submodules/vim-gitgutter"]
 	path = submodules/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
 	shallow = true
 	ignore = dirty
 [submodule "submodules/vim-puppet"]
 	path = submodules/vim-puppet
-	url = https://github.com/rodjek/vim-puppet
+	url = https://github.com/rodjek/vim-puppet.git
 	shallow = true
 	ignore = dirty
 [submodule "submodules/vim-gnupg"]
 	path = submodules/vim-gnupg
-	url = https://github.com/jamessan/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg.git
 	shallow = true
 	ignore = dirty
 [submodule "submodules/vim-youcompleteme"]
