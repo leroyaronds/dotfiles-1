@@ -22,11 +22,11 @@ APT="apt --quiet --assume-yes --no-install-recommends"
 wpa_passphrase YOUR_SSID YOUR_PASSWORD > /etc/wpa_supplicant.conf
 
 # Auto start network interface
-cat >>"/etc/network/interfaces" <<EOL
+cat >>"/etc/network/interfaces.d/wifi" <<EOL
 # Wifi
-auto wlp1s0
-iface wlp1s0 inet dhcp
-  pre-up wpa_supplicant -c /etc/wpa_supplicant.conf -i wlp1s0 &
+auto wlp0s20f3
+iface wlp0s20f3 inet dhcp
+  pre-up wpa_supplicant -c /etc/wpa_supplicant.conf -i wlp0s20f3 &
   pre-up sleep 4
   post-down pkill wpa_supplicant
 EOL
@@ -46,7 +46,7 @@ sed -i '/#FallbackDNS=/c\FallbackDNS=1.1.1.1' /etc/systemd/resolved.conf
 # unattended-upgrades - Autmatic background update daemon
 # snapd - Extra package manager
 # xserver-xorg-video-intel - ** Intel driver which is causing screen FREEZES! (Removing this fixed the freezes) **
-$APT remove --purge --auto-remove gdm3 snapd bluez ubuntu-session gvfs-daemons gnome-session-bin gnome-settings-daemon cups netplan.io network-manager sssd unattended-upgrades xserver-xorg-video-intel
+$APT remove --purge --auto-remove gdm3 snapd bluez ubuntu-session gvfs-daemons gnome-session-bin gnome-settings-daemon cups netplan.io network-manager sssd ubuntu-wallpapers ubuntu-wallpapers-groovy unattended-upgrades xserver-xorg-video-intel
 $APT autoremove
 $APT autoclean
 
