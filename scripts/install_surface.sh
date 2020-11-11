@@ -58,18 +58,20 @@ deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy-security main universe
 EOL
 
 # Extra repositories
-cat >"/etc/apt/sources.list.d/vscode.list" <<EOL
+cat >"/etc/apt/sources.list.d/misc.list" <<EOL
 # Microsoft Visual Studio Code
 deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main
 # Puppet 5 (For puppet extention)
 deb http://apt.puppetlabs.com bionic puppet5
+# Signal messenger
+deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main
 EOL
 
 # Update repositories
 $APT update
 
 # Install packages
-$APT install brightnessctl cpufrequtils freerdp2-wayland git gpg grim i3status ifupdown intel-media-va-driver kitty knockd libgfshare-bin mpd mpc ncmpc qrencode pinentry-gnome3 ripgrep scdaemon sshfs steghide sway swayidle swaylock todotxt-cli tomb vim wireguard wl-clipboard wpasupplicant xwayland zbar-tools zsh
+$APT install brightnessctl cpufrequtils freerdp2-wayland git gpg grim i3status ifupdown intel-media-va-driver kitty knockd libgfshare-bin mpd mpc ncmpc qrencode pinentry-gnome3 ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant xwayland zbar-tools zsh
 
 # Create symbolic links to dotfiles
 ln --symbolic ~/dotfiles/.gitconfig ~/.gitconfig
