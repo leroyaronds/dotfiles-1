@@ -65,7 +65,8 @@
 	ignore = dirty
 [submodule "submodules/vim-gnupg"]
 	path = submodules/vim-gnupg
-	url = git@github.com:jamessan/vim-gnupg.git
+	url = https://github.com/jamessan/vim-gnupg.git
+	branch = main
 	shallow = true
 	ignore = dirty
 [submodule "submodules/vim-puppet"]
