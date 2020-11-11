@@ -63,14 +63,14 @@
 	url = https://github.com/airblade/vim-gitgutter.git
 	shallow = true
 	ignore = dirty
+[submodule "submodules/vim-gnupg"]
+	path = submodules/vim-gnupg
+	url = git@github.com:jamessan/vim-gnupg.git
+	shallow = true
+	ignore = dirty
 [submodule "submodules/vim-puppet"]
 	path = submodules/vim-puppet
 	url = https://github.com/rodjek/vim-puppet.git
-	shallow = true
-	ignore = dirty
-[submodule "submodules/vim-gnupg"]
-	path = submodules/vim-gnupg
-	url = https://github.com/jamessan/vim-gnupg.git
 	shallow = true
 	ignore = dirty
 [submodule "submodules/vim-youcompleteme"]
