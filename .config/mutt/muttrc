@@ -3,7 +3,12 @@ macro index <f2> '<sync-mailbox><enter-command>source "gpg -qd ~/.config/mutt/ac
 macro index <f3> '<sync-mailbox><enter-command>source "gpg -qd ~/.config/mutt/account.home.gpg |"<enter><change-folder>!<enter>'
 
 # Default account
-source "gpg --quiet --decrypt ~/.config/mutt/account.work.gpg |"
+source "pass mail/account.work |"
+
+# Aliases
+set sort_alias = alias
+set reverse_alias = yes
+source "pass mail/aliases |"
 
 # General
 unset wait_key
