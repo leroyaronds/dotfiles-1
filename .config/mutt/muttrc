@@ -40,8 +40,6 @@ set sidebar_folder_indent = yes
 set sidebar_indent_string = ' '
 set mail_check_stats
 set sidebar_format = "%B %* %?N?%N?"
-color sidebar_indicator default default
-color sidebar_new yellow default
 
 # Keybindings
 bind index ^        imap-fetch-mail
@@ -63,6 +61,7 @@ bind attach <return> view-mailcap
 # Header
 ignore *
 unignore From To Reply-To Cc Bcc Subject Date Organization X-Label X-Mailer User-Agent
+unhdr_order * 
 
 # Pager
 set pager_index_lines = 10 # number of index lines to show
@@ -123,3 +122,8 @@ color quoted2       color84     default
 color quoted3       color215    default
 color quoted4       color212    default
 color signature     color212    default
+
+# SIDEBAR               FG          BF
+# -----------------------------------------------
+color sidebar_indicator default     default
+color sidebar_new       yellow      default
