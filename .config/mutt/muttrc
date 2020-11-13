@@ -1,9 +1,12 @@
 # Account switch bindings
-macro index <f2> '<sync-mailbox><enter-command>source "gpg -qd ~/.config/mutt/account.work.gpg |"<enter><change-folder>!<enter>'
-macro index <f3> '<sync-mailbox><enter-command>source "gpg -qd ~/.config/mutt/account.home.gpg |"<enter><change-folder>!<enter>'
+macro index <f2> '<sync-mailbox><enter-command>source "pass mail/account.work |"<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source "pass mail/account.home |"<enter><change-folder>!<enter>'
 
-# Default account
+# Accounts
+#source "pass mail/account.home |"
+#folder-hook $folder "source 'pass mail/account.home |'"
 source "pass mail/account.work |"
+#folder-hook $folder "source 'pass mail/account.work |'"
 
 # Aliases
 set sort_alias = alias
