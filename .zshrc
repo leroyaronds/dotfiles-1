@@ -137,12 +137,6 @@ fi
 if command -v gpgconf >/dev/null; then
     export GPG_TTY="$(tty)"
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-    # gpg-connect-agent updatestartuptty /bye >/dev/null
-fi
-
-# Auto start MPD daemon
-if command -v mpd >/dev/null && [ ! -s ~/.config/mpd/pid ]; then
-    mpd
 fi
 
 # Auto start SWAY
