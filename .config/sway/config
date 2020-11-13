@@ -17,6 +17,7 @@ set $lock swaylock -c 000000 -f -F && mpc --quiet stop
 set $term kitty
 #
 # Browser
+#set $browser MOZ_ENABLE_WAYLAND=1 firefox
 set $browser firefox
 #
 # Moving around

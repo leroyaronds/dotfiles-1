@@ -27,7 +27,6 @@ cat >>"/etc/network/interfaces.d/wifi" <<EOL
 auto wlp0s20f3
 iface wlp0s20f3 inet dhcp
   pre-up wpa_supplicant -c /etc/wpa_supplicant.conf -i wlp0s20f3 &
-  pre-up sleep 4
   post-down pkill wpa_supplicant
 EOL
 
@@ -104,30 +103,61 @@ chsh --shell /usr/bin/zsh
 cat >"/etc/thermald/thermal-conf.xml" <<EOL
 <?xml version="1.0"?>
 <ThermalConfiguration>
-<Platform>
+  <Platform>
     <Name>Surface Pro 7</Name>
     <ProductName>*</ProductName>
     <Preference>QUIET</Preference>
+    <ThermalSensors>
+      <ThermalSensor>
+        <Type>coretemp</Type>
+        <Path>/sys/class/thermal/thermal_zone8/temp</Path>
+        <AsyncCapable>0</AsyncCapable>
+      </ThermalSensor>
+    </ThermalSensors>
     <ThermalZones>
-        <ThermalZone>
-            <Type>cpu</Type>
-            <TripPoints>
-                <TripPoint>
-                    <SensorType>x86_pkg_temp</SensorType>
-                    <Temperature>60000</Temperature>
-                    <type>passive</type>
-                    <ControlType>SEQUENTIAL</ControlType>
-                    <CoolingDevice>
-                        <index>1</index>
-                        <type>rapl_controller</type>
-                        <influence>100</influence>
-                        <SamplingPeriod>10</SamplingPeriod>
-                    </CoolingDevice>
-                </TripPoint>
-            </TripPoints>
-        </ThermalZone>
+      <ThermalZone>
+        <Type>cpu</Type>
+        <TripPoints>
+          <TripPoint>
+            <SensorType>x86_pkg_temp</SensorType>
+            <Temperature>60000</Temperature>
+            <type>passive</type>
+            <ControlType>PARALLEL</ControlType>
+            <CoolingDevice>
+              <index>1</index>
+              <type>rapl_controller</type>
+              <influence>50</influence>
+              <SamplingPeriod>10</SamplingPeriod>
+            </CoolingDevice>
+            <CoolingDevice>
+              <index>2</index>
+              <type>intel_pstate</type>
+              <influence>40</influence>
+              <SamplingPeriod>10</SamplingPeriod>
+            </CoolingDevice>
+            <CoolingDevice>
+              <index>3</index>
+              <type>intel_powerclamp</type>
+              <influence>30</influence>
+              <SamplingPeriod>10</SamplingPeriod>
+            </CoolingDevice>
+            <CoolingDevice>
+              <index>4</index>
+              <type>cpufreq</type>
+              <influence>20</influence>
+              <SamplingPeriod>8</SamplingPeriod>
+            </CoolingDevice>
+            <CoolingDevice>
+              <index>5</index>
+              <type>Processor</type>
+              <influence>10</influence>
+              <SamplingPeriod>5</SamplingPeriod>
+            </CoolingDevice>
+          </TripPoint>
+        </TripPoints>
+      </ThermalZone>
     </ThermalZones>
-</Platform>
+  </Platform>
 </ThermalConfiguration>
 EOL
 

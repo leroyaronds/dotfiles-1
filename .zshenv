@@ -10,8 +10,6 @@ export XDG_CACHE_HOME=/dev/shm
 export XDG_CONFIG_HOME=$HOME/.config
 # Set data directory
 export XDG_DATA_HOME=$HOME/.local/share
-# Enable WAYLAND in Firefox
-export MOZ_ENABLE_WAYLAND=1
 # Set WAYLAND backend
 #export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland-egl
