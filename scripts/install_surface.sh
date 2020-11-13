@@ -46,7 +46,7 @@ sed -i '/#FallbackDNS=/c\FallbackDNS=1.1.1.1' /etc/systemd/resolved.conf
 # unattended-upgrades - Autmatic background update daemon
 # snapd - Extra package manager
 # xserver-xorg-video-intel - ** Intel driver which is causing screen FREEZES! (Removing this fixed the freezes) **
-$APT remove --purge --auto-remove gdm3 snapd bluez ubuntu-session gvfs-daemons gnome-session-bin gnome-settings-daemon cups netplan.io network-manager sssd ubuntu-wallpapers ubuntu-wallpapers-groovy unattended-upgrades xserver-xorg-video-intel
+$APT remove --purge --auto-remove gdm3 snapd bluez ubuntu-session gvfs-daemons gnome-session-bin gnome-settings-daemon cups netplan.io network-manager plymouth sssd sssd-common ubuntu-wallpapers ubuntu-wallpapers-groovy unattended-upgrades xserver-xorg-video-intel
 $APT autoremove
 $APT autoclean
 
@@ -134,9 +134,6 @@ EOL
 # Add user to 'video' group to allow brightness control
 usermod -aG video $USER
 
-# Disable ondemand CPU scaling
-#systemctl disable ondemand
-
 # Set powerbutton to suspend
 cat >"/etc/systemd/logind.conf" <<EOL
 [Login]
@@ -144,7 +141,7 @@ HandlePowerKey=suspend
 EOL
 
 # Fix mouse pointer in Firefox
-#gsettings set org.gnome.desktop.interface cursor-theme 'DMZ-White'
+gsettings set org.gnome.desktop.interface cursor-theme 'DMZ-White'
 
 # Install Ledger USB detection
 cat <<EOF > /etc/udev/rules.d/20-hw1.rules
@@ -160,14 +157,9 @@ udevadm control --reload-rules
 
 # Add reboot fix for Surface Pro 7
 cat >"/etc/default/grub" <<EOL
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash reboot=pci"
+GRUB_CMDLINE_LINUX_DEFAULT="reboot=pci"
 EOL
 update-grub2
 
 # Set default systemd runlevel to multi user
-systemctl set-default multi-user.target
-
-# Fix Plymouth login stuck on logo
-cat >"/lib/systemd/system/plymouth.service" <<EOL
-ExecStart=/bin/plymouth quit
-EOL
+#systemctl set-default multi-user.target
