@@ -1,4 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Powerlevel10k instant prompt (Should stay close to the top of ~/.zshrc)
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -118,7 +118,6 @@ else
     precmd_functions+=( precmd_vcs_info )
     zstyle ':vcs_info:*' enable git
     zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' disable-patterns "~/ssh-mount(|/*)"
     zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
     zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'
     zstyle ':vcs_info:git:*' formats '[%F{cyan}%b%f%c%u]'
