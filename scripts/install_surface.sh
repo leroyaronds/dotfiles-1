@@ -27,6 +27,7 @@ cat >>"/etc/network/interfaces.d/wifi" <<EOL
 auto wlp0s20f3
 iface wlp0s20f3 inet dhcp
   pre-up wpa_supplicant -c /etc/wpa_supplicant.conf -i wlp0s20f3 &
+  pre-up sleep 4
   post-down pkill wpa_supplicant
 EOL
 
@@ -88,6 +89,10 @@ ln -s ~/dotfiles/.config/mutt ~/.config/mutt
 ln -s ~/dotfiles/.config/sway ~/.config/sway
 ln -s ~/dotfiles/.config/todo ~/.config/todo
 ln -s ~/dotfiles/.config/xkb ~/.config/xkb
+
+# Setup MPD
+mkdir ~/.mpd
+systemctl --user enable mpd.service
 
 # Set locale
 #cat >"/etc/default/locale" <<EOL
