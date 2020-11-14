@@ -73,15 +73,21 @@ $APT update
 $APT install brightnessctl cpufrequtils freerdp2-wayland git gpg grim i3status ifupdown intel-media-va-driver kitty knockd libgfshare-bin mpd mpc ncmpc qrencode pinentry-gnome3 ripgrep scdaemon sshfs steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant xwayland zbar-tools zsh
 
 # Create symbolic links to dotfiles
-ln --symbolic ~/dotfiles/.gitconfig ~/.gitconfig
-ln --symbolic ~/dotfiles/.gitignore ~/.gitignore
-ln --symbolic ~/dotfiles/.vimrc ~/.vimrc
-ln --symbolic ~/dotfiles/.zshenv ~/.zshenv
-ln --symbolic ~/dotfiles/.zshrc ~/.zshrc
-ln --symbolic ~/dotfiles/.config/sway ~/.config/sway
-ln --symbolic ~/dotfiles/.config/i3status ~/.config/i3status
-ln --symbolic ~/dotfiles/.config/kitty ~/.config/kitty
-ln --symbolic ~/dotfiles/.config/todo ~/.config/todo
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/dotfiles/.gitignore ~/.gitignore
+ln -s ~/dotfiles/.p10k.zsh ~/.p10k.zsh
+ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/.zshenv ~/.zshenv
+ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/.config/flake8 ~/.config/flake8
+ln -s ~/dotfiles/.config/i3status ~/.config/i3status
+ln -s ~/dotfiles/.config/kitty ~/.config/kitty
+ln -s ~/dotfiles/.config/mpd ~/.config/mpd
+ln -s ~/dotfiles/.config/mutt ~/.config/mutt
+ln -s ~/dotfiles/.config/sway ~/.config/sway
+ln -s ~/dotfiles/.config/todo ~/.config/todo
+ln -s ~/dotfiles/.config/xkb ~/.config/xkb
 
 # Set locale
 #cat >"/etc/default/locale" <<EOL
