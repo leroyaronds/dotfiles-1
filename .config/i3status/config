@@ -72,9 +72,11 @@ volume master {
 }
 
 battery 1 {
-    format = "P: %remaining [%status]"
-    low_threshold = 30
-    threshold_type = time
+    format = "P: %percentage (%remaining) [%status]"
+    last_full_capacity = true
+    integer_battery_capacity = true
+    low_threshold = 25
+    threshold_type = "percentage"
     status_chr = "C"
     status_bat = "B"
     status_unk = "?"
