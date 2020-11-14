@@ -8,11 +8,6 @@ macro index <f3> '<sync-mailbox><enter-command>source "pass mail/account.home |"
 source "pass mail/account.work |"
 #folder-hook $folder "source 'pass mail/account.work |'"
 
-# Aliases
-set sort_alias = alias
-set reverse_alias = yes
-source "pass mail/aliases |"
-
 # General
 unset wait_key
 set quit
@@ -27,6 +22,8 @@ set charset = 'utf-8'
 set fast_reply
 set smart_wrap
 set net_inc = 10
+set sort_alias = alias
+set reverse_alias = yes
 
 # Status bar
 set status_chars  = " *%A"
