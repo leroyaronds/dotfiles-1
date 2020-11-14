@@ -25,9 +25,9 @@ load {
 }
 
 memory {
-    format = "M: %used"
+    format = "M: %percentage_used"
     memory_used_method = "classical"
-    threshold_degraded = "40%"
+    threshold_degraded = "50%"
     threshold_critical = "10%"
 }
 
@@ -37,7 +37,9 @@ cpu_temperature 8 {
 }
 
 disk "/" {
-    format = "D: %used"
+    format = "D: %avail"
+    threshold_type = "percentage_free"
+    low_threshold = 10
 }
 
 ethernet _first_ {
