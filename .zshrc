@@ -129,9 +129,7 @@ else
 fi
 
 # Include local zshrc file if exists
-if [[ -a ~/.zshrc.local ]]; then
-    source ~/.zshrc.local
-fi
+[[ ! -f ~/.zshrc.local ]] || source ~/.zshrc.local
 
 # Update GPG variables
 if command -v gpgconf >/dev/null; then
