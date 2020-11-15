@@ -253,6 +253,7 @@ bindsym $mod+t [app_id="kitty-scratch"] scratchpad show
 #
 # Always move Firefox to workspace 1
 for_window [app_id="firefox"] move workspace 1
+for_window [class="Firefox"] move workspace 1
 
 ## Idle configuration
 #
