@@ -1,12 +1,12 @@
 # Account switch bindings
-macro index <f2> '<sync-mailbox><enter-command>source "pass mail/account.work |"<enter><change-folder>!<enter>'
-macro index <f3> '<sync-mailbox><enter-command>source "pass mail/account.home |"<enter><change-folder>!<enter>'
+macro index <f2> '<sync-mailbox><enter-command>source "pass work/mutt.account |"<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source "pass marco/mutt.account |"<enter><change-folder>!<enter>'
 
 # Accounts
-#source "pass mail/account.home |"
-#folder-hook $folder "source 'pass mail/account.home |'"
-source "pass mail/account.work |"
-#folder-hook $folder "source 'pass mail/account.work |'"
+#source "pass marco/mutt.account |"
+#folder-hook $folder "source 'pass marco/mutt.account |'"
+source "pass work/mutt.account |"
+#folder-hook $folder "source 'pass work/mutt.account |'"
 
 # General
 unset wait_key
