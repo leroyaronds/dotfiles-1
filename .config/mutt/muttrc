@@ -52,14 +52,15 @@ set sidebar_format = "%B %* %?N?%N?"
 bind index ^            imap-fetch-mail
 bind index <tab>        sync-mailbox
 bind index <space>      collapse-thread
-bind index gg           first-entry
+bind index g            first-entry
 bind index G            last-entry
+bind index \CD          purge-message
 bind index,pager \Cp    sidebar-prev
 bind index,pager \Cn    sidebar-next
 bind index,pager \Co    sidebar-open
 bind pager <up>         previous-line
 bind pager <down>       next-line
-bind pager gg           top
+bind pager g            top
 bind pager G            bottom
 
 # View attachments properly.
