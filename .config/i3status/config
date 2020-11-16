@@ -26,7 +26,7 @@ load {
 
 memory {
     format = "M: %percentage_used"
-    memory_used_method = "classical"
+    memory_used_method = "memavailable"
     threshold_degraded = "50%"
     threshold_critical = "10%"
 }
