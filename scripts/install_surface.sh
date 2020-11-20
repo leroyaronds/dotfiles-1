@@ -52,9 +52,9 @@ $APT autoclean
 
 # Cleanup repositories
 cat >"/etc/apt/sources.list" <<EOL
-deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy main universe
-deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy-updates main universe
-deb http://ftp.nluug.nl/os/Linux/distr/ubuntu/ groovy-security main universe
+deb http://nl.archive.ubuntu.com/ubuntu/ groovy main universe
+deb http://nl.archive.ubuntu.com/ubuntu/ groovy-updates main universe
+deb http://nl.archive.ubuntu.com/ubuntu/ groovy-security main universe
 EOL
 
 # Extra repositories
