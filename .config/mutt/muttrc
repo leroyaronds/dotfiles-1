@@ -9,6 +9,7 @@ source "pass work/mutt.account |"
 #folder-hook $folder "source 'pass work/mutt.account |'"
 
 # General
+unset help
 unset wait_key
 set quit
 set delete
