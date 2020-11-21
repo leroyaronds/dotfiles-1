@@ -119,22 +119,26 @@ color index         color141    default     ~v # messages part of a collapsed th
 color hdrdefault    color117    default
 color header        color231    default     ^Subject:.*
 
-# BODY              FG          BG          REGEX
-# -----------------------------------------------
-color attachment    color228    default
-color body          color231    default     [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+               # email addresses
-color body          color228    default     (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+        # URLs
-color body          color231    default     (^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$) # *bold* text
-color body          color231    default     (^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)     # _underlined_ text
-color body          color231    default     (^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)     # /italic/ text
-color quoted        color61     default
-color quoted1       color117    default
-color quoted2       color84     default
-color quoted3       color215    default
-color quoted4       color212    default
-color signature     color212    default
+# BODY                  FG              BG          REGEX
+# --------------------------------------------------------------------------------------------------------------------------
+color attachment        color228        default
+color body              color231        default     "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"               # email addresses
+color body              color228        default     "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+"        # URLs
+color body              color231        default     "(^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$)" # *bold* text
+color body              color231        default     "(^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)"     # _underlined_ text
+color body              color231        default     "(^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)"     # /italic/ text
+color body              brightyellow    default     "warning(|s)?"
+color body              brightred       default     "error(|s)?"
+color body              brightred       default     "fail(ure|ures|ed)?"
+color body              brightred       default     "alert(|s)?"
+color quoted            color61         default
+color quoted1           color117        default
+color quoted2           color84         default
+color quoted3           color215        default
+color quoted4           color212        default
+color signature         color212        default
 
-# SIDEBAR               FG          BF
+# SIDEBAR               FG              BF
 # -----------------------------------------------
-color sidebar_indicator default     default
-color sidebar_new       yellow      default
+color sidebar_indicator default         default
+color sidebar_new       yellow          default
