@@ -8,6 +8,9 @@ macro index <f3> '<sync-mailbox><enter-command>source "pass marco/mutt.account |
 source "pass work/mutt.account |"
 #folder-hook $folder "source 'pass work/mutt.account |'"
 
+# Collapse threads
+folder-hook . "push \eV"
+
 # General
 unset help
 unset wait_key
@@ -36,6 +39,7 @@ set date_format = "%d-%m %H:%M"
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
 set index_format = "%2C [%Z] (%-4.4c)  %D  %-25.25F  %-80.80s"
+set collapse_unread
 set uncollapse_jump
 set sort_re
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
