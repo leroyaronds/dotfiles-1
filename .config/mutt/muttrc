@@ -8,9 +8,6 @@ macro index <f3> '<sync-mailbox><enter-command>source "pass marco/mutt.account |
 source "pass work/mutt.account |"
 #folder-hook $folder "source 'pass work/mutt.account |'"
 
-# Collapse threads
-folder-hook . "push \eV"
-
 # General
 unset help
 unset wait_key
@@ -58,7 +55,8 @@ set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
 # Keybindings
 bind index ^            imap-fetch-mail
 bind index <tab>        sync-mailbox
-bind index <space>      collapse-thread
+bind index -            collapse-thread
+bind index _            collapse-all
 bind index g            first-entry
 bind index G            last-entry
 bind index \CD          purge-message
