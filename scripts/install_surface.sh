@@ -71,7 +71,7 @@ EOL
 $APT update
 
 # Install packages
-$APT install brightnessctl cpufrequtils fzf git gpg grim i3status ifupdown intel-media-va-driver kitty knockd libgfshare-bin mpd mpc ncmpc pass pass-extension-otp pinentry-gnome3 qrencode ripgrep scdaemon steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant xwayland zbar-tools zsh
+$APT install brightnessctl cpufrequtils fzf git gpg grim i3status ifupdown intel-media-va-driver kitty knockd libgfshare-bin mpd mpc mutt ncmpc pass pass-extension-otp pinentry-gnome3 qrencode ripgrep scdaemon steghide sway swayidle swaylock tomb vim wireguard wl-clipboard wpasupplicant xwayland zbar-tools zsh
 
 # Create symbolic links to dotfiles
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
