@@ -58,11 +58,11 @@ deb http://nl.archive.ubuntu.com/ubuntu/ groovy-security main universe
 EOL
 
 # Extra repositories
+curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+curl https://updates.signal.org/desktop/apt/keys.asc | apt-key add -
 cat >"/etc/apt/sources.list.d/misc.list" <<EOL
 # Microsoft Visual Studio Code
 deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main
-# Puppet 5 (For puppet extention)
-deb http://apt.puppetlabs.com bionic puppet5
 # Signal messenger
 deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main
 EOL
