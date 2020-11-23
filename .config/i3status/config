@@ -33,7 +33,7 @@ memory {
 
 cpu_temperature 8 {
     format = "T: %degrees°C"
-    max_threshold = 55
+    max_threshold = 60
 }
 
 disk "/" {
