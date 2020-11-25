@@ -57,16 +57,6 @@ deb http://nl.archive.ubuntu.com/ubuntu/ groovy-updates main universe
 deb http://nl.archive.ubuntu.com/ubuntu/ groovy-security main universe
 EOL
 
-# Extra repositories
-curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-curl https://updates.signal.org/desktop/apt/keys.asc | apt-key add -
-cat >"/etc/apt/sources.list.d/misc.list" <<EOL
-# Microsoft Visual Studio Code
-deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main
-# Signal messenger
-deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main
-EOL
-
 # Update repositories
 $APT update
 
@@ -101,10 +91,10 @@ systemctl --user enable mpd.service
 #EOL
 
 # MesloLGS NF fonts
-curl -o "/usr/local/share/fonts/MesloLGS NF Regular.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
-curl -o "/usr/local/share/fonts/MesloLGS NF Bold.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
-curl -o "/usr/local/share/fonts/MesloLGS NF Italic.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
-curl -o "/usr/local/share/fonts/MesloLGS NF Bold Italic.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+#curl -o "/usr/local/share/fonts/MesloLGS NF Regular.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+#curl -o "/usr/local/share/fonts/MesloLGS NF Bold.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+#curl -o "/usr/local/share/fonts/MesloLGS NF Italic.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+#curl -o "/usr/local/share/fonts/MesloLGS NF Bold Italic.ttf" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 
 # Change shell
 chsh --shell /usr/bin/zsh
