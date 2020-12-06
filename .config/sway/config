@@ -111,7 +111,7 @@ bindsym $mod+d exec $term --class kitty-menu --override background_opacity=0.8 /
 for_window [app_id="kitty-menu"] floating enable, resize set height 250 px, resize set width 800 px, move position center
 #
 # Start a terminal
-bindsym $mod+Return exec $term --single-instance --instance-group terminal
+bindsym $mod+Return exec $term --single-instance
 #
 # Start internet browser
 bindsym $mod+i exec $browser
@@ -253,6 +253,9 @@ bindsym $mod+t [app_id="kitty-scratch"] scratchpad show
 # Always move Firefox to workspace 1
 for_window [app_id="firefox"] move workspace 1
 for_window [class="Firefox"] move workspace 1
+# Inhibit Idle if a window is fullscreen
+for_window [app_id="^.*"] inhibit_idle fullscreen
+for_window [class="^.*"] inhibit_idle fullscreen
 
 ## Idle configuration
 #
