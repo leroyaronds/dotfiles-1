@@ -43,6 +43,7 @@
     b = branch
     cam = commit --amend
     d = diff
+    l = log -10
     p = push
     pf = push --force
     sc = clone --depth 1
@@ -57,3 +58,7 @@
 [user]
     name = Marco
     email = marco@localhost
+[format]
+    pretty = %h - %cd: %s
+[log]
+    date = format:"%Y-%m-%d @ %H:%M"
