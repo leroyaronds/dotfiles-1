@@ -88,8 +88,8 @@ output $primary {
     position 0,0
 }
 # Clamshell mode
-bindswitch --reload --locked lid:on output $primary disable
-bindswitch --reload --locked lid:off output $primary enable
+#bindswitch --reload --locked lid:on output $primary disable
+#bindswitch --reload --locked lid:off output $primary enable
 
 #
 # External monitor
