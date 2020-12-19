@@ -61,8 +61,6 @@ set runtimepath^=~/dotfiles/submodules/vim-fugitive
 set runtimepath^=~/dotfiles/submodules/vim-gitgutter
 " Syntastic (Syntax checking)
 set runtimepath^=~/dotfiles/submodules/vim-syntastic
-" YouCompleteMe (Code completion)
-set runtimepath^=~/dotfiles/submodules/vim-youcompleteme
 " Puppet (Puppet)
 set runtimepath^=~/dotfiles/submodules/vim-puppet
 " GPG (GPG encrypt/decrypt)
