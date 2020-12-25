@@ -66,7 +66,7 @@ alias otp2secret='zbarimg -q --raw'
 alias otp2image='qrencode -t ansiutf8'
 alias sd='shred -u'
 alias sz='sudo HOME=$HOME /bin/zsh'
-alias sshb='ssh -fNT'
+alias sshb='ssh -fNT 2>/dev/null'
 alias sshz=sshz
 alias t='todo.sh -t -f'
 alias tm='tmux attach -t $(hostname) || tmux new -s $(hostname)'
