@@ -5,7 +5,7 @@ application/ics; cat '%s'; copiousoutput
 application/gpg; gpg -d '%s'; copiousoutput
 
 text/pdf; pdftotext -layout '%s' -; copiousoutput
-application/pdf; firefox '%s'; test=test -n "$DISPLAY"
+application/pdf; firefox '%s' & sleep 5; test=test -n "$DISPLAY"
 application/pdf; pdftotext -layout '%s' -; copiousoutput
 application/x-pdf; pdftotext -layout '%s' -; copiousoutput
 application/x-bzpdf; pdftotext -layout '%s' -; copiousoutput
