@@ -138,6 +138,6 @@ if command -v gpgconf >/dev/null; then
 fi
 
 # Auto start SWAY
-if [[ -z "$DISPLAY_WAYLAND" ]] && [[ $(tty) == /dev/tty1 ]] && command -v sway >/dev/null; then
+if [[ -z "$DISPLAY_WAYLAND" && $(tty) == /dev/tty1 ]] && command -v sway >/dev/null; then
     sway
 fi
