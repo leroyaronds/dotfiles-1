@@ -9,6 +9,7 @@
     ff = only
 [push]
     default = simple
+    followTags = true
 [color]
     ui = auto
 [color "branch"]
