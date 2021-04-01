@@ -1,62 +1,79 @@
 default partial alphanumeric_keys modifier_keys
+
 xkb_symbols "us_custom" {
 
     name[Group1]= "US (Custom)";
 
-    // Make CAPS a Level3 shifter
-    key <CAPS> { [ ISO_Level3_Shift ] };
-    modifier_map Mod5 { ISO_Level3_Shift };
+    // Make CAPS a Level3 modifier
+    include "level3(modifier_mapping)"
+    include "level3(caps_switch)"
 
-    //                  Normal,         Shift,          Caps,                   Shift+Caps
+    // Make RALT a Level5 modifier
+    include "level5(modifier_mapping)"
+    include "level5(ralt_switch)"
 
-    key <ESC>  {    [   Escape,         asciitilde,     grave,                  NoSymbol    ]   };
-    key <AE01> {    [   1,              exclam,         F1,                     NoSymbol    ]   };
-    key <AE02> {    [   2,              at,             F2,                     NoSymbol    ]   };
-    key <AE03> {    [   3,              numbersign,     F3,                     NoSymbol    ]   };
-    key <AE04> {    [   4,              dollar,         F4,                     NoSymbol    ]   };
-    key <AE05> {    [   5,              percent,        F5,                     NoSymbol    ]   };
-    key <AE06> {    [   6,              asciicircum,    F6,                     NoSymbol    ]   };
-    key <AE07> {    [   7,              ampersand,      F7,                     NoSymbol    ]   };
-    key <AE08> {    [   8,              asterisk,       F8,                     NoSymbol    ]   };
-    key <AE09> {    [   9,              parenleft,      F9,                     NoSymbol    ]   };
-    key <AE10> {    [   0,              parenright,     F10,                    NoSymbol    ]   };
-    key <AE11> {    [   minus,          underscore,     F11,                    NoSymbol    ]   };
-    key <AE12> {    [   equal,          plus,           F12,                    NoSymbol    ]   };
+    // Make keys 8 levels
+    key.type[Group1] = "EIGHT_LEVEL";
 
-    key <AD01> {    [   q,              Q,              NoSymbol,               NoSymbol    ]   };
-    key <AD02> {    [   w,              W,              XF86MonBrightnessUp,    NoSymbol    ]   };
-    key <AD03> {    [   e,              E,              EuroSign,               NoSymbol    ]   };
-    key <AD04> {    [   r,              R,              NoSymbol,               NoSymbol    ]   };
-    key <AD05> {    [   t,              T,              NoSymbol,               NoSymbol    ]   };
-    key <AD06> {    [   y,              Y,              NoSymbol,               NoSymbol    ]   };
-    key <AD07> {    [   u,              U,              Prior,                  Prior       ]   };
-    key <AD08> {    [   i,              I,              NoSymbol,               NoSymbol    ]   };
-    key <AD09> {    [   o,              O,              Next,                   Next        ]   };
-    key <AD10> {    [   p,              P,              NoSymbol,               NoSymbol    ]   };
-    key <AD11> {    [   bracketleft,    braceleft,      NoSymbol,               NoSymbol    ]   };
-    key <AD12> {    [   bracketright,   braceright,     XF86AudioPlay,          NoSymbol    ]   };
-    key <BKSL> {    [   backslash,      bar,            NoSymbol,               NoSymbol    ]   };
+    //                  NORMAL,         SHIFT,          CAPS,                   SHIFT+CAPS,         RALT,               SHIFT+RALT,         CAPS+RALT,          SHIFT+CAPS+RALT 
 
-    key <AC01> {    [   a,              A,              NoSymbol,               NoSymbol    ]   };
-    key <AC02> {    [   s,              S,              XF86MonBrightnessDown,  NoSymbol    ]   };
-    key <AC03> {    [   d,              D,              NoSymbol,               NoSymbol    ]   };
-    key <AC04> {    [   f,              F,              NoSymbol,               NoSymbol    ]   };
-    key <AC05> {    [   g,              G,              NoSymbol,               NoSymbol    ]   };
-    key <AC06> {    [   h,              H,              Left,                   Left        ]   };
-    key <AC07> {    [   j,              J,              Down,                   Down        ]   };
-    key <AC08> {    [   k,              K,              Up,                     Up          ]   };
-    key <AC09> {    [   l,              L,              Right,                  Right       ]   };
-    key <AC10> {    [   semicolon,      colon,          Insert,                 NoSymbol    ]   };
-    key <AC11> {    [   apostrophe,     quotedbl,       Delete,                 NoSymbol    ]   };
+    key <ESC>  {    [   Escape,         asciitilde,     grave,                  NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AE01> {    [   1,              exclam,         F1,                     NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AE02> {    [   2,              at,             F2,                     NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AE03> {    [   3,              numbersign,     F3,                     NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AE04> {    [   4,              dollar,         F4,                     NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AE05> {    [   5,              percent,        F5,                     NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AE06> {    [   6,              asciicircum,    F6,                     NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AE07> {    [   7,              ampersand,      F7,                     NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AE08> {    [   8,              asterisk,       F8,                     NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AE09> {    [   9,              parenleft,      F9,                     NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AE10> {    [   0,              parenright,     F10,                    NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AE11> {    [   minus,          underscore,     F11,                    NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AE12> {    [   equal,          plus,           F12,                    NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
 
-    key <AB01> {    [   z,              Z,              NoSymbol,               NoSymbol    ]   };
-    key <AB02> {    [   x,              X,              NoSymbol,               NoSymbol    ]   };
-    key <AB03> {    [   c,              C,              NoSymbol,               NoSymbol    ]   };
-    key <AB04> {    [   v,              V,              NoSymbol,               NoSymbol    ]   };
-    key <AB05> {    [   b,              B,              NoSymbol,               NoSymbol    ]   };
-    key <AB06> {    [   n,              N,              Home,                   Home        ]   };
-    key <AB07> {    [   m,              M,              End,                    End         ]   };
-    key <AB08> {    [   comma,          less,           XF86AudioMute,          NoSymbol    ]   };
-    key <AB09> {    [   period,         greater,        XF86AudioLowerVolume,   NoSymbol    ]   };
-    key <AB10> {    [   slash,          question,       XF86AudioRaiseVolume,   NoSymbol    ]   };
+    key <AD01> {    [   q,              Q,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AD02> {    [   w,              W,              XF86MonBrightnessUp,    NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AD03> {    [   e,              E,              EuroSign,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AD04> {    [   r,              R,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AD05> {    [   t,              T,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AD06> {    [   y,              Y,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AD07> {    [   u,              U,              Prior,                  Prior,              NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AD08> {    [   i,              I,              Up,                     Up,                 NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AD09> {    [   o,              O,              Next,                   Next,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AD10> {    [   p,              P,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AD11> {    [   bracketleft,    braceleft,      NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AD12> {    [   bracketright,   braceright,     XF86AudioPlay,          NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <BKSL> {    [   backslash,      bar,            NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+
+    key <AC01> {    [   a,              A,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC02> {    [   s,              S,              XF86MonBrightnessDown,  NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC03> {    [   d,              D,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC04> {    [   f,              F,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC05> {    [   g,              G,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC06> {    [   h,              H,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC07> {    [   j,              J,              Left,                   Left,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC08> {    [   k,              K,              Down,                   Down,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC09> {    [   l,              L,              Right,                  Right,              NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC10> {    [   semicolon,      colon,          Insert,                 NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC11> {    [   apostrophe,     quotedbl,       Delete,                 NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+
+    key <AB01> {    [   z,              Z,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AB02> {    [   x,              X,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AB03> {    [   c,              C,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AB04> {    [   v,              V,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AB05> {    [   b,              B,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AB06> {    [   n,              N,              Home,                   Home,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AB07> {    [   m,              M,              End,                    End,                NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AB08> {    [   comma,          less,           XF86AudioMute,          NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AB09> {    [   period,         greater,        XF86AudioLowerVolume,   NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AB10> {    [   slash,          question,       XF86AudioRaiseVolume,   NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+
+    key <TAB>  {    [   Tab         ]   };
+    key <BKSP> {    [   BackSpace   ]   };
+    key <RTRN> {    [   Return      ]   };
+    key <SPCE> {    [   space       ]   };
+    key <RCTL> {    [   NoSymbol    ]   };
+    key <MENU> {    [   Menu        ]   };
+    key <RWIN> {    [   Super_R     ]   };
+    key <RTSH> {    [   Shift_R     ]   };
 };
