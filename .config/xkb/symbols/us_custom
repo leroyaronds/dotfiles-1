@@ -38,7 +38,7 @@ xkb_symbols "us_custom" {
     key <AD05> {    [   t,              T,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
     key <AD06> {    [   y,              Y,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
     key <AD07> {    [   u,              U,              Prior,                  Prior,              NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
-    key <AD08> {    [   i,              I,              Up,                     Up,                 NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AD08> {    [   i,              I,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
     key <AD09> {    [   o,              O,              Next,                   Next,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
     key <AD10> {    [   p,              P,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
     key <AD11> {    [   bracketleft,    braceleft,      NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
@@ -50,9 +50,9 @@ xkb_symbols "us_custom" {
     key <AC03> {    [   d,              D,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
     key <AC04> {    [   f,              F,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
     key <AC05> {    [   g,              G,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
-    key <AC06> {    [   h,              H,              NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
-    key <AC07> {    [   j,              J,              Left,                   Left,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
-    key <AC08> {    [   k,              K,              Down,                   Down,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC06> {    [   h,              H,              Left,                   Left,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC07> {    [   j,              J,              Down,                   Down,               NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AC08> {    [   k,              K,              Up,                     Up,                 NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
     key <AC09> {    [   l,              L,              Right,                  Right,              NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
     key <AC10> {    [   semicolon,      colon,          Insert,                 NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
     key <AC11> {    [   apostrophe,     quotedbl,       Delete,                 NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
@@ -71,7 +71,7 @@ xkb_symbols "us_custom" {
     key <TAB>  {    [   Tab         ]   };
     key <BKSP> {    [   BackSpace   ]   };
     key <RTRN> {    [   Return      ]   };
-    key <SPCE> {    [   space       ]   };
+    key <SPCE> {    [   space,          space       ]   };
     key <RCTL> {    [   NoSymbol    ]   };
     key <MENU> {    [   Menu        ]   };
     key <RWIN> {    [   Super_R     ]   };
