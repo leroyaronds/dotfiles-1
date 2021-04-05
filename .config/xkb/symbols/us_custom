@@ -64,16 +64,8 @@ xkb_symbols "us_custom" {
     key <AB04> {    [   v,              V,              NoSymbol,               NoSymbol,           F10,                NoSymbol,           NoSymbol,           NoSymbol    ]   };
     key <AB05> {    [   b,              B,              NoSymbol,               NoSymbol,           F11,                NoSymbol,           NoSymbol,           NoSymbol    ]   };
     key <AB06> {    [   n,              N,              Home,                   Home,               F12,                NoSymbol,           NoSymbol,           NoSymbol    ]   };
-    key <AB07> {    [   m,              M,              End,                    End,                NoSymbol,           NoSymbol,           NoSymbol,           NoSymbol    ]   };
+    key <AB07> {    [   m,              M,              End,                    End,                NoSymbol,           NoSymbol,           XF86AudioPlay,          NoSymbol    ]   };
     key <AB08> {    [   comma,          less,           NoSymbol,               NoSymbol,           NoSymbol,           NoSymbol,           XF86AudioMute,          NoSymbol    ]   };
     key <AB09> {    [   period,         greater,        Home,                   NoSymbol,           Prior,              NoSymbol,           XF86AudioLowerVolume,   NoSymbol    ]   };
     key <AB10> {    [   slash,          question,       End,                    NoSymbol,           Next,               NoSymbol,           XF86AudioRaiseVolume,   NoSymbol    ]   };
-
-    key <BKSP> {    [   BackSpace   ]   };
-    key <RTRN> {    [   Return      ]   };
-    key <SPCE> {    [   space,          space,          space,                  space,              space,              space,              XF86AudioPlay,      space       ]   };
-    key <RCTL> {    [   NoSymbol    ]   };
-    key <MENU> {    [   Menu        ]   };
-    key <RWIN> {    [   Super_R     ]   };
-    key <RTSH> {    [   NoSymbol    ]   };
 };
