@@ -31,10 +31,6 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
 
-# Add todo.txt to path
-path+=("${HOME}/dotfiles/submodules/shell-todo-txt")
-export PATH
-
 # Global aliases
 alias -g apt='apt --quiet --assume-yes --no-install-recommends'
 
@@ -69,7 +65,7 @@ alias sd='shred -u'
 alias sz='sudo HOME=$HOME /bin/zsh'
 alias sshb='ssh -fNT 2>/dev/null'
 alias sshz=sshz
-alias t='todo.sh -t -f'
+alias t='~/.todo/todo.md'
 alias tm='tmux attach -t $(hostname) || tmux new -s $(hostname)'
 alias update='sudo apt update; sudo apt upgrade; sudo apt --purge autoremove; sudo apt autoclean'
 alias v='vim'
@@ -137,9 +133,4 @@ if command -v gpgconf >/dev/null; then
     export GPG_TTY=$TTY
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
     gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
-fi
-
-# Auto start SWAY
-if [[ -z "$DISPLAY_WAYLAND" && $(tty) == /dev/tty1 ]] && command -v sway >/dev/null; then
-    sway
 fi

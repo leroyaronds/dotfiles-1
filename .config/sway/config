@@ -61,9 +61,9 @@ seat * hide_cursor 5000
 # [swaymsg -t get_inputs]
 #
 # Keyboard
-input type:keyboard {
-    xkb_layout us_custom
-}
+#input type:keyboard {
+#    xkb_layout us_custom
+#}
 #
 # Touchpad
 input type:touchpad {

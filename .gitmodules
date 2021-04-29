@@ -84,6 +84,3 @@
 	url = https://github.com/romkatv/powerlevel10k.git
 	shallow = true
 	ignore = dirty
-[submodule "submodules/shell-todo-txt"]
-	path = submodules/shell-todo-txt
-	url = https://github.com/todotxt/todo.txt-cli.git
