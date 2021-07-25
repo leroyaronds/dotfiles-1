@@ -20,6 +20,9 @@ set $term kitty
 #set $browser MOZ_ENABLE_WAYLAND=1 firefox
 set $browser firefox
 #
+# Visual Studio Code
+set $code code --enable-features=UseOzonePlatform --ozone-platform=wayland
+#
 # Moving around
 set $up Up
 set $left Left
@@ -115,6 +118,9 @@ bindsym $mod+Return exec $term --single-instance
 #
 # Start internet browser
 bindsym $mod+i exec $browser
+#
+# Start Visual Studio Code
+bindsym $mod+c exec $code
 #
 # Kill focused window
 bindsym $mod+Shift+q kill
