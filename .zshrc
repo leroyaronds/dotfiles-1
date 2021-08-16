@@ -133,3 +133,8 @@ if command -v gpgconf >/dev/null; then
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
     gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
 fi
+
+# Start sway on main terminal
+if [ "$TTY" = "/dev/tty1" ]; then
+	exec sway
+fi
